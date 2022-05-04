@@ -1,8 +1,7 @@
-public class Canzoni {
+package emotionalsongs;
 
-    private String titolo;
-    private String autore;
-    private String anno;
+public class Canzoni {
+    private String titolo, autore,anno;
 
     private Canzoni(String Titolo , String Autore , String Anno)
     {
