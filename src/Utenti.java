@@ -11,10 +11,9 @@ public class Utenti {
     private String userid;
     private String password;
 
-    public Utenti(String Nome, String Cognome, int Cap , String Provincia,
-                  String Comune, String Via , String NumeroCivico , String CF , String Email,
-                  String UserID, String PW) {
-
+    private Utenti(String Nome, String Cognome, int Cap , String Provincia,
+                   String Comune, String Via , String NumeroCivico , String CF , String Email,
+                   String UserID, String PW) {
         this.nome=Nome;
         this.cognome=Cognome;
         this.cap=Cap;
@@ -26,5 +25,11 @@ public class Utenti {
         this.email=Email;
         this.userid=UserID;
         this.password=PW;
+    }
+
+    public Utenti Registrazione(String Nome, String Cognome, int Cap , String Provincia,
+                              String Comune, String Via , String NumeroCivico , String CF , String Email,
+                              String UserID, String PW ){
+       return new Utenti(Nome, Cognome,  Cap , Provincia, Comune, Via , NumeroCivico ,  CF ,  Email, UserID,  PW);
     }
 }
