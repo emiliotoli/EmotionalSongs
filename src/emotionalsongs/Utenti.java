@@ -1,8 +1,18 @@
 package emotionalsongs;
 
+import java.io.*;
+
 public class Utenti {
+
+    //<editor-fold desc="Attributi">
+    static int codfisLunghezza = 16;//usato per verificare la lunghezza del codice fiscale
+    static InputStreamReader isr=new InputStreamReader(System.in);
+    static BufferedReader br=new BufferedReader(isr);
     private String nome,cognome,codiceFiscale,via,numeroCivico,comune,provincia,email,userid,password;
     private int cap;
+
+    //</editor-fold>
+
     protected Utenti(String Nome, String Cognome, String CF,String Via,String NumeroCivico, int Cap,  String Comune,
                   String Provincia, String Email, String UserID, String PW) {
         this.nome=Nome;
@@ -22,10 +32,71 @@ public class Utenti {
        return new Utenti(Nome,Cognome,CF,Via,NumeroCivico,Cap,Comune,Provincia,Email,UserID,PW);
     }
     public String ToString(){
-        String separatore = Character.toString((char) 2063);
-        return this.nome+separatore+this.cognome+separatore+this.codiceFiscale+separatore+this.via+separatore+this.numeroCivico+separatore+this.cap+separatore+this.comune+separatore+this.provincia+separatore+this.email+separatore+this.userid+separatore+this.password;
-    }
 
+        return this.nome+ " " +this.cognome+ " " +this.codiceFiscale+ " " +this.via+ " " +this.numeroCivico+ " " +this.cap+ " " +this.comune+ " " +this.provincia+ " " +this.email+ " " +this.userid+ " " +this.password;
+    }
+     //metodi per i controlli
+
+    //<editor-fold desc="Funzione che controlla il codice fiscale sia lungo 16 caratteri e nel seguente formato:">
+    static String ControlloFormatocf(String cf) throws IOException {
+        do {
+            if ((cf.length() == codfisLunghezza) && cf.matches("([A-Za-z]{6})([0-9]{2})([A-Za-z])([0-9]{2})([A-Za-z])([0-9]{3})([A-Za-z])")) {// se il codice fiscale inserito rispetta la lunghezza e il formato ritorna true
+                break;
+            } else {
+                System.out.println("inserimento non valido");
+                System.out.print("reinserisci il Codice Fiscale: ");
+                cf = br.readLine();
+            }
+        }while ((cf.length() != codfisLunghezza) && !cf.matches("([A-Za-z]{6})([0-9]{2})([A-Za-z])([0-9]{2})([A-Za-z])([0-9]{3})([A-Za-z])"));
+        return cf;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="funzione che il nome sia lungo almeo 3">
+    static String LunghezzaNome(String nome)throws IOException {
+        while(nome.length()<3)
+        {
+            System.out.println("Nome inserito troppo corto.");
+            System.out.print("reinsirire il nome: ");
+            nome=br.readLine();
+        }
+        return nome;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="funzione che il cognome sia lungo almeo 3">
+    static String LunghezzaCognome(String cognome)throws IOException {
+        while(cognome.length()<3)
+        {
+            System.out.println("Nome inserito troppo corto.");
+            System.out.print("reinsirire il nome: ");
+            cognome=br.readLine();
+        }
+        return cognome;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="funzione che controlla che il cap sia lungo 5">
+    static int LunghezzaCap(int cap) throws IOException {
+        do{
+            if(cap<=10000 && cap>=100000)
+                break;
+            else {
+                System.out.println("valore cap non valido.");
+                System.out.print("reinserire cap: ");
+                cap=br.read();
+            }
+        }while(cap<=10000 && cap>=100000);
+        return cap;
+    }
+    //</editor-fold>
+
+    public static void ScriviFile(String testo, String filePath) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
+        bw.write(testo);
+        bw.newLine();
+        bw.close();
+    }
 
 
 }

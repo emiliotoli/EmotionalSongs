@@ -1,18 +1,43 @@
 package emotionalsongs;
 
-public class Canzoni {
-    private String titolo, autore,anno;
+import java.io.*;
 
-    private Canzoni(String Titolo , String Autore , String Anno)
+public class Canzoni {
+    private String titolo, autore,anno,album,durata,genere;
+    static InputStreamReader isr=new InputStreamReader(System.in);
+    static BufferedReader br=new BufferedReader(isr);
+    public Canzoni(){
+
+    }
+
+    private Canzoni(String Titolo , String Autore , String Anno,String Album,String Durata,String Genere)
     {
+        this.titolo=Titolo;
         this.autore=Autore;
         this.anno=Anno;
-        this.titolo=Titolo;
+        this.album=Album;
+        this.durata=Durata;
+        this.genere=Genere;
     }
 
-    public void creaCanzone(String Titolo , String Autore , String Anno)
+    public void creaCanzone(String Titolo , String Autore , String Anno, String Album, String Durata, String Genere)
     {
-        new Canzoni(Titolo , Autore , Anno);
+        new Canzoni(Titolo,Autore,Anno,Album,Durata,Genere);
     }
+
+    public String ToString(){
+
+        return this.titolo+ " " +this.autore+ " " +this.anno+ " " +this.album+ " " +this.durata+ " " +this.genere;
+    }
+
+    public static void ScriviFile(String testo, String filePath) throws IOException {
+        //FileWriter fw=new FileWriter(filePath);
+        BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
+        bw.write(testo);
+        bw.newLine();
+        bw.flush(); //svuoto lo stream
+        bw.close();
+    }
+
 }
 
