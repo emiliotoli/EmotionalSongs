@@ -15,7 +15,7 @@ public class EmotionalSongs {
                 InputStreamReader isr=new InputStreamReader(System.in);
                 BufferedReader br=new BufferedReader(isr);
 
-                System.out.println("inizio procedura inserimento canzoni:\n");
+                /*System.out.println("inizio procedura inserimento canzoni:\n");
                 System.out.print("inserisci il Titolo della canzone: ");
                 titolo=br.readLine();
 
@@ -34,30 +34,16 @@ public class EmotionalSongs {
                 System.out.print("inserisci il Genere della canzone: ");
                 genere=br.readLine();
 
-                //Canzoni can=new Canzoni();
-                //can.creaCanzone(titolo,autore,anno,album,durata,genere);
-                //ScriviFile(can.ToString(), "../EmotionalSongs/.data/Canzoni.dati.txt");
-                //Canzoni.ScriviFile(can.ToString(), "../EmotionalSongs/.data/Canzoni.dati1.txt");
-                //System.out.println(can);
-                System.out.println(titolo);
-                System.out.println(autore);
-                System.out.println(anno);
-                System.out.println(album);
-                System.out.println(durata);
-                System.out.println(genere);
-
-
                 Canzoni canzonenuova= new Canzoni();
                 canzonenuova.creaCanzone(titolo,autore,anno,album,durata,genere);
-                Canzoni.ScriviFile(canzonenuova.ToString(), "../EmotionalSongs/.data/Canzoni.dati.txt");
-
-                System.out.println("\nprocedura terminata");
-
+                Canzoni.ScriviFile(canzonenuova.ToString(titolo,autore,anno,album,durata,genere), "../EmotionalSongs/.data/Canzoni.dati.txt");
+                System.out.println("\nprocedura terminata");*/
 
 
 
 
-               /* System.out.println("inserisci utente da registrare: ");
+
+               System.out.println("inserisci utente da registrare: ");
 
                 System.out.print("Inserisci nome: ");
                 nome= br.readLine().toLowerCase();
@@ -78,13 +64,13 @@ public class EmotionalSongs {
                 numerocivico= br.readLine();
 
                 System.out.print("inserisci cap: ");
-                cap=br.read();
+                cap=Integer.parseInt(br.readLine());
                 cap=Utenti.LunghezzaCap(cap);
 
-                System.out.print("inserisci comune: ");
+                System.out.print("inserire il comune: ");
                 comune=br.readLine();
 
-                System.out.print("inserisci provincia: ");
+                System.out.print("inserire la provincia: ");
                 provincia= br.readLine();
 
                 System.out.print("inserisci email: ");
@@ -96,8 +82,9 @@ public class EmotionalSongs {
                 System.out.print("inserisci password: ");
                 password=br.readLine();
 
-                Utenti nuovoutente=new Utenti(nome,cognome,codfisc,indirizzo,numerocivico,cap,comune,provincia,email,username,password);
-                ScriviFile(nuovoutente.ToString(),"../EmotionalSongs/.data/UtentiRegistrati.dati.txt"); //inserixìsco un nuovo utente nel file
-                System.out.println("registrazione completata");*/
+                Utenti nuovoutente=new Utenti();
+                nuovoutente.Registrazione(nome,cognome,codfisc,indirizzo,numerocivico,cap,comune,provincia,email,username,password);
+                Utenti.ScriviFile(nuovoutente.ToString(nome,cognome,codfisc,indirizzo,numerocivico,cap,comune,provincia,email,username,password),"../EmotionalSongs/.data/UtentiRegistrati.dati.txt"); //inserixìsco un nuovo utente nel file
+                System.out.println("\nregistrazione completata");
         }
 }

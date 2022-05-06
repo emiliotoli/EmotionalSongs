@@ -6,9 +6,8 @@ public class Canzoni {
     private String titolo, autore,anno,album,durata,genere;
     static InputStreamReader isr=new InputStreamReader(System.in);
     static BufferedReader br=new BufferedReader(isr);
-    public Canzoni(){
 
-    }
+    public Canzoni(){}
 
     private Canzoni(String Titolo , String Autore , String Anno,String Album,String Durata,String Genere)
     {
@@ -25,9 +24,10 @@ public class Canzoni {
         new Canzoni(Titolo,Autore,Anno,Album,Durata,Genere);
     }
 
-    public String ToString(){
+    public String ToString( String Titolo,String Autore,String Anno,String Album,String Durata,String Genere ){
 
-        return this.titolo+ " " +this.autore+ " " +this.anno+ " " +this.album+ " " +this.durata+ " " +this.genere;
+        return Titolo+"|"+Autore+ "|" +Anno+"|"+Album+"|"+Durata+"|"+Genere;
+
     }
 
     public static void ScriviFile(String testo, String filePath) throws IOException {

@@ -7,13 +7,15 @@ public class Utenti {
     //<editor-fold desc="Attributi">
     static int codfisLunghezza = 16;//usato per verificare la lunghezza del codice fiscale
     static InputStreamReader isr=new InputStreamReader(System.in);
-    static BufferedReader br=new BufferedReader(isr);
+    static BufferedReader brr=new BufferedReader(isr);
     private String nome,cognome,codiceFiscale,via,numeroCivico,comune,provincia,email,userid,password;
     private int cap;
 
     //</editor-fold>
 
-    protected Utenti(String Nome, String Cognome, String CF,String Via,String NumeroCivico, int Cap,  String Comune,
+    public Utenti(){}
+
+    private Utenti(String Nome, String Cognome, String CF,String Via,String NumeroCivico, int Cap,  String Comune,
                   String Provincia, String Email, String UserID, String PW) {
         this.nome=Nome;
         this.cognome=Cognome;
@@ -31,9 +33,9 @@ public class Utenti {
                                 String Provincia,String Email,String UserID,String PW){
        return new Utenti(Nome,Cognome,CF,Via,NumeroCivico,Cap,Comune,Provincia,Email,UserID,PW);
     }
-    public String ToString(){
+    public String ToString(String Nome,String Cognome,String CF,String Via,String NumeroCivico,int Cap,String Comune,String Provincia, String Email, String UserID, String PW){
 
-        return this.nome+ " " +this.cognome+ " " +this.codiceFiscale+ " " +this.via+ " " +this.numeroCivico+ " " +this.cap+ " " +this.comune+ " " +this.provincia+ " " +this.email+ " " +this.userid+ " " +this.password;
+        return Nome+"|"+Cognome+"|"+CF+"|"+Via+"|"+NumeroCivico+"|"+Cap+"|"+Comune+"|"+Provincia+"|"+Email+"|"+UserID+"|"+PW;
     }
      //metodi per i controlli
 
@@ -45,7 +47,7 @@ public class Utenti {
             } else {
                 System.out.println("inserimento non valido");
                 System.out.print("reinserisci il Codice Fiscale: ");
-                cf = br.readLine();
+                cf = brr.readLine();
             }
         }while ((cf.length() != codfisLunghezza) && !cf.matches("([A-Za-z]{6})([0-9]{2})([A-Za-z])([0-9]{2})([A-Za-z])([0-9]{3})([A-Za-z])"));
         return cf;
@@ -58,7 +60,7 @@ public class Utenti {
         {
             System.out.println("Nome inserito troppo corto.");
             System.out.print("reinsirire il nome: ");
-            nome=br.readLine();
+            nome=brr.readLine();
         }
         return nome;
     }
@@ -70,7 +72,7 @@ public class Utenti {
         {
             System.out.println("Nome inserito troppo corto.");
             System.out.print("reinsirire il nome: ");
-            cognome=br.readLine();
+            cognome=brr.readLine();
         }
         return cognome;
     }
@@ -79,14 +81,14 @@ public class Utenti {
     //<editor-fold desc="funzione che controlla che il cap sia lungo 5">
     static int LunghezzaCap(int cap) throws IOException {
         do{
-            if(cap<=10000 && cap>=100000)
+            if(cap>10000 && cap<=100000)
                 break;
             else {
                 System.out.println("valore cap non valido.");
                 System.out.print("reinserire cap: ");
-                cap=br.read();
+                cap=Integer.parseInt(brr.readLine());
             }
-        }while(cap<=10000 && cap>=100000);
+        }while(cap<10000 || cap>100000);
         return cap;
     }
     //</editor-fold>
