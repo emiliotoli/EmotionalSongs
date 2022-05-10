@@ -12,6 +12,8 @@ public class Utenti {
     private int cap;
     private final static String sep = System.getProperty("file.separator");
 
+    private boolean loginEffettuato = false;
+
     //</editor-fold>
 
     public Utenti() {
@@ -129,5 +131,25 @@ public class Utenti {
         bw.close();
     }
 
+    public static boolean loginUtente(String UID, String PW) throws FileNotFoundException, IOException {
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + ".UtentiRegistrati.dati.txt"));
+        String str;
+        boolean esistente = false;
+        while ((str = br.readLine()) != null) {
+            String[] a = str.split("\\|");
+            esistente = comparaLogin(a, UID, PW);
+            if (esistente) {
+                //loginEffettuato=true;                 //bisogna mettere un campo per stabilire se l'utente sia loggato o meno, da controllare poi quando si userà la playlist
+                return true;                            //non so come modificarlo dato che non posso modificare un attributo con un metodo statico
+            }
+        }
+        return false;
+    }
+
+    private static boolean comparaLogin(String[] a, String UID, String PW) {
+        if (UID.equals((a[9].trim())) && PW.equals((a[10].trim())))
+            return true;
+        return false;
+    }
 
 }
