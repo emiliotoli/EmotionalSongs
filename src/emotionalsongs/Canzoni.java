@@ -99,9 +99,7 @@ public class Canzoni {
         } else {
             System.out.println("Canzone non trovata");
         }
-        br.close();
-
-
+        bufread.close();
     }
 }
 
