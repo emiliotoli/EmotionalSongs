@@ -10,6 +10,7 @@ public class Utenti {
     static BufferedReader brr=new BufferedReader(isr);
     private String nome,cognome,codiceFiscale,via,numeroCivico,comune,provincia,email,userid,password;
     private int cap;
+    private final static String sep=System.getProperty("file.separator");
 
     //</editor-fold>
 

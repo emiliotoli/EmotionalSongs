@@ -8,14 +8,33 @@ import java.io.InputStreamReader;
 
 public class EmotionalSongs {
         public static void main(String[] args) throws IOException{
+            String nome,cognome,codfisc,indirizzo,numerocivico,comune,provincia,email,username,password;
+            int cap;
+            String titolo, autore,anno,album,durata,genere;
+            InputStreamReader isr=new InputStreamReader(System.in);
+            BufferedReader br=new BufferedReader(isr);
+            final  String sep=System.getProperty("file.separator");
 
-                String nome,cognome,codfisc,indirizzo,numerocivico,comune,provincia,email,username,password;
-                int cap;
-                String titolo, autore,anno,album,durata,genere;
-                InputStreamReader isr=new InputStreamReader(System.in);
-                BufferedReader br=new BufferedReader(isr);
 
-                /*System.out.println("inizio procedura inserimento canzoni:\n");
+            System.out.println("inizio procedura ricerca canzone per autore e titolo:");
+            Canzoni can =new Canzoni();
+            System.out.print("\ninserisci autore: ");
+            autore= br.readLine().trim().toLowerCase();
+            System.out.print("Inserisci anno: ");
+            anno= br.readLine().trim().toLowerCase();
+            can.cercaBranoMusicaleAutoreAnoo(autore,anno);
+
+
+            //<editor-fold desc="RICERCA BRANO PER TITOLO">
+           /* System.out.println("inizio procedura di ricerca in base al titolo");
+            Canzoni can=new Canzoni();
+            System.out.print("inserisci titolo da cercare: ");
+            titolo= br.readLine().toLowerCase().trim();
+            can.cercaBranoMusicaleTitolo(titolo);*/
+            //</editor-fold>
+
+            //<editor-fold desc="REGISTRAZIONE NUOVA CANZONE">
+               /*System.out.println("inizio procedura inserimento canzoni:\n");
                 System.out.print("inserisci il Titolo della canzone: ");
                 titolo=br.readLine();
 
@@ -36,14 +55,12 @@ public class EmotionalSongs {
 
                 Canzoni canzonenuova= new Canzoni();
                 canzonenuova.creaCanzone(titolo,autore,anno,album,durata,genere);
-                Canzoni.ScriviFile(canzonenuova.ToString(titolo,autore,anno,album,durata,genere), "../EmotionalSongs/.data/Canzoni.dati.txt");
+                Canzoni.ScriviFile(canzonenuova.ToString(titolo,autore,anno,album,durata,genere), ".."+sep+"EmotionalSongs"+sep+".data"+sep+"Canzoni.dati.txt");
                 System.out.println("\nprocedura terminata");*/
+            //</editor-fold>
 
-
-
-
-
-               System.out.println("inserisci utente da registrare: ");
+            //<editor-fold desc="REGISTRAZIONE NUOVO UTENTE">
+                /*System.out.println("inserisci utente da registrare: ");
 
                 System.out.print("Inserisci nome: ");
                 nome= br.readLine().toLowerCase();
@@ -84,7 +101,9 @@ public class EmotionalSongs {
 
                 Utenti nuovoutente=new Utenti();
                 nuovoutente.Registrazione(nome,cognome,codfisc,indirizzo,numerocivico,cap,comune,provincia,email,username,password);
-                Utenti.ScriviFile(nuovoutente.ToString(nome,cognome,codfisc,indirizzo,numerocivico,cap,comune,provincia,email,username,password),"../EmotionalSongs/.data/UtentiRegistrati.dati.txt"); //inserixìsco un nuovo utente nel file
-                System.out.println("\nregistrazione completata");
+                Utenti.ScriviFile(nuovoutente.ToString(nome,cognome,codfisc,indirizzo,numerocivico,cap,comune,provincia,email,username,password),".."+sep+"EmotionalSongs"+sep+".data"+sep+"UtentiRegistrati.dati.txt"); //inserixìsco un nuovo utente nel file
+                System.out.println("\nregistrazione completata");*/
+            //</editor-fold>
+
         }
 }
