@@ -146,6 +146,21 @@ public class Utenti {
         return false;
     }
 
+    /*
+    public static int loginUtente(String UID, String PW) throws FileNotFoundException, IOException {
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + ".UtentiRegistrati.dati.txt"));
+        String str;
+        boolean esistente = false;
+        while ((str = br.readLine()) != null) {
+            String[] a = str.split("\\|");
+            esistente = comparaLogin(a, UID, PW);
+            if (esistente) {
+                return 1;                   secondo me si potrebbe sfruttare il return, se è 1 è loggato, altrimenti no.
+            }
+        }
+        return 0;
+    }
+    */
     private static boolean comparaLogin(String[] a, String UID, String PW) {
         if (UID.equals((a[9].trim())) && PW.equals((a[10].trim())))
             return true;
