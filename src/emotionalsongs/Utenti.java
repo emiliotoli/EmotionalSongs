@@ -44,32 +44,6 @@ public class Utenti {
         return Nome + "|" + Cognome + "|" + CF + "|" + Via + "|" + NumeroCivico + "|" + Cap + "|" + Comune + "|" + Provincia + "|" + Email + "|" + UserID + "|" + PW;
     }
 
-    public static String Login(String Id, String Pw) throws IOException {
-        FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + ".UtentiRegistrati.dati.txt");
-        BufferedReader bufread = new BufferedReader(fread);
-        boolean esiste = false;
-        String sup;
-        String idutenteFile;
-        String passwordFile;
-
-        while ((sup = bufread.readLine()) != null) {
-
-            String[] supporto = sup.split("\\|");
-            idutenteFile = supporto[9].trim().toLowerCase();
-            passwordFile = supporto[10].trim().toLowerCase();
-            if (Id.equals(idutenteFile.trim().toLowerCase()) && Pw.equals(passwordFile.trim().toLowerCase())) {
-                esiste = true;
-                break;
-            }
-        }
-        if (!esiste) {
-            System.out.println("non ti sei ancora registrato");
-            //richimare funzione regitra
-        }
-        return Id + Pw;
-    }
-
-
     //metodi per i controlli
 
     //<editor-fold desc="Funzione che controlla il codice fiscale sia lungo 16 caratteri e nel seguente formato:">
@@ -112,14 +86,17 @@ public class Utenti {
     //<editor-fold desc="funzione che controlla che il cap sia lungo 5">
     static int LunghezzaCap(int cap) throws IOException {
         do {
-            if (cap > 10000 && cap <= 100000)
+            if (cap > 10 && cap <= 97100)
                 break;
             else {
                 System.out.println("valore cap non valido.");
                 System.out.print("reinserire cap: ");
                 cap = Integer.parseInt(brr.readLine());
             }
-        } while (cap < 10000 || cap > 100000);
+        } while (cap < 10 || cap > 97100);
+        if(cap<1000){
+
+        }
         return cap;
     }
     //</editor-fold>
@@ -131,8 +108,34 @@ public class Utenti {
         bw.close();
     }
 
+    public static boolean Login(String Id, String Pw) throws IOException {
+
+        FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt");
+        BufferedReader bufread = new BufferedReader(fread);
+        boolean esiste = false;
+        String sup;
+        String idutenteFile;
+        String passwordFile;
+
+        while ((sup = bufread.readLine()) != null) {
+            String[] supporto = sup.split("\\|");
+            idutenteFile = supporto[9].trim().toLowerCase();
+            passwordFile = supporto[10].trim();
+            if (Id.equals(idutenteFile) && Pw.equals(passwordFile)) {
+                esiste = true;
+                break;
+            }
+        }
+        if (!esiste) {
+            System.out.println("non ti sei ancora registrato");
+            //richimare funzione regitra
+        }
+        return esiste;
+    }
+
+
     public static boolean loginUtente(String UID, String PW) throws FileNotFoundException, IOException {
-        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + ".UtentiRegistrati.dati.txt"));
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
         String str;
         boolean esistente = false;
         while ((str = br.readLine()) != null) {
