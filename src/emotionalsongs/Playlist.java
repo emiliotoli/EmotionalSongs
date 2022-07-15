@@ -60,4 +60,31 @@ public class Playlist {
         return Idutente+"|"+NomePlay;
     }
 
+    public static boolean aggiungiCanzone(String titolo , String playList , String idUtente) throws IOException {
+        boolean esito=false;
+        String[] a;
+        BufferedReader playlistReader = new BufferedReader(new FileReader(".." +sep+"EmotionalSongs"+sep+".data"+sep+"Playlist.dati.txt"));
+        String sup;
+        while((sup= playlistReader.readLine())!=null) {
+            a=sup.split("//|");
+            if(a[1].equals(playList) && a[0].equals(idUtente) && esisteCanzone(titolo)){
+
+
+            }
+        }
+        return true; //messo solo per non generare errore
+    }
+
+    private static boolean esisteCanzone(String nomeCanzone) throws IOException {
+        BufferedReader songReader= new BufferedReader(new FileReader(".." +sep+"EmotionalSongs"+sep+".data"+sep+"Playlist.dati.txt"));
+        String[] a;
+        String sup;
+        while((sup=songReader.readLine())!=null)
+        {
+            a=sup.split("||/");
+            if(a[0].equals(nomeCanzone))
+                return true;
+        }
+        return false;
+    }
 }
