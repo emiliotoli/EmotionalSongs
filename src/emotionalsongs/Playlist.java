@@ -20,6 +20,7 @@ public class Playlist {
         new Playlist(idutente,nomeplaylist);
     }
 
+
     public static void ScriviFile(String testo, String filePath) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
         bw.write(testo);

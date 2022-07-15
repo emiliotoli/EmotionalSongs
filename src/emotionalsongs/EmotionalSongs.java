@@ -42,6 +42,7 @@ public class EmotionalSongs {
                     Canzoni can = new Canzoni();
                     can.cercaBranoMusicaleTitolo(titolo);
                     System.out.println("finito");
+
                     break;
                 //</editor-fold>
                 case 2:
@@ -106,38 +107,31 @@ public class EmotionalSongs {
                     do {
                         System.out.print("inserisci l'UserId:");
                         idUtente = br.readLine().trim().toLowerCase();
-                        ;
                         System.out.print("inserisci la password: ");
                         password = br.readLine().trim();
                         loggato = Utenti.Login(idUtente, password);
-                    } while (loggato);
+                    } while (!loggato);
                     idUtenteGlob = idUtente;
                     loggatoglob = true;
                     System.out.println("oky");
-                   /* System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
+                    System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
                     System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
                     System.out.println("Digitare 3 per creare una PlayList: ");
-                    System.out.println("Digitare 4  per Inserire delle Emozioni ad una canzoni ");*/
+                    System.out.println("Digitare 4  per Inserire delle Emozioni ad una canzoni ");
                     break;
                 case 5:
-                    if(loggatoglob)
-                    {
+                    if (loggatoglob) {
                         //richiamare la procedura crea playlist
-                    }
-                    else {
+                    } else {
                         System.out.println("non sei loggato");
                     }
                     break;
                 case 6:
-                    if(loggatoglob)
-                    {
+                    if (loggatoglob) {
                         //richiama il metodo aggiungi emozioni
-                    }
-                    else {
+                    } else {
                         System.out.println("non sei loggato!!");
                     }
-
-
 
 
             }
