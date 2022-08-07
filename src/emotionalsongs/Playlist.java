@@ -15,21 +15,34 @@ public class Playlist {
         this.idutente=Id;
         this.nomeplaylist=NomePlaylist;
     }
-    public void CreaPlaylist( String ID,String NomePlay)
-    {
-        new Playlist(idutente,nomeplaylist);
+
+    public static boolean registraPlaylist(String ID, String NomePlay , String[] canzoni) throws IOException {
+            if (controlloPlaylistEsistente(ID, NomePlay)) {
+                //new Playlist(idutente, nomeplaylist);
+                scriviFileRegistrazione(ID, NomePlay, ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", canzoni);
+                return true;
+            }
+        return false;
     }
 
 
-    public static void ScriviFile(String testo, String filePath) throws IOException {
+    public static void scriviFileRegistrazione(String ID , String testo, String filePath,  String[] canzoni) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
-        bw.write(testo);
+        bw.write(ID);
+        bw.write("\\|");
+        bw.write(testo);        //scrivo l'id e il nome della playlist nel file separati dal carattere '|'
+        for(int i=0;i<canzoni.length;i++){
+            if(esisteCanzone(canzoni[i])) {
+                bw.write(canzoni[i]);
+                bw.write("\\|");        //dopo aver scritto sul file il nome della canzone lo separo con il carattere '|' in moddo che risulti separato dalla canzone successiva
+            }
+        }
         bw.newLine();
         bw.flush(); //svuoto lo stream
         bw.close();
     }
 
-    public static boolean ControlloPlaylistEsistente(String IdUtente, String NomePlay) throws IOException {
+    public static boolean controlloPlaylistEsistente(String IdUtente, String NomePlay) throws IOException {
         FileReader fread = new FileReader(".." +sep+"EmotionalSongs"+sep+".data"+sep+"Playlist.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
         boolean esistente = false;
@@ -46,21 +59,25 @@ public class Playlist {
                 esistente = true;
                 break;
             }
+            else{
+
+
+            }
         }
-        if (esistente) {
+       /* if (esistente) {
             System.out.println("Nome playlist gia esistente per quel id Utente");
         }
         else {
             System.out.println("play list aggiuta con successo.");
-        }
+        }*/
         return esistente;
     }
 
-    public String ToString(String Idutente,String NomePlay){
+    public String toString(String Idutente,String NomePlay){
         return Idutente+"|"+NomePlay;
     }
 
-    public static boolean aggiungiCanzone(String titolo , String playList , String idUtente) throws IOException {
+    /*public void aggiungiCanzone(String titolo , String playList , String idUtente) throws IOException {
         boolean esito=false;
         String[] a;
         BufferedReader playlistReader = new BufferedReader(new FileReader(".." +sep+"EmotionalSongs"+sep+".data"+sep+"Playlist.dati.txt"));
@@ -72,8 +89,11 @@ public class Playlist {
 
             }
         }
-        return true; //messo solo per non generare errore
+
+       // return true; //messo solo per non generare errore
     }
+
+     */
 
     private static boolean esisteCanzone(String nomeCanzone) throws IOException {
         BufferedReader songReader= new BufferedReader(new FileReader(".." +sep+"EmotionalSongs"+sep+".data"+sep+"Playlist.dati.txt"));
