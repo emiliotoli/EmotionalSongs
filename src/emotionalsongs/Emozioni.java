@@ -7,12 +7,29 @@ import java.io.InputStreamReader;
 
 public class Emozioni {
     private final static String sep = System.getProperty("file.separator");
+    private final static String[] Emozioni={"Amazement" , "Solemnity" , "Tenderness" , "Nostalgia" , "Calmness" , "Power" , "Joy" , "Tension" , "Sadness"};
     static InputStreamReader isr = new InputStreamReader(System.in);
     static BufferedReader br = new BufferedReader(isr);
     String emozione;
     String spiegazione;
     int punteggio;
     String note;
+
+    public boolean inserisciEmozioni(String IDUtente , String canzone , String Emozione, int Intensità , String note) throws IOException {
+        //cerca di percorso file
+        //apertura stream
+        if(!Canzoni.controlloCanzoneEsistente(canzone)) {
+            System.out.println("canzone inserita non corretta!");
+            return false;
+        }
+        if(!controlloEsisteEmozione(Emozione)){
+            System.out.println("emozione inserita non corretta!");
+            return false;
+        }
+
+        //scrittura sul file dell'id + nome canzone + emozione + intensità + note
+        return true;
+    }
 
     public void inserisciEmozioni() throws IOException {
 
@@ -99,7 +116,7 @@ public class Emozioni {
                 System.out.println("inserire una nota");
             } else {
                 if (note.length() > 250) {
-                    System.out.println("nota troppo lungha.");
+                    System.out.println("nota troppo lunga.");
                     System.out.println("inserire al massimo 250 caratteri.");
                 }
             }
@@ -120,5 +137,12 @@ public class Emozioni {
 
     }
 
+    private static boolean controlloEsisteEmozione(String emozione){
+        for(int i=0;i< Emozioni.length;i++){
+            if(Emozioni[i].equals(emozione))
+                return true;
+        }
+        return false;
+    }
 }
 

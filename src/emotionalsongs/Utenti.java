@@ -19,8 +19,9 @@ public class Utenti {
     public Utenti() {
     }
 
-    private Utenti(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
-                   String Provincia, String Email, String UserID, String PW) {
+   /* private Utenti(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
+                   String Provincia, String Email, String UserID, String PW) throws IOException {
+        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
         this.nome = Nome;
         this.cognome = Cognome;
         this.codiceFiscale = CF;
@@ -32,17 +33,28 @@ public class Utenti {
         this.email = Email;
         this.userid = UserID;
         this.password = PW;
+        wr.write(this.toString(nome,cognome,CF,via,numeroCivico,cap,comune,provincia,email,userid,password));
+    } */
+
+    public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
+                                String Provincia, String Email, String UserID, String PW) throws IOException {
+
+        boolean nonesistente=false;
+        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
+        //return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
+        nonesistente= esisteUtente(UserID);
+        if(nonesistente) {
+            wr.write(toString(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW));
+        }
+        else{
+            System.out.println("ID UTENTE già esistente! Utente non creato");
+        }
     }
 
-    public Utenti Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
-                                String Provincia, String Email, String UserID, String PW) {
-        return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
-    }
-
-    public String ToString(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune, String Provincia, String Email, String UserID, String PW) {
+    public static String toString(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune, String Provincia, String Email, String UserID, String PW) {
 
         return Nome + "|" + Cognome + "|" + CF + "|" + Via + "|" + NumeroCivico + "|" + Cap + "|" + Comune + "|" + Provincia + "|" + Email + "|" + UserID + "|" + PW;
-    }
+    } //da rendere privato non ha senso pubblico
 
     //metodi per i controlli
 
@@ -100,6 +112,23 @@ public class Utenti {
         return cap;
     }
     //</editor-fold>
+
+    static boolean controlloCAP(String cap){
+        if(cap.length()==5 && controlloNumero(cap)){
+            return true;
+        }
+        System.out.println("cap inserito non corretto , reinserire cap");
+        return false;
+    }
+
+    private static boolean controlloNumero(String cap){
+        boolean giusto=true;
+        for(int i=0;i<cap.length();i++){
+            if(Character.digit(cap.charAt(i),10)<0)
+                return false;
+        }
+        return true;
+    }
 
     public static void ScriviFile(String testo, String filePath) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
@@ -167,6 +196,18 @@ public class Utenti {
     private static boolean comparaLogin(String[] a, String UID, String PW) {
         if (UID.equals((a[9].trim())) && PW.equals((a[10].trim())))
             return true;
+        return false;
+    }
+    private static boolean esisteUtente(String nomeUtente) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + ".UtentiRegistrati.dati.txt"));
+        String str;
+        String[] supporto;
+
+        while((str=br.readLine())!=null){
+            supporto=str.split("\\|");
+            if(supporto[0].equals(nomeUtente))
+                return true;
+        }
         return false;
     }
 
