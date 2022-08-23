@@ -74,7 +74,40 @@ public class Canzoni {
 
     }
 
-    public void cercaBranoMusicaleAutoreAnoo(String Autore, String Anno) throws IOException {
+    public static ArrayList<String> cercaBranoMusicaleDalTitolo(String titolo) throws IOException {
+
+        BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
+        boolean trovato=false;
+        String str;
+
+        ArrayList<String> brani = new ArrayList();
+        while((str= bufread.readLine())!=null){
+            String[] supporto=str.split("//|");
+            if((supporto[0].toLowerCase()).contains(titolo.toLowerCase()))   //controlla se la stringa inserita come titolo sia compresa nel titolo della canzone
+                brani.add(str);                                             //aggiunge alla lista il brano la cui stringa inserita dall'utente è compresa nel titolo
+        }
+        return brani; //può anche essere vuoto!! ritorna una lista perchè i brani restituiti possono essere più di uno! dato che l'utente può riservarsi di scrivere anche solo una parte del titolo
+    }
+
+    public static String visualizzaEmozioniBrano(String titolo) throws IOException {
+        BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
+        String info="";
+        String str;
+        String[] supporto;
+        boolean trovato=false;
+        while((str=bufread.readLine())!=null)
+        {
+            if(trovato)
+                break;
+            supporto=str.split("//|");
+            if(supporto[0].equals(titolo))
+                for(int i=0;i<supporto.length;i++)
+                    info+=supporto[i] + "-";
+        }
+        return info;
+    }
+
+    public void cercaBranoMusicaleAutoreAnno(String Autore, String Anno) throws IOException {
 
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
