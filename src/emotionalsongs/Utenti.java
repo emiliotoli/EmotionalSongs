@@ -1,6 +1,7 @@
 package emotionalsongs;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class Utenti {
 
@@ -10,6 +11,7 @@ public class Utenti {
     static BufferedReader brr = new BufferedReader(isr);
     private String nome, cognome, codiceFiscale, via, numeroCivico, comune, provincia, email, userid, password;
     private int cap;
+
     private final static String sep = System.getProperty("file.separator");
 
     private boolean loginEffettuato = false;
@@ -96,7 +98,7 @@ public class Utenti {
     //</editor-fold>
 
     //<editor-fold desc="funzione che controlla che il cap sia lungo 5">
-    static int LunghezzaCap(int cap) throws IOException {
+   /* static int LunghezzaCap(int cap) throws IOException {
         do {
             if (cap > 10 && cap <= 97100)
                 break;
@@ -112,14 +114,41 @@ public class Utenti {
         return cap;
     }
     //</editor-fold>
+*/
+    static String controlloCAP(int cap){
+        boolean check= false;
+        do {
+            if (cap < 10 || cap > 97100) {
+                System.out.println("cap non valido");
+                Scanner in=new Scanner(System.in);
+                in.nextInt();
+            }
+            else{ check = true; }
 
-    static boolean controlloCAP(String cap){
-        if(cap.length()==5 && controlloNumero(cap)){
-            return true;
-        }
-        System.out.println("cap inserito non corretto , reinserire cap");
-        return false;
+        }while(!check);
+
+            StringBuilder CAP = new StringBuilder();
+            while (CAP.length() < 5 - Integer.toString(cap).length()) {
+                CAP.append(0);
+            }
+            CAP.append(cap);
+
+            return CAP.toString();
     }
+
+    /*static String checkCap(int Cap){
+
+        if(Cap<10 || Cap > 97100)
+            System.out.println("cap non valido");
+
+        StringBuilder CAP = new StringBuilder();
+        while(CAP.length()< 5 - Integer.toString(Cap).length()){
+            CAP.append(0);
+        }
+        CAP.append(Cap);
+
+        return true;
+    }*/
 
     private static boolean controlloNumero(String cap){
         boolean giusto=true;

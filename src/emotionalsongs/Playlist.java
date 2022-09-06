@@ -101,7 +101,7 @@ public class Playlist {
         String sup;
         while((sup=songReader.readLine())!=null)
         {
-            a=sup.split("||/");
+        a=sup.split("\\|");
             if(a[0].equals(nomeCanzone))
                 return true;
         }
