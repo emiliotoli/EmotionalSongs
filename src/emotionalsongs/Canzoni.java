@@ -114,7 +114,7 @@ public class Canzoni {
 
     //public static String visualizzaEmozioniBrano(String titolo){}
 
-    public void cercaBranoMusicaleAutoreAnno(String Autore, String Anno) throws IOException {
+    public void cercaBranoMusicaleAutoreAnno(String Autore, String Anno) throws IOException { //vers1
 
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
@@ -159,6 +159,26 @@ public class Canzoni {
             }
         }
         return false;
+    }
+
+    public static boolean ricercaCanzoni(String titolo) throws IOException {
+
+            FileReader fr = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
+            BufferedReader br= new BufferedReader(fr);
+            String srv;
+            String[] spl;
+            int linea=1;
+            boolean trovato=false;
+            while((srv=br.readLine())!=null)
+            {
+                spl=srv.split("\\|");
+                if(spl[0].contains(titolo)){
+                    System.out.println(spl[0] + linea);
+                    trovato=true;
+                }
+                linea++;
+            }
+            return trovato;
     }
 }
 
