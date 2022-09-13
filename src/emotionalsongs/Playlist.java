@@ -17,6 +17,7 @@ public class Playlist {
     private Playlist(String Id,String NomePlaylist){
         this.idutente=Id;
         this.nomeplaylist=NomePlaylist;
+        //pdpdpdpdpdp
     }
 
     public void registraPlaylist(String ID, String NomePlay) throws IOException {
