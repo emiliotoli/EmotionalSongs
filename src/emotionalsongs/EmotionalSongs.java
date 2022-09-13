@@ -29,6 +29,8 @@ public class EmotionalSongs {
         System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
         System.out.println("Digitare 3 per per Registrati:");
         System.out.println("Digitare 4 per Loggartii");
+        System.out.println("Digitare 5 per creare una PlayList: ");
+        System.out.println("Digitare 6  per Inserire delle Emozioni ad una canzoni ");
 
         do {
             System.out.print("scelta: ");
@@ -42,7 +44,8 @@ public class EmotionalSongs {
                     Canzoni can = new Canzoni();
                     can.cercaBranoMusicaleTitolo(titolo);
                     System.out.println("finito");
-
+                    Emozioni emoz=new Emozioni();
+                    emoz.visualizzaEmozioni(titolo);
                     break;
                 //</editor-fold>
                 case 2:
@@ -80,7 +83,7 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci cap: ");
                     cap = Integer.parseInt(br.readLine());
-                    cap = Utenti.LunghezzaCap(cap);
+                    cap = Integer.parseInt(Utenti.controlloCAP(cap));
 
                     System.out.print("inserire il comune: ");
                     comune = br.readLine();
@@ -113,11 +116,8 @@ public class EmotionalSongs {
                     } while (!loggato);
                     idUtenteGlob = idUtente;
                     loggatoglob = true;
-                    System.out.println("oky");
-                    System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
-                    System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
-                    System.out.println("Digitare 3 per creare una PlayList: ");
-                    System.out.println("Digitare 4  per Inserire delle Emozioni ad una canzoni ");
+                    System.out.println("sei loggato");
+
                     break;
                 case 5:
                     if (loggatoglob) {
@@ -128,7 +128,8 @@ public class EmotionalSongs {
                     break;
                 case 6:
                     if (loggatoglob) {
-                        //richiama il metodo aggiungi emozioni
+                        // richiamre il metodo per inserire le emozioni nel fine
+                       Emozioni.inserisciEmozioni();
                     } else {
                         System.out.println("non sei loggato!!");
                     }

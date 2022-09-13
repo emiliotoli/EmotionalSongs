@@ -66,8 +66,8 @@ public class Canzoni {
             System.out.println("Titolo: " + TitoloFile);
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);
-            //richiama metodo visua emozioni
-            //if loggato richiam metodo inserisci emozioni
+            Emozioni.visualizzaEmozioni(Titolo);
+            //if loggato richiam metodo inserisci emozioni   //lo fa davo
 
         } else {
             System.out.println("Canzone non trovata");
