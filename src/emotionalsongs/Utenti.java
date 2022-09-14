@@ -42,14 +42,14 @@ public class Utenti {
                                 String Provincia, String Email, String UserID, String PW) throws IOException {
 
         boolean nonesistente=false;
-        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
+        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt",true));
         //return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
         nonesistente= esisteUtente(UserID);
         if(nonesistente) {
             wr.write(toString(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW));
         }
         else{
-            System.out.println("ID UTENTE già esistente! Utente non creato");
+            System.out.println("ID UTENTE gia' esistente! Utente non creato");
         }
     }
 
@@ -228,13 +228,13 @@ public class Utenti {
         return false;
     }
     private static boolean esisteUtente(String nomeUtente) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + ".UtentiRegistrati.dati.txt"));
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
         String str;
         String[] supporto;
 
         while((str=br.readLine())!=null){
             supporto=str.split("\\|");
-            if(supporto[0].equals(nomeUtente))
+            if(supporto[9].equals(nomeUtente))
                 return true;
         }
         return false;

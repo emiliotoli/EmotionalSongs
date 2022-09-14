@@ -11,6 +11,7 @@ public class Emozioni {
     private final static String[] Emozioni={"Amazement" , "Solemnity" , "Tenderness" , "Nostalgia" , "Calmness" , "Power" , "Joy" , "Tension" , "Sadness"};
     static InputStreamReader isr = new InputStreamReader(System.in);
     static BufferedReader br = new BufferedReader(isr);
+    static Scanner scan=new Scanner(System.in);
     
 
     /*public boolean inserisciEmozioni(String IDUtente , String canzone , String Emozione, int Intensità , String note) throws IOException {
@@ -32,7 +33,7 @@ public class Emozioni {
     public static void inserisciEmozioni() throws IOException {
         String emozione = null;
         String spiegazione;
-        int punteggio;
+        int punteggio ;
 
         
         System.out.println("scegli categora emozioni: " + "\n");
@@ -104,20 +105,21 @@ public class Emozioni {
         //passo 3
         System.out.println("inserisci punteggio emopzione da 1 a 5: ");
         do {
-            punteggio = br.read();
-            if (punteggio < 1 && punteggio > 5) {
+            punteggio=scan.nextInt();
+            //punteggio = br.read();
+            if (punteggio < 1 || punteggio > 5) {
                 System.out.println("punteggio non valido, inserire da 1 a 5: ");
             }
-        } while (punteggio < 1 && punteggio > 5);
+        } while (punteggio < 1 || punteggio > 5);
 
         //passo 4
-        Scanner scan=new Scanner(System.in);
         System.out.println("inserisci Note (massimo 250 caratteri):  ");
 
-        //String note = br.readLine().toLowerCase();
-        String note =scan.nextLine();
+        String note = br.readLine().toLowerCase();
+        //String note =scan.nextLine();
+
         do {
-            if (note.length() == 0) {
+            if (note.length()==0) {
                 System.out.println("Reinserire una nota");
                 //note = br.readLine().toLowerCase();
                 note =scan.nextLine();
@@ -125,22 +127,32 @@ public class Emozioni {
                 if (note.length() > 250) {
                     System.out.println("nota troppo lunga.");
                     System.out.println("inserire al massimo 250 caratteri.");
-                    //note = br.readLine().toLowerCase();
-                    note =scan.nextLine();
+                    note = br.readLine().toLowerCase();
+                    //note =scan.nextLine();
                 }
             }
         } while (note.length() > 250 || note.length()==0);
 
-        String emozioneNuova=emozione+ "|"+spiegazione+"|"+punteggio+"|"+note;
+        String emozioneNuova= emozione +"|"+ spiegazione +"|"+ punteggio +"|"+ note;
 
-        File file = new File("data" + sep + "Emozioni.dati.txt");
+
+        /*File file = new File("data" + sep + "Emozioni.dati.txt");
         String path = file.getAbsolutePath();
-        BufferedWriter bw = new BufferedWriter(new FileWriter(path, true));
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(path, true)); // sbagliata questa riga
         bw.write(emozioneNuova);
         bw.flush(); //svuoto lo stream
+        bw.close();*/
+        String filePath= ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt";
+        BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
+        bw.write(emozioneNuova);
+        bw.newLine();
         bw.close();
+    }
+    public static void ScriviFile(String testo, String filePath) throws IOException {
 
     }
+
 
     public static void visualizzaEmozioni(String tit) throws IOException{
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt");

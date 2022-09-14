@@ -102,7 +102,7 @@ public class EmotionalSongs {
 
                     Utenti nuovoutente = new Utenti();
                     nuovoutente.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);
-                    Utenti.ScriviFile(nuovoutente.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"); //inserixìsco un nuovo utente nel file
+                    Utenti.ScriviFile(nuovoutente.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"); //inserisco un nuovo utente nel file
                     System.out.println("\nregistrazione completata");
                     break;
                 //</editor-fold>
@@ -123,7 +123,7 @@ public class EmotionalSongs {
                     if (loggatoglob) {
                         //richiamare la procedura crea playlist
                     } else {
-                        System.out.println("non sei loggato");
+                        System.out.println("non ti sei ancora loggato!!");
                     }
                     break;
                 case 6:
@@ -131,7 +131,7 @@ public class EmotionalSongs {
                         // richiamre il metodo per inserire le emozioni nel fine
                        Emozioni.inserisciEmozioni();
                     } else {
-                        System.out.println("non sei loggato!!");
+                        System.out.println("non ti sei ancora loggato!!");
                     }
 
 
