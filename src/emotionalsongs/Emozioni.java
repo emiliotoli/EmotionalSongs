@@ -136,10 +136,10 @@ public class Emozioni {
         String emozioneNuova= emozione +"|"+ spiegazione +"|"+ punteggio +"|"+ note;
 
 
-        /*File file = new File("data" + sep + "Emozioni.dati.txt");
+        File file = new File("data" + sep + "Emozioni.dati.txt");
         String path = file.getAbsolutePath();
 
-        BufferedWriter bw = new BufferedWriter(new FileWriter(path, true)); // sbagliata questa riga
+        /*BufferedWriter bw = new BufferedWriter(new FileWriter(path, true)); // sbagliata questa riga
         bw.write(emozioneNuova);
         bw.flush(); //svuoto lo stream
         bw.close();*/
@@ -149,15 +149,12 @@ public class Emozioni {
         bw.newLine();
         bw.close();
     }
-    public static void ScriviFile(String testo, String filePath) throws IOException {
-
-    }
-
 
     public static void visualizzaEmozioni(String tit) throws IOException{
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
         int count_Amazement=0, count_Solemnity=0, count_Tenderness=0, count_Nostalgia=0, count_Calmness=0,count_Power=0, count_Joy=0, count_Tension=0, count_Sadness=0;
+        int countGenerale=0;
         String supportoTitolo=null;
         String supportoEmozione=null;
         String sup;
@@ -165,48 +162,48 @@ public class Emozioni {
             String[] supporto = sup.split("\\|");
             supportoTitolo = supporto[0].trim().toLowerCase();
             supportoEmozione = supporto[1].trim().toLowerCase();
-            if (tit.equals(supportoTitolo.trim().toLowerCase())) {
-                if(supportoEmozione.equals("Amazement")){
-                    count_Amazement=count_Amazement++;
+            if (tit.trim().toLowerCase().equals(supportoTitolo.trim().toLowerCase())) {
+                countGenerale++;
+                if(supportoEmozione.equals("amazement")){
+                    count_Amazement++;
                 }
-                if(supportoEmozione.equals("Solemnity")){
-                    count_Solemnity=count_Solemnity++;
+                if(supportoEmozione.equals("solemnity")){
+                    count_Solemnity++;
                 }
-                if(supportoEmozione.equals("Tenderness")){
-                    count_Tenderness=count_Tenderness++;
+                if(supportoEmozione.equals("tenderness")){
+                    count_Tenderness++;
                 }
-                if(supportoEmozione.equals("Nostalgia")){
-                    count_Nostalgia=count_Nostalgia++;
+                if(supportoEmozione.equals("nostalgia")){
+                    count_Nostalgia++;
                 }
-                if(supportoEmozione.equals("Calmness")){
-                    count_Calmness=count_Calmness++;
+                if(supportoEmozione.equals("calmness")){
+                    count_Calmness++;
                 }
-                if(supportoEmozione.equals("Power")){
-                    count_Power=count_Power++;
+                if(supportoEmozione.equals("power")){
+                    count_Power++;
                 }
-                if(supportoEmozione.equals("Joy")){
-                    count_Joy=count_Joy++;
+                if(supportoEmozione.equals("joy")){
+                    count_Joy++;
                 }
-                if(supportoEmozione.equals("Tension")){
-                    count_Tension=count_Tension++;
+                if(supportoEmozione.equals("tension")){
+                    count_Tension++;
                 }
-                if(supportoEmozione.equals("Sadness")){
-                    count_Sadness=count_Sadness++;
+                if(supportoEmozione.equals("sadness")){
+                    count_Sadness++;
                 }
             }
         }
-        double sommaCount= (count_Amazement+count_Solemnity+count_Tenderness+count_Nostalgia+count_Calmness+count_Power+count_Joy+count_Tension+count_Sadness);
 
         System.out.println("la percentuale delle emozioni di questa canzone sono: "+ "\n");
-        System.out.println("Amazement = " + (count_Amazement/sommaCount)*100 +"%");
-        System.out.println("Solemnity = "+ (count_Solemnity/sommaCount)*100 +"%");
-        System.out.println("Tenderness = "+ (count_Tenderness/sommaCount)*100 +"%");
-        System.out.println("Nostalgia = "+ (count_Nostalgia/sommaCount)*100 +"%");
-        System.out.println("Calmness = "+ (count_Calmness/sommaCount)*100 +"%");
-        System.out.println("Power = "+ (count_Power/sommaCount)*100 +"%");
-        System.out.println("Joy = "+ (count_Joy/sommaCount)*100 +"%");
-        System.out.println("Tension = "+ (count_Tension/sommaCount)*100 +"%");
-        System.out.println("Sadness = "+ (count_Sadness/sommaCount)*100 +"%");
+        System.out.println("Amazement = " + (count_Amazement/countGenerale)*100 +"%");
+        System.out.println("Solemnity = "+ (count_Solemnity/countGenerale)*100 +"%");
+        System.out.println("Tenderness = "+ (count_Tenderness/countGenerale)*100 +"%");
+        System.out.println("Nostalgia = "+ (count_Nostalgia/countGenerale)*100 +"%");
+        System.out.println("Calmness = "+ (count_Calmness/countGenerale)*100 +"%");
+        System.out.println("Power = "+ (count_Power/countGenerale)*100 +"%");
+        System.out.println("Joy = "+ (count_Joy/countGenerale)*100 +"%");
+        System.out.println("Tension = "+ (count_Tension/countGenerale)*100 +"%");
+        System.out.println("Sadness = "+ (count_Sadness/countGenerale)*100 +"%");
     }
 
     private static boolean controlloEsisteEmozione(String emozione){

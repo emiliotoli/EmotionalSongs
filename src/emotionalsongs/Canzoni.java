@@ -42,7 +42,7 @@ public class Canzoni {
         bw.close();
     }
 
-    public void cercaBranoMusicaleTitolo(String Titolo) throws IOException {
+    public static void cercaBranoMusicaleTitolo(String Titolo) throws IOException {
 
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
@@ -52,8 +52,9 @@ public class Canzoni {
         String AutoreFile = null;
         String AnnoFile = null;
         String TitoloFile = null;
+        String[] supporto=null;
         while ((sup = bufread.readLine()) != null) {
-            String[] supporto = sup.split("\\|");
+            supporto = sup.split("\\|");
             TitoloFile = supporto[0].trim().toLowerCase();
             if (Titolo.equals(TitoloFile.trim().toLowerCase())) {
                 AutoreFile = supporto[1].trim().toLowerCase();
@@ -63,6 +64,8 @@ public class Canzoni {
             }
         }
         if (trovato) {
+            //menu con visualizza emozione e se loggato inserisci emozione terzavozione menu principale
+            Emozioni.visualizzaEmozioni(supporto[0]);
             System.out.println("Titolo: " + TitoloFile);
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);

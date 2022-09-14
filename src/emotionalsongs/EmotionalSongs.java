@@ -25,6 +25,10 @@ public class EmotionalSongs {
         boolean loggatoglob = false; // serve per far vedere cosa può fare l'utente loggato
         int varswich;
 
+        File file = new File("data" + sep + "Emozioni.dati.txt");
+        String path = file.getAbsolutePath();
+        System.out.println(path);
+
         System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
         System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
         System.out.println("Digitare 3 per per Registrati:");
