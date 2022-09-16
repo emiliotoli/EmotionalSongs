@@ -10,3 +10,8 @@ emilio|daverio|dfglkj87d67l875r|fil|33|234|bodio|varese|email|emi|pwd
 marco|buglione|ryfhfe63a63u833i|via como 23|23|123|bodio|milano|emiiiiiiiii|davoooooo|123456
 marco|buglione|freliu64g63l876y|minte generoso|22|23456|varedser|varese|mbuglione|marco|pwd
 emilio|toli|gtrkel36d64u876t|monmte|54|54637|var|varese|etoli|etoli|pwd
+piero|angela|dfgyuo98f63h732g|erba|como|123|varese|busto|ginopino|emi|pwd
+antonio|lavazza|poiuyt09s87g654f|monte|56|45678|noapoli|napoli|antonio244|emi|pwd
+pippo|baudo|ertyui94d45f958j|monte|44ù|45678|quasso|varese|pippobaudo@gmail.com|emi|pwd
+pluto|sniffa|plusfi99f98s094h|torino|45|123|aaaaaaaaaaaa|ddddddddddddddddddddd|ffffffffffffffffffff|dddddddddddddddddddddddddddddddddddddddddddddddd|ercole
+prova|prov|werfgh89k95g574d|prova|45|12|prova|prova|prova|prova|prova

@@ -133,7 +133,7 @@ public class Emozioni {
             }
         } while (note.length() > 250 || note.length()==0);
 
-        String emozioneNuova= titolo+"|" + emozione +"|"+ spiegazione +"|"+ punteggio +"|"+ note;
+        String emozioneNuova=titolo+"|" + emozione +"|"+ spiegazione +"|"+ punteggio +"|"+ note;
 
 
         File file = new File("data" + sep + "Emozioni.dati.txt");

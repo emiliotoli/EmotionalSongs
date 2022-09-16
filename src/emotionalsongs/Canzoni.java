@@ -88,6 +88,7 @@ public class Canzoni {
                         if(loggato){
                             System.out.println("inizio procedureper inserire le emozioni");
                             Emozioni.inserisciEmozioni(supporto[0]);
+                            System.out.println("registrazione emozione effetuata con successo\n");
                         }
                         else{
                             System.out.println("ti devi ancora loggare");
@@ -101,7 +102,7 @@ public class Canzoni {
         } else {
             System.out.println("Canzone non trovata");
         }
-        br.close();
+        bufread.close();
 
     }
 
@@ -168,6 +169,7 @@ public class Canzoni {
                         if(loggato){
                             System.out.println("inizio procedura inserimento emozioni: \n");
                             Emozioni.inserisciEmozioni(TitoloFile);
+                            System.out.println("registrazione Emozioni effuttata con successo \n");
                         }
                         else{
                             System.out.println("ti devi ancora loggare");

@@ -43,7 +43,7 @@ public class EmotionalSongs {
                     //<editor-fold desc="RICERCA BRANO PER TITOLO">
                     System.out.println("inizio procedura di ricerca in base al titolo\n");
                     System.out.print("inserisci titolo da cercare: ");
-                    titolo = br.readLine().toLowerCase().trim();
+                    titolo = br.readLine().trim().toLowerCase();
                     Canzoni can = new Canzoni();
                     can.cercaBranoMusicaleTitolo(titolo,loggatoglob);
                     break;
@@ -123,9 +123,8 @@ public class EmotionalSongs {
                 case 5: // ci pensa il davo
                     if (loggatoglob) {
                         System.out.println("Digitare 1 per creare una playlist: ");
-                        System.out.println("Digitare 2 per inserire un emozione di una canzone");
-                        System.out.println("Digitare 3 per visualizzare le playList");
-                        System.out.println("Digitare 4 per fare il logout");
+                        System.out.println("Digitare 2 per visualizzare le playList");
+                        System.out.println("Digitare 3 per fare il logout");
                         System.out.print("scelta: ");
                         varmenu = Integer.parseInt(br.readLine());
                         do{
@@ -134,22 +133,22 @@ public class EmotionalSongs {
                                     //richiamare il metoto per creare una plylist
                                     break;
                                 case 2:
-                                    break;
-                                case 3:
                                     //fare il metodo che visulizza solo le plylist in base all'idutente
                                     break;
-                                case 4:
+                                case 3:
                                     loggatoglob=false;
                                     varmenu=0;
+                                    break;
                             }
 
                         }while(varmenu!=0);
 
                     } else {
-                        System.out.println("non ti sei ancora loggato!!");
+                        System.out.println("non ti sei ancora loggato!! \n");
                     }
                     break;
                 case 6:
+                    System.out.println("grazie e arrivederci");
                     varswich=0;
             }
         } while (varswich != 0);

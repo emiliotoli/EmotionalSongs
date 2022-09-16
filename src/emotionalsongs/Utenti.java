@@ -41,11 +41,11 @@ public class Utenti {
     public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
                                 String Provincia, String Email, String UserID, String PW) throws IOException {
 
-        boolean nonesistente=false;
+        boolean nonesistente=true;
         BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt",true));
         //return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
         nonesistente= esisteUtente(UserID);
-        if(nonesistente) {
+        if(!nonesistente) {
             wr.write(toString(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW));
         }
         else{
@@ -120,6 +120,7 @@ public class Utenti {
         do {
             if (cap < 10 || cap > 97100) {
                 System.out.println("cap non valido");
+                System.out.println("reinserire il cap: ");
                 Scanner in=new Scanner(System.in);
                 in.nextInt();
             }
