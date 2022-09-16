@@ -21,22 +21,21 @@ public class EmotionalSongs {
         String idUtenteGlob = null; //variabile globale che serve ad avere l'id-utente
         String idUtente;
         boolean esiste;
-        boolean loggato; // serve per vedere se e gia registrato
-        boolean loggatoglob = false; // serve per far vedere cosa può fare l'utente loggato
+        boolean loggatoglob = false;
         int varswich;
+        int varmenu;
 
         File file = new File("data" + sep + "Emozioni.dati.txt");
         String path = file.getAbsolutePath();
         System.out.println(path);
 
-        System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
-        System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
-        System.out.println("Digitare 3 per per Registrati:");
-        System.out.println("Digitare 4 per Loggartii");
-        System.out.println("Digitare 5 per creare una PlayList: ");
-        System.out.println("Digitare 6  per Inserire delle Emozioni ad una canzoni ");
-
         do {
+            System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
+            System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
+            System.out.println("Digitare 3 per per Registrati:");
+            System.out.println("Digitare 4 per Loggartii");
+            System.out.println("Digitare 5 per accedere all'area personale:      Devi essere loggato per accedere");
+            System.out.println("Digitare 6 per terminare tutte le operazioni");
             System.out.print("scelta: ");
             varswich = Integer.parseInt(br.readLine());
             switch (varswich) {
@@ -46,10 +45,7 @@ public class EmotionalSongs {
                     System.out.print("inserisci titolo da cercare: ");
                     titolo = br.readLine().toLowerCase().trim();
                     Canzoni can = new Canzoni();
-                    can.cercaBranoMusicaleTitolo(titolo);
-                    System.out.println("finito");
-                    Emozioni emoz=new Emozioni();
-                    emoz.visualizzaEmozioni(titolo);
+                    can.cercaBranoMusicaleTitolo(titolo,loggatoglob);
                     break;
                 //</editor-fold>
                 case 2:
@@ -60,7 +56,7 @@ public class EmotionalSongs {
                     System.out.print("Inserisci anno: ");
                     anno = br.readLine().trim().toLowerCase();
                     Canzoni ricerca = new Canzoni();
-                    ricerca.cercaBranoMusicaleAutoreAnno(autore, anno);
+                    ricerca.cercaBranoMusicaleAutoreAnno(autore, anno, loggatoglob);
                     break;
                 //</editor-fold>
                 case 3:
@@ -116,29 +112,45 @@ public class EmotionalSongs {
                         idUtente = br.readLine().trim().toLowerCase();
                         System.out.print("inserisci la password: ");
                         password = br.readLine().trim();
-                        loggato = Utenti.Login(idUtente, password);
-                    } while (!loggato);
-                    idUtenteGlob = idUtente;
+                        loggatoglob = Utenti.Login(idUtente, password);
+                    } while (!loggatoglob);
                     loggatoglob = true;
+                    idUtenteGlob=idUtente;
                     System.out.println("sei loggato");
 
+
                     break;
-                case 5:
+                case 5: // ci pensa il davo
                     if (loggatoglob) {
-                        //richiamare la procedura crea playlist
+                        System.out.println("Digitare 1 per creare una playlist: ");
+                        System.out.println("Digitare 2 per inserire un emozione di una canzone");
+                        System.out.println("Digitare 3 per visualizzare le playList");
+                        System.out.println("Digitare 4 per fare il logout");
+                        System.out.print("scelta: ");
+                        varmenu = Integer.parseInt(br.readLine());
+                        do{
+                            switch (varmenu){
+                                case 1:
+                                    //richiamare il metoto per creare una plylist
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    //fare il metodo che visulizza solo le plylist in base all'idutente
+                                    break;
+                                case 4:
+                                    loggatoglob=false;
+                                    varmenu=0;
+                            }
+
+                        }while(varmenu!=0);
+
                     } else {
                         System.out.println("non ti sei ancora loggato!!");
                     }
                     break;
                 case 6:
-                    if (loggatoglob) {
-                        // richiamre il metodo per inserire le emozioni nel fine
-                       Emozioni.inserisciEmozioni();
-                    } else {
-                        System.out.println("non ti sei ancora loggato!!");
-                    }
-
-
+                    varswich=0;
             }
         } while (varswich != 0);
 

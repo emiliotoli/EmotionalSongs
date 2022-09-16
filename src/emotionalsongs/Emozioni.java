@@ -4,6 +4,7 @@ import java.io.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Emozioni {
@@ -30,12 +31,11 @@ public class Emozioni {
         return true;
     }*/
 
-    public static void inserisciEmozioni() throws IOException {
+    public static void inserisciEmozioni(String titolo) throws IOException {
         String emozione = null;
         String spiegazione;
         int punteggio ;
 
-        
         System.out.println("scegli categora emozioni: " + "\n");
         System.out.println("Digitare 1 per --> Amazement");
         System.out.println("Digitare 2 per --> Solemnity");
@@ -133,7 +133,7 @@ public class Emozioni {
             }
         } while (note.length() > 250 || note.length()==0);
 
-        String emozioneNuova= emozione +"|"+ spiegazione +"|"+ punteggio +"|"+ note;
+        String emozioneNuova= titolo+"|" + emozione +"|"+ spiegazione +"|"+ punteggio +"|"+ note;
 
 
         File file = new File("data" + sep + "Emozioni.dati.txt");
@@ -153,8 +153,8 @@ public class Emozioni {
     public static void visualizzaEmozioni(String tit) throws IOException{
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
-        int count_Amazement=0, count_Solemnity=0, count_Tenderness=0, count_Nostalgia=0, count_Calmness=0,count_Power=0, count_Joy=0, count_Tension=0, count_Sadness=0;
-        int countGenerale=0;
+        double count_Amazement=0, count_Solemnity=0, count_Tenderness=0, count_Nostalgia=0, count_Calmness=0,count_Power=0, count_Joy=0, count_Tension=0, count_Sadness=0;
+        double countGenerale=0;
         String supportoTitolo=null;
         String supportoEmozione=null;
         String sup;
@@ -194,16 +194,37 @@ public class Emozioni {
             }
         }
 
+        String pattern = "#.##";
+        DecimalFormat decimalFormat =  new DecimalFormat(pattern);
+
         System.out.println("la percentuale delle emozioni di questa canzone sono: "+ "\n");
-        System.out.println("Amazement = " + (count_Amazement/countGenerale)*100 +"%");
-        System.out.println("Solemnity = "+ (count_Solemnity/countGenerale)*100 +"%");
-        System.out.println("Tenderness = "+ (count_Tenderness/countGenerale)*100 +"%");
-        System.out.println("Nostalgia = "+ (count_Nostalgia/countGenerale)*100 +"%");
-        System.out.println("Calmness = "+ (count_Calmness/countGenerale)*100 +"%");
-        System.out.println("Power = "+ (count_Power/countGenerale)*100 +"%");
-        System.out.println("Joy = "+ (count_Joy/countGenerale)*100 +"%");
-        System.out.println("Tension = "+ (count_Tension/countGenerale)*100 +"%");
-        System.out.println("Sadness = "+ (count_Sadness/countGenerale)*100 +"%");
+
+        String formattedDouble = decimalFormat.format((count_Amazement/countGenerale)*100);
+        System.out.println("Amazement = " + formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Solemnity/countGenerale)*100);
+        System.out.println("Solemnity = "+formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Tenderness/countGenerale)*100);
+        System.out.println("Tenderness = "+ formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Nostalgia/countGenerale)*100);
+        System.out.println("Nostalgia = "+ formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Calmness/countGenerale)*100);
+        System.out.println("Calmness = "+  formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Power/countGenerale)*100);
+        System.out.println("Power = "+ formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Joy/countGenerale)*100 );
+        System.out.println("Joy = "+ formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Tension/countGenerale)*100);
+        System.out.println("Tension = "+ formattedDouble +"%");
+
+        formattedDouble = decimalFormat.format((count_Sadness/countGenerale)*100);
+        System.out.println("Sadness = "+  formattedDouble +"%");
     }
 
     private static boolean controlloEsisteEmozione(String emozione){

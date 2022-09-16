@@ -42,7 +42,7 @@ public class Canzoni {
         bw.close();
     }
 
-    public static void cercaBranoMusicaleTitolo(String Titolo) throws IOException {
+    public static void cercaBranoMusicaleTitolo(String Titolo,boolean loggato) throws IOException {
 
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
@@ -53,6 +53,7 @@ public class Canzoni {
         String AnnoFile = null;
         String TitoloFile = null;
         String[] supporto=null;
+
         while ((sup = bufread.readLine()) != null) {
             supporto = sup.split("\\|");
             TitoloFile = supporto[0].trim().toLowerCase();
@@ -65,33 +66,42 @@ public class Canzoni {
         }
         if (trovato) {
             //menu con visualizza emozione e se loggato inserisci emozione terzavozione menu principale
-            Emozioni.visualizzaEmozioni(supporto[0]);
+            int varswich;
+            System.out.println("inormazioni canzone \n");
             System.out.println("Titolo: " + TitoloFile);
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);
-            Emozioni.visualizzaEmozioni(Titolo);
-            //if loggato richiam metodo inserisci emozioni   //lo fa davo
+            System.out.println("\n");
+            do{
+                System.out.println("Digita 1:  per visualizzare le emozioni associate a questa canzone--> ");
+                System.out.println("Digita 2:  per inserire le emozioni che hai provato ascoltando questa canzone--> ");
+                System.out.println("NOTA--> per inserire emozioni di devi prima loggare");
+                System.out.println("Digita 3:  per tornare al menu principale--> ");
+                System.out.print("scelta: ");
+                varswich = Integer.parseInt(br.readLine());
+                switch (varswich){
+                    case 1:
+                        System.out.println("ora puoi visualizzare le emozioni");
+                        Emozioni.visualizzaEmozioni(supporto[0]);
+                        break;
+                    case 2:
+                        if(loggato){
+                            System.out.println("inizio procedureper inserire le emozioni");
+                            Emozioni.inserisciEmozioni(supporto[0]);
+                        }
+                        else{
+                            System.out.println("ti devi ancora loggare");
+                        }
+                        break;
+                    case 3:
+                        varswich=0;
+                }
+            }while(varswich!=0);
 
         } else {
             System.out.println("Canzone non trovata");
         }
         br.close();
-
-    }
-
-    public static void cercaBranoMusicaleDalTitolo(String titolo) throws IOException {
-
-        BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
-        boolean trovato=false;
-        String str;
-
-        while((str= bufread.readLine())!=null){
-            String[] supporto=str.split("//|");
-            if((supporto[0].toLowerCase()).contains(titolo.toLowerCase()))   //controlla se la stringa inserita come titolo sia compresa nel titolo della canzone
-            {
-                System.out.println(supporto[0]);
-            }
-        }
 
     }
 
@@ -115,9 +125,7 @@ public class Canzoni {
         }
     }
 
-    //public static String visualizzaEmozioniBrano(String titolo){}
-
-    public void cercaBranoMusicaleAutoreAnno(String Autore, String Anno) throws IOException { //vers1
+    public void cercaBranoMusicaleAutoreAnno(String Autore, String Anno, boolean loggato) throws IOException { //vers1
 
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
@@ -130,10 +138,10 @@ public class Canzoni {
         while ((sup = bufread.readLine()) != null) {
 
             String[] supporto = sup.split("\\|");
+            TitoloFile =supporto[0].trim().toLowerCase();
             AutoreFile = supporto[1].trim().toLowerCase();
             AnnoFile = supporto[2].trim().toLowerCase();
             if (Autore.equals(AutoreFile.trim().toLowerCase()) && Anno.equals(AnnoFile.trim().toLowerCase())) {
-                TitoloFile = supporto[0].trim().toLowerCase();
                 trovato = true;
                 break;
             }
@@ -142,6 +150,35 @@ public class Canzoni {
             System.out.println("Titolo: " + TitoloFile);
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);
+            int varswich;
+            do{
+
+                System.out.println("Digita 1:  per visualizzare le emozioni associate a questa canzone--> ");
+                System.out.println("Digita 2:  per inserire le emozioni che hai provato ascoltando questa canzone--> ");
+                System.out.println("NOTA--> per inserire emozioni di devi prima loggare");
+                System.out.println("Digita 3:  per tornare al menu principale--> ");
+                System.out.print("scelta: ");
+                varswich = Integer.parseInt(br.readLine());
+                switch (varswich){
+                    case 1:
+                        System.out.println("ora puoi visualizzare le emozioni");
+                        Emozioni.visualizzaEmozioni(TitoloFile);
+                        break;
+                    case 2:
+                        if(loggato){
+                            System.out.println("inizio procedura inserimento emozioni: \n");
+                            Emozioni.inserisciEmozioni(TitoloFile);
+                        }
+                        else{
+                            System.out.println("ti devi ancora loggare");
+                        }
+                        break;
+                    case 3:
+                        varswich=0;
+                }
+            }while(varswich!=0);
+
+
         } else {
             System.out.println("Canzone non trovata");
         }
