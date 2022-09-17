@@ -155,4 +155,91 @@ public class Playlist {
         }
         return titolo;
     }
+
+    private static boolean aggiungiCanzonePlaylist(String playlist , String titolo , String uid) throws IOException {
+
+        StringBuilder stb;
+        if(!controlloPlaylistEsistente(uid,playlist)){
+            System.err.println("Playlist non esistente!");
+            return false;
+        }
+        else {
+            if (!Canzoni.controlloCanzoneEsistente(titolo)) {
+                System.err.println("Canzone non esistente");
+                return false;
+            } else {
+                BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+                String sup;
+                String[] spl;
+                stb = new StringBuilder();
+                while ((sup = br.readLine()) != null) {
+                    spl=sup.split("\\|");
+                    if(spl[0].equals(uid) && spl[1].equals(playlist)){
+                        sup+= "|" + titolo;
+                        stb.append(sup +"\n");
+                    }
+                    else{
+                        stb.append(sup + "\n");
+                    }
+                }
+            }
+        }
+        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false));
+        wr.write(stb.toString());
+        System.out.println("Inserimento andato a buon fine!");
+        return true;
+    }
+
+    public static boolean eliminaCanzoneDaPlaylist(String uid , String nomeplaylist , String titolo) throws IOException {
+        StringBuilder stb;
+        if(!controlloPlaylistEsistente(uid,nomeplaylist)){
+            System.err.println("Playlist non esistente!");
+            return false;
+        }
+        else {
+            if (!Canzoni.controlloCanzoneEsistente(titolo)) {
+                System.err.println("Canzone non esistente");
+                return false;
+            } else {
+                BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+                String sup;
+                String[] spl;
+                stb = new StringBuilder();
+                while ((sup = br.readLine()) != null) {
+                    spl=sup.split("\\|");
+                    if(spl[0].equals(uid) && spl[1].equals(nomeplaylist)){      //se nome utente e nome playlist coincidono vado ad aggiungere sullo stringbuilder tutti i titoli delle canzoni, tranne quello che si voleva eliminare
+                        for(int i=2;i<spl.length;i++){
+                            stb.append(spl[0] + "|" + spl[1]);
+                            if(!spl[i].equals(titolo))
+                                stb.append("|" + spl[i]);
+                        }
+                    }
+                    else{
+                        stb.append(sup + "\n");
+                    }
+                }
+            }
+        }
+        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false));
+        wr.write(stb.toString());
+        System.out.println("Inserimento andato a buon fine!");
+        return true;
+    }
+
+
+    public static void visualizzaPlaylist(String idUtente) throws IOException{ // da vedere il senso, se si vogliono visualizzare tutte le playlist dell'utente o se si vogliono vedere la canzoni di una certa playlist
+        BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+        String sup;
+        String supportoIdUtente;
+        while ((sup = bufread.readLine()) != null) {
+            String[] supporto = sup.split("\\|");
+            supportoIdUtente = supporto[0].trim().toLowerCase();
+            if (idUtente.equals(supportoIdUtente.trim().toLowerCase())){
+
+            }
+            else{
+                System.out.println("questo utente non ha ancora una playlist");
+            }
+        }
+    }
 }

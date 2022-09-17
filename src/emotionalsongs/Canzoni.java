@@ -219,7 +219,7 @@ public class Canzoni {
                     trovato=true;
                 }
                 linea++;
-                //dpdpdpdpdpd
+                //da usare anche in inserisci emozioni
             }
             return trovato;
     }
