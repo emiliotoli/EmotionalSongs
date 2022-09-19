@@ -222,7 +222,7 @@ public class Playlist {
         }
         BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false));
         wr.write(stb.toString());
-        System.out.println("Inserimento andato a buon fine!");
+        System.out.println("Cancellazione andata a buon fine!");
         return true;
     }
 
@@ -241,5 +241,26 @@ public class Playlist {
                 System.out.println("questo utente non ha ancora una playlist");
             }
         }
+    }
+
+
+    public static boolean cancellaPlaylist(String uid , String nomeplaylist) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+        String sup;
+        String[] spl;
+        BufferedWriter wr;
+        StringBuilder stb= new StringBuilder();
+        while((sup=br.readLine())!=null){
+            spl = sup.split("//|");
+            if(!controlloPlaylistEsistente(uid,nomeplaylist)){
+                System.err.println("La playlist che hai inserito non è esistente!");
+                return false;
+            }
+            if(!spl[1].equals(nomeplaylist)){
+                stb.append(sup);
+            }
+        }
+        System.out.println("Cancellazione andata a buon fine!");
+        return true;
     }
 }
