@@ -250,16 +250,20 @@ public class Playlist {
         String[] spl;
         BufferedWriter wr;
         StringBuilder stb= new StringBuilder();
+
+        if(!controlloPlaylistEsistente(uid,nomeplaylist)){
+            System.err.println("La playlist che hai inserito non è esistente!");
+            return false;
+        }
+
         while((sup=br.readLine())!=null){
             spl = sup.split("//|");
-            if(!controlloPlaylistEsistente(uid,nomeplaylist)){
-                System.err.println("La playlist che hai inserito non è esistente!");
-                return false;
-            }
             if(!spl[1].equals(nomeplaylist)){
                 stb.append(sup);
             }
         }
+        wr=new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false));
+        wr.write(stb.toString());
         System.out.println("Cancellazione andata a buon fine!");
         return true;
     }
