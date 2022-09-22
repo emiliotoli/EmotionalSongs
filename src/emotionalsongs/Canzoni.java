@@ -223,5 +223,11 @@ public class Canzoni {
             }
             return trovato;
     }
+
+    public static int numeroTotaleCanzoni() throws IOException {
+        LineNumberReader lnr = new LineNumberReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
+        lnr.skip(Long.MAX_VALUE);
+        return (lnr.getLineNumber() + 1);
+    }
 }
 

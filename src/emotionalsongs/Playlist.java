@@ -3,6 +3,7 @@ package emotionalsongs;
 import jdk.swing.interop.SwingInterOpUtils;
 
 import java.io.*;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Playlist {
@@ -23,16 +24,50 @@ public class Playlist {
     public void registraPlaylist(String ID, String NomePlay) throws IOException {
         PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt", true)), true);
         StringBuilder str = new StringBuilder();
-        String choice;
+        String brano , aggiuntaCanzoni="";
         int linea;
+        boolean uscitaciclo=true;
+
         Scanner sc = new Scanner(System.in);
         if (!controlloPlaylistEsistente(ID, NomePlay)) {
             //new Playlist(idutente, nomeplaylist);
             //scriviFileRegistrazione(ID, NomePlay, ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt");
             str.append(ID + "|");
             str.append(NomePlay);
-
+            System.out.println("Cerca canzone da aggiungere alla playlist: ");
+            brano = sc.nextLine();
             do{
+                System.out.println("Vuoi aggiungere altre canzoni alla lista? Digitare si o no");
+                aggiuntaCanzoni= sc.nextLine().trim().toLowerCase();
+                switch (aggiuntaCanzoni){
+                    case "si":
+                        System.out.println("Cerca altra canzone da aggiungere alla playlist: ");
+                        brano = sc.nextLine();
+                        if(!Canzoni.ricercaCanzoni(brano)){
+                            System.out.println("nessuna canzone trovata");
+                            uscitaciclo=false;
+                        }
+                        else {
+                            System.out.println("inserisci codice canzone da aggiungere");
+                            linea = sc.nextInt();
+                            while(linea<0 || linea> Canzoni.numeroTotaleCanzoni()) {
+                                System.err.println("hai inserito un numero errato! riprova");
+                                linea = sc.nextInt();
+                            }
+                            str.append("|" + insertByLine(linea));
+                        }
+                        break;
+                    case "no":
+                        uscitaciclo=true;
+                        break;
+                    default:
+                        System.err.println("errore nell'inserimento!");
+                        System.out.println("Si prega di inserire correttamente si oppure no ");
+                        break;
+                }
+
+            }while(!uscitaciclo);
+            /*do{
                 System.out.println("Cerca canzone da aggiungere alla playlist: ");
                 choice = sc.nextLine();
                 if(!Canzoni.ricercaCanzoni(choice))
@@ -43,12 +78,12 @@ public class Playlist {
                     str.append("|" + insertByLine(linea)); //controllare che il numero di linea inserito non sballi tutto pd!
                 }
 
-            }while(!choice.equals("FINE INSERIMENTO"));
+            }while(!choice.equals("FINE INSERIMENTO"));*/
             wr.println(str.toString());
         }
     }
 
-    private static void inserisciCanzone(String str) throws IOException {
+    /*private static void inserisciCanzone(String str) throws IOException {
         String srv;
         String[] spl;
         if(Canzoni.controlloCanzoneEsistente(str)){
@@ -58,7 +93,7 @@ public class Playlist {
 
         }
 
-    }
+    }*/
     public static void scriviFileRegistrazione(String ID , String testo, String filePath,  String[] canzoni) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
         bw.write(ID);
@@ -267,4 +302,6 @@ public class Playlist {
         System.out.println("Cancellazione andata a buon fine!");
         return true;
     }
+
+
 }
