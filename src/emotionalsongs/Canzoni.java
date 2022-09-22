@@ -214,8 +214,11 @@ public class Canzoni {
             while((srv=br.readLine())!=null)
             {
                 spl=srv.split("\\|");
-                if(spl[0].contains(titolo)){
-                    System.out.println(spl[0] + linea);
+                if(spl[0].contains(titolo) || spl[0].trim().toLowerCase().equals(titolo)){
+                    System.out.println(spl[0]);
+                    System.out.println(spl[1]);
+                    System.out.println(spl[2]);
+                    System.out.println("La canzone ha codice: " + linea);
                     trovato=true;
                 }
                 linea++;

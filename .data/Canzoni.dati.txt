@@ -597,3 +597,7 @@
  Tired Of Being Alone|Al Green|1971
  Please Please Me|Beatles|1963
  I Still Haven't Found What I'm Looking For|U2|1987
+emi|PESCMAN
+emi|PESCMAN| Swanee
+emi|PESCMAN| Respect
+emi|resp

@@ -21,10 +21,10 @@ public class Playlist {
         //pdpdpdpdpdp
     }
 
-    public void registraPlaylist(String ID, String NomePlay) throws IOException {
-        PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt", true)), true);
+    public static boolean registraPlaylist(String ID, String NomePlay) throws IOException {
+        PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", true)), true);
         StringBuilder str = new StringBuilder();
-        String brano , aggiuntaCanzoni="";
+        String brano , aggiuntaCanzoni;
         int linea;
         boolean uscitaciclo=true;
 
@@ -34,10 +34,8 @@ public class Playlist {
             //scriviFileRegistrazione(ID, NomePlay, ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt");
             str.append(ID + "|");
             str.append(NomePlay);
-            System.out.println("Cerca canzone da aggiungere alla playlist: ");
-            brano = sc.nextLine();
             do{
-                System.out.println("Vuoi aggiungere altre canzoni alla lista? Digitare si o no");
+                System.out.println("Vuoi aggiungere canzoni alla Playlist? Digitare si o no");
                 aggiuntaCanzoni= sc.nextLine().trim().toLowerCase();
                 switch (aggiuntaCanzoni){
                     case "si":
@@ -67,20 +65,13 @@ public class Playlist {
                 }
 
             }while(!uscitaciclo);
-            /*do{
-                System.out.println("Cerca canzone da aggiungere alla playlist: ");
-                choice = sc.nextLine();
-                if(!Canzoni.ricercaCanzoni(choice))
-                    System.out.println("nessuna canzone trovata");
-                else{
-                    System.out.println("inserisci codice canzone da aggiungere");
-                    linea=sc.nextInt();
-                    str.append("|" + insertByLine(linea)); //controllare che il numero di linea inserito non sballi tutto pd!
-                }
-
-            }while(!choice.equals("FINE INSERIMENTO"));*/
+            System.out.println(str);
             wr.println(str.toString());
+            wr.close();
+            return true;
         }
+        System.out.println("id utente o playlist non validi! ");
+        return false;
     }
 
     /*private static void inserisciCanzone(String str) throws IOException {
@@ -128,12 +119,6 @@ public class Playlist {
             }
         }
         return false;
-       /* if (esistente) {
-            System.out.println("Nome playlist gia esistente per quel id Utente");
-        }
-        else {
-            System.out.println("play list aggiuta con successo.");
-        }*/
 
     }
 
@@ -262,7 +247,7 @@ public class Playlist {
     }
 
 
-    public static void visualizzaPlaylist(String idUtente) throws IOException{ // da vedere il senso, se si vogliono visualizzare tutte le playlist dell'utente o se si vogliono vedere la canzoni di una certa playlist
+    public static void visualizzaPlaylistUtente(String idUtente) throws IOException{ // da vedere il senso, se si vogliono visualizzare tutte le playlist dell'utente o se si vogliono vedere la canzoni di una certa playlist
         BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
         String sup;
         String supportoIdUtente;
@@ -270,7 +255,7 @@ public class Playlist {
             String[] supporto = sup.split("\\|");
             supportoIdUtente = supporto[0].trim().toLowerCase();
             if (idUtente.equals(supportoIdUtente.trim().toLowerCase())){
-
+                System.out.println(supporto[1]);
             }
             else{
                 System.out.println("questo utente non ha ancora una playlist");

@@ -33,7 +33,7 @@ public class EmotionalSongs {
             System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
             System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
             System.out.println("Digitare 3 per per Registrati:");
-            System.out.println("Digitare 4 per Loggartii");
+            System.out.println("Digitare 4 per Loggarti");
             System.out.println("Digitare 5 per accedere all'area personale:      Devi essere loggato per accedere");
             System.out.println("Digitare 6 per terminare tutte le operazioni");
             System.out.print("scelta: ");
@@ -130,10 +130,16 @@ public class EmotionalSongs {
                         do{
                             switch (varmenu){
                                 case 1:
-                                    //richiamare il metoto per creare una plylist
+                                    boolean valido = true;
+                                    System.out.println("INSERIRE IL NOME DELLA NUOVA PLAYLIST");
+                                    do {
+                                        valido = Playlist.registraPlaylist(idUtenteGlob , br.readLine());
+                                        if(!valido)
+                                            System.err.println("PLAYLIST GIA' ESISTENTE. INSERISCI UN NUOVO NOME PER LA TUA PLAYLIST");
+                                    }while(!valido);            //controllo sul ritorno del metodo per capire se esista gia' una playlist associata all'idUtente
                                     break;
                                 case 2:
-                                    //fare il metodo che visulizza solo le plylist in base all'idutente
+                                    Playlist.visualizzaPlaylistUtente(idUtenteGlob);
                                     break;
                                 case 3:
                                     loggatoglob=false;
