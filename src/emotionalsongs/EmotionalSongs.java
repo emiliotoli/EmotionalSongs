@@ -135,8 +135,9 @@ public class EmotionalSongs {
                                     do {
                                         valido = Playlist.registraPlaylist(idUtenteGlob , br.readLine());
                                         if(!valido)
-                                            System.err.println("PLAYLIST GIA' ESISTENTE. INSERISCI UN NUOVO NOME PER LA TUA PLAYLIST");
+                                            System.out.println("PLAYLIST GIA' ESISTENTE. INSERISCI UN NUOVO NOME PER LA TUA PLAYLIST");
                                     }while(!valido);            //controllo sul ritorno del metodo per capire se esista gia' una playlist associata all'idUtente
+
                                     break;
                                 case 2:
                                     Playlist.visualizzaPlaylistUtente(idUtenteGlob);

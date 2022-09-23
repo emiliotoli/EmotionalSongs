@@ -26,7 +26,7 @@ public class Playlist {
         StringBuilder str = new StringBuilder();
         String brano , aggiuntaCanzoni;
         int linea;
-        boolean uscitaciclo=true;
+        boolean uscitaciclo=false;
 
         Scanner sc = new Scanner(System.in);
         if (!controlloPlaylistEsistente(ID, NomePlay)) {
@@ -36,6 +36,7 @@ public class Playlist {
             str.append(NomePlay);
             do{
                 System.out.println("Vuoi aggiungere canzoni alla Playlist? Digitare si o no");
+                sc.reset();
                 aggiuntaCanzoni= sc.nextLine().trim().toLowerCase();
                 switch (aggiuntaCanzoni){
                     case "si":
@@ -49,7 +50,7 @@ public class Playlist {
                             System.out.println("inserisci codice canzone da aggiungere");
                             linea = sc.nextInt();
                             while(linea<0 || linea> Canzoni.numeroTotaleCanzoni()) {
-                                System.err.println("hai inserito un numero errato! riprova");
+                                System.out.println("hai inserito un numero errato! riprova");
                                 linea = sc.nextInt();
                             }
                             str.append("|" + insertByLine(linea));
@@ -59,8 +60,9 @@ public class Playlist {
                         uscitaciclo=true;
                         break;
                     default:
-                        System.err.println("errore nell'inserimento!");
+                        System.out.println("errore nell'inserimento!");
                         System.out.println("Si prega di inserire correttamente si oppure no ");
+                        uscitaciclo=false;
                         break;
                 }
 
