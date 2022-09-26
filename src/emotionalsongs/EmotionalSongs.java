@@ -122,12 +122,12 @@ public class EmotionalSongs {
                     break;
                 case 5: // ci pensa il davo
                     if (loggatoglob) {
-                        System.out.println("Digitare 1 per creare una playlist: ");
-                        System.out.println("Digitare 2 per visualizzare le playList");
-                        System.out.println("Digitare 3 per fare il logout");
-                        System.out.print("scelta: ");
-                        varmenu = Integer.parseInt(br.readLine());
                         do{
+                            System.out.println("Digitare 1 per creare una playlist: ");
+                            System.out.println("Digitare 2 per visualizzare le playList");
+                            System.out.println("Digitare 3 per fare il logout");
+                            System.out.print("scelta: ");
+                            varmenu = Integer.parseInt(br.readLine());
                             switch (varmenu){
                                 case 1:
                                     boolean valido = true;
