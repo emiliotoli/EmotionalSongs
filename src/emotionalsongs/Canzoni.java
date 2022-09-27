@@ -64,6 +64,7 @@ public class Canzoni {
                 break;
             }
         }
+
         if (trovato) {
             //menu con visualizza emozione e se loggato inserisci emozione terzavozione menu principale
             int varswich;

@@ -16,6 +16,7 @@ public class Utenti {
 
     private boolean loginEffettuato = false;
 
+
     //</editor-fold>
 
     public Utenti() {

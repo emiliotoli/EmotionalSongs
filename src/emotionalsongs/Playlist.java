@@ -34,6 +34,7 @@ public class Playlist {
             //scriviFileRegistrazione(ID, NomePlay, ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt");
             str.append(ID + "|");
             str.append(NomePlay);
+
             do{
                 System.out.println("Vuoi aggiungere canzoni alla Playlist? Digitare si o no");
                 sc.reset();
