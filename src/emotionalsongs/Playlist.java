@@ -71,7 +71,7 @@ public class Playlist {
             wr.close();
             return true;
         }
-        System.out.println("id utente o playlist non validi! ");
+        System.out.println("PLAYLIST GIA' ESISTENTE!");
         return false;
     }
 
@@ -102,25 +102,17 @@ public class Playlist {
         bw.close();
     }
 
-    public static boolean controlloPlaylistEsistente(String IdUtente, String NomePlay) throws IOException {
+    public static boolean controlloPlaylistEsistente(String IdUtente, String NomePlay) throws IOException {             //metodo che ritorna true se esiste, false se non esiste
         FileReader fread = new FileReader(".." +sep+"EmotionalSongs"+sep+".data"+sep+"Playlist.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
-        boolean esistente = false;
         String sup;
-        String NomePlayListFile;
-        String idutenteFile;
-
         while ((sup = bufread.readLine()) != null) {
             String[] supporto = sup.split("\\|");
-            idutenteFile = supporto[0].trim().toLowerCase();
-            NomePlayListFile = supporto[1].trim().toLowerCase();
-
-            if ( IdUtente.equals(idutenteFile) && NomePlay.equals(NomePlayListFile) ) {
+            if (IdUtente.equals(supporto[0].trim().toLowerCase()) && NomePlay.equals(supporto[1].trim())) {
                 return true;
             }
         }
         return false;
-
     }
 
     public String toString(String Idutente,String NomePlay){
@@ -177,22 +169,22 @@ public class Playlist {
         return titolo;
     }
 
-    private static boolean aggiungiCanzonePlaylist(String playlist , String titolo , String uid) throws IOException {
+    public static void aggiungiCanzonePlaylist(String playlist , String titolo , String uid) throws IOException {
 
-        StringBuilder stb;
+        StringBuilder stb = new StringBuilder();
         if(!controlloPlaylistEsistente(uid,playlist)){
-            System.err.println("Playlist non esistente!");
-            return false;
+            System.out.println("Playlist non esistente!");
+            //return false;
         }
         else {
             if (!Canzoni.controlloCanzoneEsistente(titolo)) {
-                System.err.println("Canzone non esistente");
-                return false;
+                System.out.println("Canzone non esistente");
+                //return false;
             } else {
                 BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
                 String sup;
                 String[] spl;
-                stb = new StringBuilder();
+
                 while ((sup = br.readLine()) != null) {
                     spl=sup.split("\\|");
                     if(spl[0].equals(uid) && spl[1].equals(playlist)){
@@ -203,12 +195,17 @@ public class Playlist {
                         stb.append(sup + "\n");
                     }
                 }
+                br.close();
             }
         }
         BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false));
-        wr.write(stb.toString());
+        PrintWriter pw = new PrintWriter(wr , true);
+        String tmp = stb.toString();
+        pw.println(tmp);
         System.out.println("Inserimento andato a buon fine!");
-        return true;
+        //return true;
+        wr.close();
+
     }
 
     public static boolean eliminaCanzoneDaPlaylist(String uid , String nomeplaylist , String titolo) throws IOException {
@@ -229,9 +226,9 @@ public class Playlist {
                 while ((sup = br.readLine()) != null) {
                     spl=sup.split("\\|");
                     if(spl[0].equals(uid) && spl[1].equals(nomeplaylist)){      //se nome utente e nome playlist coincidono vado ad aggiungere sullo stringbuilder tutti i titoli delle canzoni, tranne quello che si voleva eliminare
+                        stb.append(spl[0] + "|" + spl[1]);
                         for(int i=2;i<spl.length;i++){
-                            stb.append(spl[0] + "|" + spl[1]);
-                            if(!spl[i].equals(titolo))
+                            if(!(spl[i].trim()).equals(titolo.trim()))
                                 stb.append("|" + spl[i]);
                         }
                     }
@@ -241,8 +238,9 @@ public class Playlist {
                 }
             }
         }
-        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false));
-        wr.write(stb.toString());
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false)),true);
+        String tmp=stb.toString();
+        pw.println(tmp);
         System.out.println("Cancellazione andata a buon fine!");
         return true;
     }
@@ -252,10 +250,12 @@ public class Playlist {
         BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
         String sup;
         String supportoIdUtente;
+
+        System.out.println("playlist dell'utente: ");
         while ((sup = bufread.readLine()) != null) {
             String[] supporto = sup.split("\\|");
             supportoIdUtente = supporto[0].trim().toLowerCase();
-            if (idUtente.equals(supportoIdUtente.trim().toLowerCase())){
+            if (idUtente.trim().toLowerCase(Locale.ROOT).equals(supportoIdUtente.trim().toLowerCase())){
                 System.out.println(supporto[1]);
             }
             else{
@@ -269,22 +269,22 @@ public class Playlist {
         BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
         String sup;
         String[] spl;
-        BufferedWriter wr;
+        PrintWriter pw;
         StringBuilder stb= new StringBuilder();
 
         if(!controlloPlaylistEsistente(uid,nomeplaylist)){
-            System.err.println("La playlist che hai inserito non è esistente!");
+            System.out.println("La playlist che hai inserito non è esistente!");
             return false;
         }
 
         while((sup=br.readLine())!=null){
             spl = sup.split("//|");
-            if(!spl[1].equals(nomeplaylist)){
+            if(!spl[1].toLowerCase().trim().equals(nomeplaylist.toLowerCase().trim())){
                 stb.append(sup);
             }
         }
-        wr=new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false));
-        wr.write(stb.toString());
+        pw= new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false)),true);
+        pw.println(stb.toString());
         System.out.println("Cancellazione andata a buon fine!");
         return true;
     }
