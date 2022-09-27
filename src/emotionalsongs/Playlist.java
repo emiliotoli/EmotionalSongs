@@ -38,11 +38,11 @@ public class Playlist {
             do{
                 System.out.println("Vuoi aggiungere canzoni alla Playlist? Digitare si o no");
                 sc.reset();
-                aggiuntaCanzoni= sc.nextLine().trim().toLowerCase();
+                aggiuntaCanzoni= sc.next().trim().toLowerCase();
                 switch (aggiuntaCanzoni){
                     case "si":
                         System.out.println("Cerca altra canzone da aggiungere alla playlist: ");
-                        brano = sc.nextLine();
+                        brano = sc.next();
                         if(!Canzoni.ricercaCanzoni(brano)){
                             System.out.println("nessuna canzone trovata");
                             uscitaciclo=false;
@@ -61,8 +61,6 @@ public class Playlist {
                         uscitaciclo=true;
                         break;
                     default:
-                        System.out.println("errore nell'inserimento!");
-                        System.out.println("Si prega di inserire correttamente si oppure no ");
                         uscitaciclo=false;
                         break;
                 }

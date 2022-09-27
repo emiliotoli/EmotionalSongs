@@ -144,9 +144,13 @@ public class EmotionalSongs {
                                     Playlist.visualizzaPlaylistUtente(idUtenteGlob);
                                     break;
                                 case 3:
+                                    varmenu=0;
+                                    break;
+                                case 4:
                                     loggatoglob=false;
                                     varmenu=0;
                                     break;
+
                             }
 
                         }while(varmenu!=0);
