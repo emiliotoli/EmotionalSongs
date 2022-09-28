@@ -1,13 +1,1 @@
-prova|prova
-Pippo prova|emi
-Pippo prova|emi
-Pippo prova|emi
-Pippo prova|emi
-Pippo prova|emi
-Pippo prova|emi
-pippo prova|emi 2
-emi|PESCMAN| Respect
-emi|PESCMAN| I Will Survive
-emi|PESCMAN| Respect
-emi|PESCMAN| Respect| Louie Louie
-emi|vvv| I Will Survive| Like A Rolling Stone| Yesterday
+emi|PESCMAN| Respect| American Pie| Strange Things Are Happening Every Dayemi|GYM| Tired Of Being Alone

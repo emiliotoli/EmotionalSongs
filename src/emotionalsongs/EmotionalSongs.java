@@ -122,15 +122,22 @@ public class EmotionalSongs {
 
                     break;
                 case 5: // ci pensa il davo
+                    String playlist, brano;
                     if (loggatoglob) {
 
                         do{
+                            System.out.println("-------------------- menu' area personale ----------------------");
                             System.out.println("Digitare 1 per creare una playlist: ");
-                            System.out.println("Digitare 2 per visualizzare le playList");
-                            System.out.println("Digitare 3 per fare il logout");
+                            System.out.println("Digitare 2 per visualizzare le playList: ");
+                            System.out.println("Digitare 3 per inserire una canzone in una playlist esistente: ");
+                            System.out.println("Digitare 4 per eliminare una canzone da una playlist esistente: ");
+                            System.out.println("Digitare 5 per eliminare una playlist: ");
+                            System.out.println("Digitare 6 per tornare al menu' principale: ");
+                            System.out.println("Digitare 7 per fare il logout: ");
                             System.out.print("scelta: ");
                             varmenu = Integer.parseInt(br.readLine());
                             switch (varmenu){
+
                                 case 1:
                                     boolean valido = true;
                                     System.out.println("INSERIRE IL NOME DELLA NUOVA PLAYLIST");
@@ -145,9 +152,36 @@ public class EmotionalSongs {
                                     Playlist.visualizzaPlaylistUtente(idUtenteGlob);
                                     break;
                                 case 3:
+
+                                    System.out.println("Inserire nome playlist in cui aggiungere canzoni: ");
+                                    playlist=br.readLine();
+                                    System.out.println("inserire nome brano da aggiungere alla playlist");
+                                    brano = br.readLine();
+                                    Playlist.aggiungiCanzonePlaylist(playlist, brano, idUtenteGlob);
+                                    break;
+
+                                case 4:
+
+                                    System.out.println("Inserire nome playlist in cui aggiungere canzoni: ");
+                                    playlist=br.readLine();
+                                    System.out.println("inserire nome brano da aggiungere alla playlist");
+                                    brano = br.readLine();
+                                    Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob,playlist,brano);
+                                    break;
+
+                                case 5:
+                                    System.out.println("Inserisci nome playlist da eliminare");
+                                    playlist=br.readLine();
+                                    Playlist.cancellaPlaylist(idUtenteGlob,playlist);
+
+                                case 6:
+                                    varmenu=0;
+                                    break;
+                                case 7:
                                     loggatoglob=false;
                                     varmenu=0;
                                     break;
+
                             }
 
                         }while(varmenu!=0);
