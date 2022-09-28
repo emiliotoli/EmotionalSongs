@@ -88,21 +88,6 @@ public class Utenti {
         return mail;
     }
 
-    //password che deve contenere un numero, un carattere minuscolo, uno maiuscolo e un carattere speciale tra @#$% e deve avere lunghezza min 8 e max 20
-    /*static String controlloPassword(String pwd) throws IOException{
-        do{
-            if(pwd.matches("^(?=.*[0-9])(?=.*[az])(?=.*[AZ])(?=.*[@#$%^&+=])(?=\\S+$).{8,30}$")){
-                break;
-            }
-            else{
-                System.out.println("formato password errato ");
-                System.out.print("reinserisci la password: ");
-                pwd = brr.readLine();
-            }
-
-        }while(!pwd.matches("^(?=.*[0-9])(?=.*[az])(?=.*[AZ])(?=.*[@#$%^&+=])(?=\\S+$).{8,30}$"));
-        return pwd;
-    }*/
     static String controlloPassword(String pwd) throws IOException{
         do{
             if(pwd!=null && pwd.length()>=8){
@@ -158,24 +143,6 @@ public class Utenti {
     }
     //</editor-fold>
 
-    //<editor-fold desc="funzione che controlla che il cap sia lungo 5">
-   /* static int LunghezzaCap(int cap) throws IOException {
-        do {
-            if (cap > 10 && cap <= 97100)
-                break;
-            else {
-                System.out.println("valore cap non valido.");
-                System.out.print("reinserire cap: ");
-                cap = Integer.parseInt(brr.readLine());
-            }
-        } while (cap < 10 || cap > 97100);
-        if(cap<1000){
-
-        }
-        return cap;
-    }
-    //</editor-fold>
-*/
     static String controlloCAP(int cap){
         boolean check= false;
         do {
@@ -197,20 +164,6 @@ public class Utenti {
 
             return CAP.toString();
     }
-
-    /*static String checkCap(int Cap){
-
-        if(Cap<10 || Cap > 97100)
-            System.out.println("cap non valido");
-
-        StringBuilder CAP = new StringBuilder();
-        while(CAP.length()< 5 - Integer.toString(Cap).length()){
-            CAP.append(0);
-        }
-        CAP.append(Cap);
-
-        return true;
-    }*/
 
     private static boolean controlloNumero(String cap){
         boolean giusto=true;
