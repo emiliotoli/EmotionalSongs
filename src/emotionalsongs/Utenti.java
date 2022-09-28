@@ -59,9 +59,6 @@ public class Utenti {
         return Nome + "|" + Cognome + "|" + CF + "|" + Via + "|" + NumeroCivico + "|" + Cap + "|" + Comune + "|" + Provincia + "|" + Email + "|" + UserID + "|" + PW;
     } //da rendere privato non ha senso pubblico
 
-    //metodi per i controlli
-
-    //<editor-fold desc="Funzione che controlla il codice fiscale sia lungo 16 caratteri e nel seguente formato:">
     static String ControlloFormatocf(String cf) throws IOException {
         do {
             if ((cf.length() == codfisLunghezza) && cf.matches("([A-Za-z]{6})([0-9]{2})([A-Za-z])([0-9]{2})([A-Za-z])([0-9]{3})([A-Za-z])")) {// se il codice fiscale inserito rispetta la lunghezza e il formato ritorna true
@@ -74,7 +71,70 @@ public class Utenti {
         } while ((cf.length() != codfisLunghezza) && !cf.matches("([A-Za-z]{6})([0-9]{2})([A-Za-z])([0-9]{2})([A-Za-z])([0-9]{3})([A-Za-z])"));
         return cf;
     }
-    //</editor-fold>
+
+    //cominciare  con una sequenza di caratteri alfanumerici,  seguiti dal simbolo chiocciola, seguiti da altri caratteri alfanumerici, seguiti dal punto, seguiti da due o tre lettere.
+    static String controlloMail(String mail) throws IOException{
+        do{
+            if(mail.matches("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,3}")){
+                break;
+            }
+            else{
+                System.out.println("inserimento della mail non valido");
+                System.out.print("reinserisci la mail: ");
+                mail = brr.readLine();
+            }
+
+        }while(!mail.matches("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,3}"));
+        return mail;
+    }
+
+    //password che deve contenere un numero, un carattere minuscolo, uno maiuscolo e un carattere speciale tra @#$% e deve avere lunghezza min 8 e max 20
+    /*static String controlloPassword(String pwd) throws IOException{
+        do{
+            if(pwd.matches("^(?=.*[0-9])(?=.*[az])(?=.*[AZ])(?=.*[@#$%^&+=])(?=\\S+$).{8,30}$")){
+                break;
+            }
+            else{
+                System.out.println("formato password errato ");
+                System.out.print("reinserisci la password: ");
+                pwd = brr.readLine();
+            }
+
+        }while(!pwd.matches("^(?=.*[0-9])(?=.*[az])(?=.*[AZ])(?=.*[@#$%^&+=])(?=\\S+$).{8,30}$"));
+        return pwd;
+    }*/
+    static String controlloPassword(String pwd) throws IOException{
+        do{
+            if(pwd!=null && pwd.length()>=8){
+                break;
+            }
+            else{
+                System.out.println("password errata ");
+                System.out.print("reinserisci la password: ");
+                pwd = brr.readLine();
+            }
+        }while(pwd==null && !(pwd.length()>=8));
+        return pwd;
+    }
+
+
+    //nome utente formato da caratteri alfanumerici e da _ e - e deve essere di lungezza min 3 e max 15
+    static String controlloUser(String user) throws IOException{
+        do{
+            if(user.matches("^[a-zA-Z0-9_-]{3,15}$")){
+                break;
+            }
+            else{
+                System.out.println("inserimento dello userId non valido");
+                System.out.print("reinserisci lo UserId: ");
+                user = brr.readLine();
+            }
+
+        }while(!user.matches("^[a-zA-Z0-9_-]{3,15}$"));
+        return user;
+    }
+
+
 
     //<editor-fold desc="funzione che il nome sia lungo almeo 3">
     static String LunghezzaNome(String nome) throws IOException {

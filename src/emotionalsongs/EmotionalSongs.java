@@ -44,8 +44,7 @@ public class EmotionalSongs {
                     System.out.println("inizio procedura di ricerca in base al titolo\n");
                     System.out.print("inserisci titolo da cercare: ");
                     titolo = br.readLine().trim().toLowerCase();
-                    Canzoni can = new Canzoni();
-                    can.cercaBranoMusicaleTitolo(titolo,loggatoglob);
+                    Canzoni.cercaBranoMusicaleTitolo(titolo,loggatoglob);
                     break;
                 //</editor-fold>
                 case 2:
@@ -55,8 +54,7 @@ public class EmotionalSongs {
                     autore = br.readLine().trim().toLowerCase();
                     System.out.print("Inserisci anno: ");
                     anno = br.readLine().trim().toLowerCase();
-                    Canzoni ricerca = new Canzoni();
-                    ricerca.cercaBranoMusicaleAutoreAnno(autore, anno, loggatoglob);
+                    Canzoni.cercaBranoMusicaleAutoreAnno(autore, anno, loggatoglob);
                     break;
                 //</editor-fold>
                 case 3:
@@ -93,12 +91,15 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci email: ");
                     email = br.readLine();
+                    Utenti.controlloMail(email);
 
                     System.out.print("inserisci user: ");
                     username = br.readLine();
+                    Utenti.controlloUser(username);
 
                     System.out.print("inserisci password: ");
                     password = br.readLine();
+                    Utenti.controlloPassword(password);
 
                     Utenti nuovoutente = new Utenti();
                     nuovoutente.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);
