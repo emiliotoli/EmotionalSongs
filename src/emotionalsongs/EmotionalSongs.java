@@ -155,9 +155,7 @@ public class EmotionalSongs {
 
                                     System.out.println("Inserire nome playlist in cui aggiungere canzoni: ");
                                     playlist=br.readLine();
-                                    System.out.println("inserire nome brano da aggiungere alla playlist");
-                                    brano = br.readLine();
-                                    Playlist.aggiungiCanzonePlaylist(playlist, brano, idUtenteGlob);
+                                    Playlist.aggiungiDopoInPlaylist(playlist, idUtenteGlob);
                                     break;
 
                                 case 4:

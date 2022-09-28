@@ -41,21 +41,9 @@ public class Playlist {
                 aggiuntaCanzoni= sc.next().trim().toLowerCase();
                 switch (aggiuntaCanzoni){
                     case "si":
-                        System.out.println("Cerca altra canzone da aggiungere alla playlist: ");
-                        brano = sc.next();
-                        if(!Canzoni.ricercaCanzoni(brano)){
-                            System.out.println("nessuna canzone trovata");
-                            uscitaciclo=false;
-                        }
-                        else {
-                            System.out.println("inserisci codice canzone da aggiungere");
-                            linea = sc.nextInt();
-                            while(linea<0 || linea> Canzoni.numeroTotaleCanzoni()) {
-                                System.out.println("hai inserito un numero errato! riprova");
-                                linea = sc.nextInt();
-                            }
-                            str.append("|" + insertByLine(linea));
-                        }
+                        int tmp = aggiuntaCanzoniServ();
+                        if(tmp>0)
+                            str.append("|" + insertByLine(tmp));
                         break;
                     case "no":
                         uscitaciclo=true;
@@ -75,6 +63,30 @@ public class Playlist {
         return false;
     }
 
+    private static int aggiuntaCanzoniServ() throws IOException {
+        String brano ;
+        Scanner sc = new Scanner(System.in);
+        boolean uscitaciclo;
+        int linea;
+        System.out.println("Cerca canzone da aggiungere alla playlist: ");
+        brano = sc.next();
+        if(!Canzoni.ricercaCanzoni(brano)){
+            System.out.println("nessuna canzone trovata");
+            uscitaciclo=false;
+            return -1;
+        }
+        else {
+            System.out.println("inserisci codice canzone da aggiungere");
+            linea = sc.nextInt();
+            while(linea<0 || linea> Canzoni.numeroTotaleCanzoni()) {
+                System.out.println("hai inserito un numero errato! riprova");
+                linea = sc.nextInt();
+            }
+            //str.append("|" + insertByLine(linea));
+            return linea;
+        }
+
+    }
     /*private static void inserisciCanzone(String str) throws IOException {
         String srv;
         String[] spl;
@@ -169,14 +181,16 @@ public class Playlist {
         return titolo;
     }
 
-    public static void aggiungiCanzonePlaylist(String playlist , String titolo , String uid) throws IOException {
-
+    public static void aggiungiCanzonePlaylist(String playlist , String uid) throws IOException {
+        Scanner sc = new Scanner(System.in);
         StringBuilder stb = new StringBuilder();
         if(!controlloPlaylistEsistente(uid,playlist)){
             System.out.println("Playlist non esistente!");
             //return false;
         }
         else {
+            System.out.println("Inserisci titolo canzone:");
+            String titolo = sc.next();
             if (!Canzoni.controlloCanzoneEsistente(titolo)) {
                 System.out.println("Canzone non esistente");
                 //return false;
@@ -207,16 +221,57 @@ public class Playlist {
         wr.close();
 
     }
+    public static void aggiungiDopoInPlaylist(String playlist , String uid) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder stb=new StringBuilder();
+        boolean uscitaciclo=false;
+        String uscitaCicloInterno;
+        String scelta = "si";
+        if(!controlloPlaylistEsistente(uid,playlist)){
+            System.out.println("Playlist non esistente!");
+            //return false;
+        }
+        else{
+            do {
+                stb.setLength(0);
+                if (scelta.trim().toLowerCase().equals("si")) {
+                    int linea = aggiuntaCanzoniServ();
+                    BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+                    String sup;
+                    String[] spl;
+                    while ((sup = br.readLine()) != null) {
+                        spl = sup.split("\\|");
+                        if (spl[0].equals(uid) && spl[1].equals(playlist)) {
+                            sup += "|" + insertByLine(linea);
+                            stb.append(sup).append("\n");
+                        } else {
+                            stb.append(sup).append("\n");
+                        }
+                    }
+                    System.out.println("inserire altre canzoni? Digitare si o no");
+                    uscitaCicloInterno = sc.next();
+                    if (uscitaCicloInterno.trim().toLowerCase().equals("si"))
+                        uscitaciclo = false;
+                    else
+                        uscitaciclo = true;
+                }
+            }while(!uscitaciclo);
+        }
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false)),true);
+        String tmp = stb.toString();
+        pw.println(tmp);
+        System.out.println("inserimento andato a buon fine si spera");
+    }
 
     public static boolean eliminaCanzoneDaPlaylist(String uid , String nomeplaylist , String titolo) throws IOException {
         StringBuilder stb;
         if(!controlloPlaylistEsistente(uid,nomeplaylist)){
-            System.err.println("Playlist non esistente!");
+            System.out.println("Playlist non esistente!");
             return false;
         }
         else {
             if (!Canzoni.controlloCanzoneEsistente(titolo)) {
-                System.err.println("Canzone non esistente");
+                System.out.println("Canzone non esistente");
                 return false;
             } else {
                 BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
@@ -278,9 +333,9 @@ public class Playlist {
         }
 
         while((sup=br.readLine())!=null){
-            spl = sup.split("//|");
+            spl = sup.split("\\|");
             if(!spl[1].toLowerCase().trim().equals(nomeplaylist.toLowerCase().trim())){
-                stb.append(sup);
+                stb.append(sup + "\n");
             }
         }
         pw= new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false)),true);
