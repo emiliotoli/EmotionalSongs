@@ -99,7 +99,7 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci password: ");
                     password = br.readLine();
-                    Utenti.controlloPassword(password);
+                    password=Utenti.controlloPassword(password);
 
                     Utenti nuovoutente = new Utenti();
                     nuovoutente.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);

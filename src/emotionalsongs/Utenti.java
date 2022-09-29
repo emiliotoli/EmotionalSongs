@@ -89,44 +89,60 @@ public class Utenti {
 
     static String controlloPassword(String pwd1) throws IOException {
 
+        String pwd2;
+        pwd1=Utenti.controlloNonNulla(pwd1);
+
+        System.out.println(" digita nuovamente la password per confermarla: ");
+        pwd2= brr.readLine();
+        pwd2=Utenti.controlloNonNulla(pwd2);
+        System.out.println("controllo delle password per vedere se coincidono: ");
+        Utenti.controlloPassUguale(pwd1,pwd2);
+        return pwd1;
+    }
+
+    private static String controlloNonNulla(String pw) throws IOException {
+
+        do {
+            if (pw!=null) {
+                break;
+            } else {
+                System.out.println("devi inserire almeno un stringa: ");
+                System.out.println("reinserisci la password: ");
+                pw=brr.readLine();
+            }
+        } while (pw == null);
+        pw=Utenti.controlloFormato(pw);
+        return pw;
+    }
+
+    private static String controlloFormato(String pass) throws IOException {
+        do {
+            if (pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})")) {
+                break;
+            } else {
+                System.out.println("inserimento  formato della password non valido ");
+                System.out.println("inserire nuavamente la password:");
+                pass = brr.readLine();
+            }
+
+        } while (!(pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})")));
+        return pass;
+    }
+
+    private static String controlloPassUguale(String pw1, String pw2) throws IOException {
         do{
-            if(pwd1!=null && pwd1.length()>=8){
+            if(pw1.equals(pw2)){
+                System.out.println("password corrette");
                 break;
             }
             else{
-                System.out.println("inserimento non valido");
-                System.out.println("inserire nuavamente la password:");
-                pwd1 = brr.readLine();
-            }
-
-        }while (pwd1==null && !(pwd1.length()>=8));
-
-        System.out.println("conferma password:");
-        String psw2 = brr.readLine();
-        do{
-            if(psw2!=null && psw2.length()>=8){
-                break;
-            }
-            else{
-                System.out.println("inserimento non valido");
-                System.out.println("inserire nuavamente la password:");
-                psw2 = brr.readLine();
-            }
-
-        }while (psw2==null && !(psw2.length()>=8));
-
-        do{
-            if(pwd1.equals(psw2)){
-                break;
-            }
-            else {
                 System.out.println("le password non coincidono.");
                 System.out.println("reinserire la password di conferma.");
-                psw2=brr.readLine();
+                pw2 = brr.readLine();
             }
 
-        }while(!(pwd1.equals(psw2)));
-        return pwd1;
+        }while(!(pw1.equals(pw2)));
+        return pw1;
     }
 
     //nome utente formato da caratteri alfanumerici e da _ e - e deve essere di lungezza min 3 e max 15
@@ -145,7 +161,6 @@ public class Utenti {
     }
 
 
-    //<editor-fold desc="funzione che il nome sia lungo almeo 3">
     static String LunghezzaNome(String nome) throws IOException {
         while (nome.length() < 3) {
             System.out.println("Nome inserito troppo corto.");
@@ -154,7 +169,6 @@ public class Utenti {
         }
         return nome;
     }
-    //</editor-fold>
 
     //<editor-fold desc="funzione che il cognome sia lungo almeo 3">
     static String LunghezzaCognome(String cognome) throws IOException {
