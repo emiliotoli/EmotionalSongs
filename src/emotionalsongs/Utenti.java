@@ -1,6 +1,7 @@
 package emotionalsongs;
 
 import java.io.*;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class Utenti {
@@ -40,16 +41,15 @@ public class Utenti {
     } */
 
     public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
-                                String Provincia, String Email, String UserID, String PW) throws IOException {
+                                     String Provincia, String Email, String UserID, String PW) throws IOException {
 
-        boolean nonesistente=true;
-        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt",true));
+        boolean nonesistente = true;
+        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt", true));
         //return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
-        nonesistente= esisteUtente(UserID);
-        if(!nonesistente) {
+        nonesistente = esisteUtente(UserID);
+        if (!nonesistente) {
             wr.write(toString(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW));
-        }
-        else{
+        } else {
             System.out.println("ID UTENTE gia' esistente! Utente non creato");
         }
     }
@@ -73,105 +73,185 @@ public class Utenti {
     }
 
     //cominciare  con una sequenza di caratteri alfanumerici,  seguiti dal simbolo chiocciola, seguiti da altri caratteri alfanumerici, seguiti dal punto, seguiti da due o tre lettere.
-    static String controlloMail(String mail) throws IOException{
-        do{
-            if(mail.matches("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,3}")){
+    static String controlloMail(String mail) throws IOException {
+        do {
+            if (mail.matches("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,3}")) {
                 break;
-            }
-            else{
+            } else {
                 System.out.println("inserimento della mail non valido");
                 System.out.print("reinserisci la mail: ");
                 mail = brr.readLine();
             }
 
-        }while(!mail.matches("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,3}"));
+        } while (!mail.matches("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,3}"));
         return mail;
     }
 
-    static String controlloPassword(String pwd) throws IOException{
-        do{
-            if(pwd!=null && pwd.length()>=8){
-                break;
-            }
-            else{
-                System.out.println("password errata ");
-                System.out.print("reinserisci la password: ");
-                pwd = brr.readLine();
-            }
-        }while(pwd==null && !(pwd.length()>=8));
-        return pwd;
+    static String controlloPassword(String pwd1) throws IOException {
+
+        String pwd2;
+        pwd1 = Utenti.controlloNonNulla(pwd1);
+
+        System.out.println(" digita nuovamente la password per confermarla: ");
+        pwd2 = brr.readLine();
+        pwd2 = Utenti.controlloNonNulla(pwd2);
+        System.out.println("controllo delle password per vedere se coincidono: ");
+        Utenti.controlloPassUguale(pwd1, pwd2);
+        return pwd1;
     }
 
+    private static String controlloNonNulla(String pw) throws IOException {
+
+        do {
+            if (pw != null) {
+                break;
+            } else {
+                System.out.println("non hai inserito nessuna password: ");
+                System.out.println("reinserisci la password: ");
+                pw = brr.readLine();
+            }
+        } while (pw == null);
+        pw = Utenti.controlloFormato(pw);
+        return pw;
+    }
+
+    private static String controlloFormato(String pass) throws IOException {
+        do {
+            if (pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})")) {
+                break;
+            } else {
+                System.out.println("inserimento  formato della password non valido ");
+                System.out.println("inserire nuavamente la password:");
+                pass = brr.readLine();
+            }
+
+        } while (!(pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})")));
+        return pass;
+    }
+
+    private static String controlloPassUguale(String pw1, String pw2) throws IOException {
+        do {
+            if (pw1.equals(pw2)) {
+                System.out.println("password corrette");
+                break;
+            } else {
+                System.out.println("le password non coincidono.");
+                System.out.println("reinserire la password di conferma.");
+                pw2 = brr.readLine();
+            }
+
+        } while (!(pw1.equals(pw2)));
+        return pw1;
+    }
 
     //nome utente formato da caratteri alfanumerici e da _ e - e deve essere di lungezza min 3 e max 15
-    static String controlloUser(String user) throws IOException{
-        do{
-            if(user.matches("^[a-zA-Z0-9_-]{3,15}$")){
+    static String controlloUser(String user) throws IOException {
+        do {
+            if (user.matches("^[a-zA-Z0-9_-]{3,15}$")) {
                 break;
-            }
-            else{
+            } else {
                 System.out.println("inserimento dello userId non valido");
                 System.out.print("reinserisci lo UserId: ");
                 user = brr.readLine();
             }
 
-        }while(!user.matches("^[a-zA-Z0-9_-]{3,15}$"));
+        } while (!user.matches("^[a-zA-Z0-9_-]{3,15}$"));
         return user;
     }
 
 
-
-    //<editor-fold desc="funzione che il nome sia lungo almeo 3">
     static String LunghezzaNome(String nome) throws IOException {
-        while (nome.length() < 3) {
-            System.out.println("Nome inserito troppo corto.");
-            System.out.print("reinsirire il nome: ");
-            nome = brr.readLine();
-        }
+        do {
+            if (nome != null && nome.length() >= 3) {
+                break;
+            } else {
+                System.out.println("non hai inserito nessun nome o il nome inserito è tropppo corto.");
+                System.out.print("reinsirire il nome: ");
+                nome = brr.readLine();
+            }
+        } while (nome == null && nome.length() < 3);
+        nome = Utenti.soloLettere(nome);
         return nome;
     }
-    //</editor-fold>
+
+    private static String soloLettere(String nominativo) throws IOException {
+        do {
+            if (nominativo.matches("[a-zA-Z]*${3,20}")) {
+                break;
+            } else {
+                System.out.println("il nominativo appena inserito contiene numero o caratteri speciali.");
+                System.out.println("reinserire il nominativo con solo le lettre");
+                nominativo = brr.readLine();
+            }
+        } while (!(nominativo.matches("[a-zA-Z]*${3,20}")));
+        return nominativo;
+    }
 
     //<editor-fold desc="funzione che il cognome sia lungo almeo 3">
     static String LunghezzaCognome(String cognome) throws IOException {
-        while (cognome.length() < 3) {
-            System.out.println("Nome inserito troppo corto.");
-            System.out.print("reinsirire il nome: ");
-            cognome = brr.readLine();
-        }
+        do {
+            if (cognome != null && cognome.length() >= 3) {
+                break;
+            } else {
+                System.out.println("non hai inserito nessun cognome o il cognome appena inserito è troppo corto.");
+                System.out.print("reinsirire il nome: ");
+                cognome = brr.readLine();
+            }
+        } while (cognome == null && cognome.length() < 3);
+        cognome = Utenti.soloLettere(cognome);
         return cognome;
     }
     //</editor-fold>
 
-    static String controlloCAP(int cap){
-        boolean check= false;
+    static String controlloCAP(int cap) {
+        boolean check = false;
         do {
             if (cap < 10 || cap > 97100) {
                 System.out.println("cap non valido");
                 System.out.println("reinserire il cap: ");
-                Scanner in=new Scanner(System.in);
+                Scanner in = new Scanner(System.in);
                 in.nextInt();
+            } else {
+                check = true;
             }
-            else{ check = true; }
 
-        }while(!check);
+        } while (!check);
 
-            StringBuilder CAP = new StringBuilder();
-            while (CAP.length() < 5 - Integer.toString(cap).length()) {
-                CAP.append(0);
-            }
-            CAP.append(cap);
+        StringBuilder CAP = new StringBuilder();
+        while (CAP.length() < 5 - Integer.toString(cap).length()) {
+            CAP.append(0);
+        }
+        CAP.append(cap);
 
-            return CAP.toString();
+        return CAP.toString();
     }
 
-    private static boolean controlloNumero(String cap){
-        boolean giusto=true;
-        for(int i=0;i<cap.length();i++){
-            if(Character.digit(cap.charAt(i),10)<0)
-                return false;
-        }
-        return true;
+    public static String controlloNumeroCivico(String numcivico) throws IOException {
+        do {
+            if (numcivico != null) {
+                break;
+            } else {
+                System.out.println("non hai inserito niente.");
+                System.out.println("reinserire il numero civico");
+                numcivico = brr.readLine();
+            }
+        } while (numcivico == null);
+        numcivico = Utenti.formatoNumCivico(numcivico);
+        return numcivico;
+    }
+
+    private static String formatoNumCivico(String civico) throws IOException {
+        do {
+            if (civico.matches("([0-9]{1,4})([a-zA-Z]{1})")) {
+                break;
+            }
+            else {
+                System.out.println("il numero civico inserito non rispetta il formato");
+                System.out.println("reinserire il numro civico");
+                civico= brr.readLine();
+            }
+        } while (!(civico.matches("([0-9]{2,4})([A-Z]{1})")));
+        return civico;
     }
 
     public static void ScriviFile(String testo, String filePath) throws IOException {
@@ -211,14 +291,15 @@ public class Utenti {
             return true;
         return false;
     }
+
     private static boolean esisteUtente(String nomeUtente) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
         String str;
         String[] supporto;
 
-        while((str=br.readLine())!=null){
-            supporto=str.split("\\|");
-            if(supporto[9].equals(nomeUtente))
+        while ((str = br.readLine()) != null) {
+            supporto = str.split("\\|");
+            if (supporto[9].equals(nomeUtente))
                 return true;
         }
         return false;
