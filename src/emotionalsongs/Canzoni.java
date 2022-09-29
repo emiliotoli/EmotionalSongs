@@ -114,6 +114,7 @@ public class Canzoni {
         boolean trovato=false;
         while((str=bufread.readLine())!=null)
         {
+
             if(trovato)
                 break;
             supporto=str.split("//|");

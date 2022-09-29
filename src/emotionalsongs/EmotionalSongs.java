@@ -110,6 +110,7 @@ public class EmotionalSongs {
                     System.out.println("\nregistrazione completata");
                     break;
                 //</editor-fold>
+
                 case 4:
                     do {
                         System.out.print("inserisci l'UserId:");
