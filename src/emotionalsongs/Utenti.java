@@ -90,28 +90,28 @@ public class Utenti {
     static String controlloPassword(String pwd1) throws IOException {
 
         String pwd2;
-        pwd1=Utenti.controlloNonNulla(pwd1);
+        pwd1 = Utenti.controlloNonNulla(pwd1);
 
         System.out.println(" digita nuovamente la password per confermarla: ");
-        pwd2= brr.readLine();
-        pwd2=Utenti.controlloNonNulla(pwd2);
+        pwd2 = brr.readLine();
+        pwd2 = Utenti.controlloNonNulla(pwd2);
         System.out.println("controllo delle password per vedere se coincidono: ");
-        Utenti.controlloPassUguale(pwd1,pwd2);
+        Utenti.controlloPassUguale(pwd1, pwd2);
         return pwd1;
     }
 
     private static String controlloNonNulla(String pw) throws IOException {
 
         do {
-            if (pw!=null) {
+            if (pw != null) {
                 break;
             } else {
-                System.out.println("devi inserire almeno un stringa: ");
+                System.out.println("non hai inserito nessuna password: ");
                 System.out.println("reinserisci la password: ");
-                pw=brr.readLine();
+                pw = brr.readLine();
             }
         } while (pw == null);
-        pw=Utenti.controlloFormato(pw);
+        pw = Utenti.controlloFormato(pw);
         return pw;
     }
 
@@ -130,18 +130,17 @@ public class Utenti {
     }
 
     private static String controlloPassUguale(String pw1, String pw2) throws IOException {
-        do{
-            if(pw1.equals(pw2)){
+        do {
+            if (pw1.equals(pw2)) {
                 System.out.println("password corrette");
                 break;
-            }
-            else{
+            } else {
                 System.out.println("le password non coincidono.");
                 System.out.println("reinserire la password di conferma.");
                 pw2 = brr.readLine();
             }
 
-        }while(!(pw1.equals(pw2)));
+        } while (!(pw1.equals(pw2)));
         return pw1;
     }
 
@@ -162,21 +161,44 @@ public class Utenti {
 
 
     static String LunghezzaNome(String nome) throws IOException {
-        while (nome.length() < 3) {
-            System.out.println("Nome inserito troppo corto.");
-            System.out.print("reinsirire il nome: ");
-            nome = brr.readLine();
-        }
+        do {
+            if (nome != null && nome.length() >= 3) {
+                break;
+            } else {
+                System.out.println("non hai inserito nessun nome o il nome inserito è tropppo corto.");
+                System.out.print("reinsirire il nome: ");
+                nome = brr.readLine();
+            }
+        } while (nome == null && nome.length() < 3);
+        nome = Utenti.soloLettere(nome);
         return nome;
+    }
+
+    private static String soloLettere(String nominativo) throws IOException {
+        do {
+            if (nominativo.matches("[a-zA-Z]*${3,20}")) {
+                break;
+            } else {
+                System.out.println("il nominativo appena inserito contiene numero o caratteri speciali.");
+                System.out.println("reinserire il nominativo con solo le lettre");
+                nominativo = brr.readLine();
+            }
+        } while (!(nominativo.matches("[a-zA-Z]*${3,20}")));
+        return nominativo;
     }
 
     //<editor-fold desc="funzione che il cognome sia lungo almeo 3">
     static String LunghezzaCognome(String cognome) throws IOException {
-        while (cognome.length() < 3) {
-            System.out.println("Nome inserito troppo corto.");
-            System.out.print("reinsirire il nome: ");
-            cognome = brr.readLine();
-        }
+        do {
+            if (cognome != null && cognome.length() >= 3) {
+                break;
+            } else {
+                System.out.println("non hai inserito nessun cognome o il cognome appena inserito è troppo corto.");
+                System.out.print("reinsirire il nome: ");
+                cognome = brr.readLine();
+            }
+        } while (cognome == null && cognome.length() < 3);
+        cognome = Utenti.soloLettere(cognome);
         return cognome;
     }
     //</editor-fold>
@@ -204,13 +226,32 @@ public class Utenti {
         return CAP.toString();
     }
 
-    private static boolean controlloNumero(String cap) {
-        boolean giusto = true;
-        for (int i = 0; i < cap.length(); i++) {
-            if (Character.digit(cap.charAt(i), 10) < 0)
-                return false;
-        }
-        return true;
+    public static String controlloNumeroCivico(String numcivico) throws IOException {
+        do {
+            if (numcivico != null) {
+                break;
+            } else {
+                System.out.println("non hai inserito niente.");
+                System.out.println("reinserire il numero civico");
+                numcivico = brr.readLine();
+            }
+        } while (numcivico == null);
+        numcivico = Utenti.formatoNumCivico(numcivico);
+        return numcivico;
+    }
+
+    private static String formatoNumCivico(String civico) throws IOException {
+        do {
+            if (civico.matches("([0-9]{1,4})([a-zA-Z]{1})")) {
+                break;
+            }
+            else {
+                System.out.println("il numero civico inserito non rispetta il formato");
+                System.out.println("reinserire il numro civico");
+                civico= brr.readLine();
+            }
+        } while (!(civico.matches("([0-9]{2,4})([A-Z]{1})")));
+        return civico;
     }
 
     public static void ScriviFile(String testo, String filePath) throws IOException {

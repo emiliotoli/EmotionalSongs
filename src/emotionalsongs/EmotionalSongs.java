@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
+
 public class EmotionalSongs {
 
     public static void main(String[] args) throws IOException {
@@ -78,6 +79,7 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci numero civico: ");
                     numerocivico = br.readLine();
+                    numerocivico=Utenti.controlloNumeroCivico(numerocivico);
 
                     System.out.print("inserisci cap: ");
                     cap = Integer.parseInt(br.readLine());
@@ -100,6 +102,7 @@ public class EmotionalSongs {
                     System.out.print("inserisci password: ");
                     password = br.readLine();
                     password=Utenti.controlloPassword(password);
+
 
                     Utenti nuovoutente = new Utenti();
                     nuovoutente.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);
