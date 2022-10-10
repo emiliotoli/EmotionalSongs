@@ -238,14 +238,21 @@ public class Playlist {
                     BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
                     String sup;
                     String[] spl;
+                    int TOT_PLAYLISTS = Playlist.numTotPlaylist() , i=0;
+
                     while ((sup = br.readLine()) != null) {
                         spl = sup.split("\\|");
                         if (spl[0].equals(uid) && spl[1].equals(playlist)) {
                             sup += "|" + insertByLine(linea);
-                            stb.append(sup).append("\n");
+                            if(i<TOT_PLAYLISTS)
+                                sup+="\n";
+                            stb.append(sup);
                         } else {
-                            stb.append(sup).append("\n");
+                            if(i<TOT_PLAYLISTS)
+                                sup+="\n";
+                            stb.append(sup);
                         }
+                        i++;
                     }
                     System.out.println("inserire altre canzoni? Digitare si o no");
                     uscitaCicloInterno = sc.next();
@@ -255,11 +262,13 @@ public class Playlist {
                         uscitaciclo = true;
                 }
             }while(!uscitaciclo);
+
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false)),true);
+            String tmp = stb.toString();
+            pw.println(tmp);
+            System.out.println("inserimento andato a buon fine si spera");
         }
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt" , false)),true);
-        String tmp = stb.toString();
-        pw.println(tmp);
-        System.out.println("inserimento andato a buon fine si spera");
+
     }
 
     public static boolean eliminaCanzoneDaPlaylist(String uid , String nomeplaylist , String titolo) throws IOException {
@@ -341,6 +350,12 @@ public class Playlist {
         pw.println(stb.toString());
         System.out.println("Cancellazione andata a buon fine!");
         return true;
+    }
+
+    private static int numTotPlaylist() throws IOException {
+        LineNumberReader lnr = new LineNumberReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+        lnr.skip(Long.MAX_VALUE);
+        return (lnr.getLineNumber())-1;
     }
 
 
