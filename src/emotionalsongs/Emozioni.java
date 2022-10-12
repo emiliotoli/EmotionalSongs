@@ -1,21 +1,34 @@
 package emotionalsongs;
 
 import java.io.*;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+/**@author Emilio Daverio
+ * la classe serve per inserire e visualizzare le emozioni
+ */
 public class Emozioni {
+
+    //<editor-fold desc="Attributi">
     private final static String sep = System.getProperty("file.separator");
     private final static String[] Emozioni={"Amazement" , "Solemnity" , "Tenderness" , "Nostalgia" , "Calmness" , "Power" , "Joy" , "Tension" , "Sadness"};
     static InputStreamReader isr = new InputStreamReader(System.in);
     static BufferedReader br = new BufferedReader(isr);
     static Scanner scan=new Scanner(System.in);
+    //</editor-fold>
 
+    /**@author Emilio Daverio
+     * metodo che serve per inserire una nuova emozione
+     * @param titolo titolo della canzone
+     * @throws IOException
+     */
+    //<editor-fold desc="Inserisci Nuova Emozione">
     public static void inserisciEmozioni(String titolo) throws IOException {
+
         String emozione = null;
+        //</editor-fold>
         String spiegazione;
         int punteggio ;
 
@@ -129,7 +142,15 @@ public class Emozioni {
         bw.newLine();
         bw.close();
     }
+    //</editor-fold>
 
+
+    /**@author Emilio Daverio
+     * metodo per visualizzare le emozioni
+     * @param tit
+     * @throws IOException
+     */
+    //<editor-fold desc="Visulaizzare Le Emozioni">
     public static void visualizzaEmozioni(String tit) throws IOException{
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt");
         BufferedReader bufread = new BufferedReader(fread);
@@ -206,5 +227,6 @@ public class Emozioni {
         formattedDouble = decimalFormat.format((count_Sadness/countGenerale)*100);
         System.out.println("Sadness = "+  formattedDouble +"%");
     }
+    //</editor-fold>
 }
 
