@@ -11,36 +11,12 @@ public class Canzoni {
     private final static String sep = System.getProperty("file.separator");
 
 
-    public Canzoni() {
-    }
-
-   /* private Canzoni(String Titolo, String Autore, String Anno, String Album, String Durata, String Genere) {
-        this.titolo = Titolo;
-        this.autore = Autore;
-        this.anno = Anno;
-        this.album = Album;
-        this.durata = Durata;
-        this.genere = Genere;
-    }*/
-
-    public void creaCanzone(String Titolo, String Autore, String Anno, String Album, String Durata, String Genere) throws IOException {
-        BufferedWriter br = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
-        br.write(toString(Titolo, Autore, Anno, Album, Durata, Genere));
-    }
-
     public String toString(String Titolo, String Autore, String Anno, String Album, String Durata, String Genere) {
 
         return Titolo + "|" + Autore + "|" + Anno + "|" + Album + "|" + Durata + "|" + Genere;
 
     }
 
-    public static void ScriviFile(String testo, String filePath) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
-        bw.write(testo);
-        bw.newLine();
-        bw.flush(); //svuoto lo stream
-        bw.close();
-    }
 
     public static void cercaBranoMusicaleTitolo(String Titolo,boolean loggato) throws IOException {
 
@@ -107,27 +83,6 @@ public class Canzoni {
 
     }
 
-    public static void visualizzaInformazioniBrano(String titolo) throws IOException {
-        BufferedReader bufread = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
-        String str;
-        String[] supporto;
-        boolean trovato=false;
-        while((str=bufread.readLine())!=null)
-        {
-
-            if(trovato)
-                break;
-            supporto=str.split("//|");
-            if(supporto[0].equals(titolo))
-            {
-                trovato=true;
-                System.out.println("titolo: " + supporto[0]);
-                System.out.println("autore: " + supporto[1]);
-                System.out.println("anno: " + supporto[2]);
-            }
-        }
-    }
-
     public static void cercaBranoMusicaleAutoreAnno(String Autore, String Anno, boolean loggato) throws IOException { //vers1
 
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
@@ -189,7 +144,6 @@ public class Canzoni {
         bufread.close();
     }
 
-
     public static boolean controlloCanzoneEsistente(String titolo) throws IOException {
         boolean esiste=false;
         BufferedReader br= new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
@@ -224,7 +178,6 @@ public class Canzoni {
                     trovato=true;
                 }
                 linea++;
-                //da usare anche in inserisci emozioni
             }
             return trovato;
     }

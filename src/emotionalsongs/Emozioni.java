@@ -13,23 +13,6 @@ public class Emozioni {
     static InputStreamReader isr = new InputStreamReader(System.in);
     static BufferedReader br = new BufferedReader(isr);
     static Scanner scan=new Scanner(System.in);
-    
-
-    /*public boolean inserisciEmozioni(String IDUtente , String canzone , String Emozione, int Intensità , String note) throws IOException {
-        //cerca di percorso file
-        //apertura stream
-        if(!Canzoni.controlloCanzoneEsistente(canzone)) {
-            System.out.println("canzone inserita non corretta!");
-            return false;
-        }
-        if(!controlloEsisteEmozione(Emozione)){
-            System.out.println("emozione inserita non corretta!");
-            return false;
-        }
-
-        //scrittura sul file dell'id + nome canzone + emozione + intensità + note
-        return true;
-    }*/
 
     public static void inserisciEmozioni(String titolo) throws IOException {
         String emozione = null;
@@ -60,7 +43,6 @@ public class Emozioni {
         if (scelta == 1) {
             emozione = "Amazement";
         }
-        //</editor-fold>
         if (scelta == 2) {
             emozione = "Solemnity";
         }
@@ -86,9 +68,7 @@ public class Emozioni {
             emozione = "Sadness";
         }
 
-
         //passo 2
-
         System.out.println("motiva la scelta di questa emozione con un breve frase: ");
         do {
             spiegazione = br.readLine().toLowerCase();
@@ -149,9 +129,6 @@ public class Emozioni {
         bw.newLine();
         bw.close();
     }
-
-
-
 
     public static void visualizzaEmozioni(String tit) throws IOException{
         FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt");
@@ -229,14 +206,5 @@ public class Emozioni {
         formattedDouble = decimalFormat.format((count_Sadness/countGenerale)*100);
         System.out.println("Sadness = "+  formattedDouble +"%");
     }
-
-    private static boolean controlloEsisteEmozione(String emozione){
-        for(int i=0;i< Emozioni.length;i++){
-            if(Emozioni[i].equals(emozione))
-                return true;
-        }
-        return false;
-    }
-
 }
 

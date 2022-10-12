@@ -6,6 +6,7 @@ import java.io.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.awt.Color;
 
 
 
@@ -124,6 +125,7 @@ public class EmotionalSongs {
                     System.out.println("sei loggato");
 
 
+
                     break;
                 case 5: // ci pensa il davo
                     String playlist, brano;
@@ -198,19 +200,6 @@ public class EmotionalSongs {
             }
         } while (varswich != 0);
 
-
-        //creazione playlist
-        /*System.out.println("inizio procedura creazione playList");
-        do {
-            System.out.print("inserisci il nome della playList: ");
-            nomePlaylist = br.readLine().trim().toLowerCase();
-            esiste = Playlist.ControlloPlaylistEsistente(idUtente, nomePlaylist);
-        } while (esiste);
-        Playlist pl = new Playlist();
-        pl.CreaPlaylist(idUtente, nomePlaylist);
-        Playlist.ScriviFile(pl.ToString(idUtente, nomePlaylist), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt");*/
-
-
         //<editor-fold desc="REGISTRAZIONE NUOVA CANZONE">
         /*System.out.println("inizio procedura inserimento canzoni:\n");
         System.out.print("inserisci il Titolo della canzone: ");
@@ -236,7 +225,6 @@ public class EmotionalSongs {
         Canzoni.ScriviFile(canzonenuova.ToString(titolo, autore, anno, album, durata, genere), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
         System.out.println("\nprocedura terminata");*/
         //</editor-fold>
-
 
     }
 }

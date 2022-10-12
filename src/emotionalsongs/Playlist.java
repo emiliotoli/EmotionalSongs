@@ -20,6 +20,7 @@ public class Playlist {
         this.nomeplaylist=NomePlaylist;
         //pdpdpdpdpdp
     }
+    /** @autor emilio*/
     public static boolean registraPlaylist(String ID, String NomePlay) throws IOException {
         PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", true)), true);
         StringBuilder str = new StringBuilder();

@@ -17,28 +17,8 @@ public class Utenti {
 
     private boolean loginEffettuato = false;
 
-
-    //</editor-fold>
-
     public Utenti() {
     }
-
-   /* private Utenti(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
-                   String Provincia, String Email, String UserID, String PW) throws IOException {
-        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
-        this.nome = Nome;
-        this.cognome = Cognome;
-        this.codiceFiscale = CF;
-        this.via = Via;
-        this.numeroCivico = NumeroCivico;
-        this.cap = Cap;
-        this.comune = Comune;
-        this.provincia = Provincia;
-        this.email = Email;
-        this.userid = UserID;
-        this.password = PW;
-        wr.write(this.toString(nome,cognome,CF,via,numeroCivico,cap,comune,provincia,email,userid,password));
-    } */
 
     public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
                                      String Provincia, String Email, String UserID, String PW) throws IOException {
@@ -88,8 +68,8 @@ public class Utenti {
     }
 
     static String controlloPassword(String pwd1) throws IOException {
-
         String pwd2;
+
         pwd1 = Utenti.controlloNonNulla(pwd1);
 
         System.out.println(" digita nuovamente la password per confermarla: ");
@@ -288,12 +268,6 @@ public class Utenti {
         return esiste;
     }
 
-    private static boolean comparaLogin(String[] a, String UID, String PW) {
-        if (UID.equals((a[9].trim())) && PW.equals((a[10].trim())))
-            return true;
-        return false;
-    }
-
     private static boolean esisteUtente(String nomeUtente) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
         String str;
@@ -306,5 +280,4 @@ public class Utenti {
         }
         return false;
     }
-
 }
