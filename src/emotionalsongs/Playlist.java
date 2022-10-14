@@ -12,7 +12,6 @@ public class Playlist {
     String idutente;
     private final static String sep = System.getProperty("file.separator");
 
-
     /** @author Emilio Toli
      * Metodo che inserisce una nuova playlist e nuove canzoni all'interno di essa
      * @param ID id dell'utente al quale viene associata la playlist
