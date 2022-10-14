@@ -9,7 +9,10 @@ import java.io.InputStreamReader;
 import java.awt.Color;
 
 
-
+/** @author Emilio Toli
+ * @author Stefano Farina
+ * è il main dell' applicazione, si trovano tutte le opzioni che un utente può fare
+ */
 public class EmotionalSongs {
 
     public static void main(String[] args) throws IOException {
@@ -33,12 +36,17 @@ public class EmotionalSongs {
 
 
         do {
+            System.out.println("\n");
+            System.out.println("-------------------- menu' principale applicazione ----------------------");
             System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
             System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
             System.out.println("Digitare 3 per per Registrati:");
             System.out.println("Digitare 4 per Loggarti");
-            System.out.println("Digitare 5 per accedere all'area personale:      Devi essere loggato per accedere");
+            System.out.println("Digitare 5 per accedere all'area personale: ");
             System.out.println("Digitare 6 per terminare tutte le operazioni");
+            //System.out.println("\n");
+            System.out.println("per accedre al case 5, prima bisogna effettuare il login");
+            System.out.println("-------------------------------------------------------------------------");
             System.out.print("scelta: ");
             varswich = Integer.parseInt(br.readLine());
             switch (varswich) {
@@ -141,6 +149,7 @@ public class EmotionalSongs {
                             System.out.println("Digitare 5 per eliminare una playlist: ");
                             System.out.println("Digitare 6 per tornare al menu' principale: ");
                             System.out.println("Digitare 7 per fare il logout: ");
+                            System.out.println("----------------------------------------------------------------");
                             System.out.print("scelta: ");
                             varmenu = Integer.parseInt(br.readLine());
                             switch (varmenu){
