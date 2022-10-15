@@ -36,17 +36,32 @@ public class EmotionalSongs {
 
 
         do {
-            System.out.println("\n");
-            System.out.println("-------------------- menu' principale applicazione ----------------------");
-            System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
-            System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
-            System.out.println("Digitare 3 per per Registrati:");
-            System.out.println("Digitare 4 per Loggarti");
-            System.out.println("Digitare 5 per accedere all'area personale: ");
-            System.out.println("Digitare 6 per terminare tutte le operazioni");
-            //System.out.println("\n");
-            System.out.println("per accedre al case 5, prima bisogna effettuare il login");
-            System.out.println("-------------------------------------------------------------------------");
+            if(!loggatoglob){
+                System.out.println("\n");
+                System.out.println("-------------------- menu' principale applicazione ----------------------");
+                System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
+                System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
+                System.out.println("Digitare 3 per per Registrati:");
+                System.out.println("Digitare 4 per Loggarti");
+                System.out.println("Digitare 5 per accedere all'area personale: ");
+                System.out.println("Digitare 6 per terminare tutte le operazioni");
+                //System.out.println("\n");
+                System.out.println("per accedre al case 5, prima bisogna effettuare il login");
+                System.out.println("-------------------------------------------------------------------------");
+            }
+            else{
+                System.out.println("\n");
+                System.out.println("-------------------- menu' principale applicazione ----------------------");
+                System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
+                System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
+                System.out.println("Digitare 3 per per Registrati:");
+                System.out.println("Digitare 4 per il logout");
+                System.out.println("Digitare 5 per accedere all'area personale: ");
+                System.out.println("Digitare 6 per terminare tutte le operazioni");
+                System.out.println("per accedre al case 5, prima bisogna effettuare il login");
+                System.out.println("-------------------------------------------------------------------------");
+            }
+
             System.out.print("scelta: ");
             varswich = Integer.parseInt(br.readLine());
             switch (varswich) {
@@ -122,18 +137,23 @@ public class EmotionalSongs {
                 //</editor-fold>
 
                 case 4:
-                    do {
-                        System.out.print("inserisci l'UserId:");
-                        idUtente = br.readLine().trim().toLowerCase();
-                        System.out.print("inserisci la password: ");
-                        password = br.readLine().trim();
-                        loggatoglob = Utenti.Login(idUtente, password);
-                    } while (!loggatoglob);
-                    loggatoglob = true;
-                    idUtenteGlob=idUtente;
-                    System.out.println("sei loggato");
-
-
+                    if(!loggatoglob){
+                        do {
+                            System.out.print("inserisci l'UserId:");
+                            idUtente = br.readLine().trim().toLowerCase();
+                            System.out.print("inserisci la password: ");
+                            password = br.readLine().trim();
+                            loggatoglob = Utenti.Login(idUtente, password);
+                        } while (!loggatoglob);
+                        loggatoglob = true;
+                        idUtenteGlob=idUtente;
+                        System.out.println("sei loggato");
+                    }
+                    else{
+                        loggatoglob=false;
+                        varmenu=0;
+                        break;
+                    }
 
                     break;
                 case 5: // ci pensa il davo
