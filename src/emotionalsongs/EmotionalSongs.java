@@ -29,9 +29,10 @@ public class EmotionalSongs {
         String idUtente;
         boolean esiste;
         boolean loggatoglob = false;
-        boolean controllo;
+        boolean controlloMenuPrincipale;
+        boolean controllomenupersonale;
         int varswich = 0;
-        int varmenu;
+        int varmenu = 0;
 
         File file = new File("data" + sep + "Emozioni.dati.txt");
         String path = file.getAbsolutePath();
@@ -69,14 +70,14 @@ public class EmotionalSongs {
                 System.out.print("scelta: ");
                 try {
                     varswich = Integer.parseInt(br.readLine());
-                    controllo = true;
+                    controlloMenuPrincipale = true;
 
                 } catch (Exception e) {
                     System.out.println("\nDEVI INSERIRE SOLO NUMERI DA 1 A 5 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'");
                     System.out.println("PER TERMINARE LE OPERZIONI SUBITO PUI DIGITARE 0 O 6");
-                    controllo = false;
+                    controlloMenuPrincipale = false;
                 }
-            } while (!controllo);
+            } while (!controlloMenuPrincipale);
 
             switch (varswich) {
                 case 1:
@@ -172,19 +173,28 @@ public class EmotionalSongs {
                 case 5: // ci pensa il davo
                     String playlist, brano;
                     if (loggatoglob) {
-
                         do {
-                            System.out.println("-------------------- menu' area personale ----------------------");
-                            System.out.println("Digitare 1 per creare una playlist: ");
-                            System.out.println("Digitare 2 per visualizzare le playList: ");
-                            System.out.println("Digitare 3 per inserire una canzone in una playlist esistente: ");
-                            System.out.println("Digitare 4 per eliminare una canzone da una playlist esistente: ");
-                            System.out.println("Digitare 5 per eliminare una playlist: ");
-                            System.out.println("Digitare 6 per tornare al menu' principale: ");
-                            System.out.println("Digitare 7 per fare il logout: ");
-                            System.out.println("----------------------------------------------------------------");
-                            System.out.print("scelta: ");
-                            varmenu = Integer.parseInt(br.readLine());
+                            do {
+                                System.out.println("-------------------- menu' area personale ----------------------");
+                                System.out.println("Digitare 1 per creare una playlist: ");
+                                System.out.println("Digitare 2 per visualizzare le playList: ");
+                                System.out.println("Digitare 3 per inserire una canzone in una playlist esistente: ");
+                                System.out.println("Digitare 4 per eliminare una canzone da una playlist esistente: ");
+                                System.out.println("Digitare 5 per eliminare una playlist: ");
+                                System.out.println("Digitare 6 per tornare al menu' principale: ");
+                                System.out.println("Digitare 7 per fare il logout: ");
+                                System.out.println("----------------------------------------------------------------");
+                                System.out.print("scelta: ");
+                                try {
+                                    varmenu = Integer.parseInt(br.readLine());
+                                    controllomenupersonale = true;
+                                } catch (Exception e) {
+                                    System.out.println("\nDEVI INSERIRE SOLO NUMERI DA 1 A 7 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'\n");
+                                    controllomenupersonale = false;
+                                }
+
+                            } while (!controllomenupersonale);
+
                             switch (varmenu) {
 
                                 case 1:
