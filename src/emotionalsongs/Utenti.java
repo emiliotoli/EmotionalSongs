@@ -1,7 +1,6 @@
 package emotionalsongs;
 
 import java.io.*;
-import java.text.ParseException;
 import java.util.Scanner;
 
 /**

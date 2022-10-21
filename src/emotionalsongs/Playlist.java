@@ -1,7 +1,5 @@
 package emotionalsongs;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 import java.io.*;
 import java.util.Locale;
 import java.util.Scanner;
