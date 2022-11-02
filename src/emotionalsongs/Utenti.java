@@ -180,7 +180,7 @@ public class Utenti {
     //<editor-fold desc="Formato Password">
     private static String controlloFormato(String pass) throws IOException {
         do {
-            if (pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})")) {
+            if (pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!_]).{8,20})")) {
                 break;
             } else {
                 System.out.println("inserimento  formato della password non valido ");
@@ -188,7 +188,7 @@ public class Utenti {
                 pass = brr.readLine();
             }
 
-        } while (!(pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})")));
+        } while (!(pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!_]).{8,20})")));
         return pass;
     }
     //</editor-fold>
@@ -227,7 +227,7 @@ public class Utenti {
      * @return nome utente corretto
      * @throws IOException
      * @author Emilio Daverio
-     * controlla che il nome utente sia lungo almeno 3 e massimo 15. Ci possono essere , nel nome, solo lettere maiscole/minuscole, numeri e i seguenti caratteri "_" "-"
+     * controlla che il nome utente sia lungo almeno 3 e massimo 15. Ci possono essere , nel nome, solo lettere maiscole/minuscole, numeri e i seguenti caratteri "_" "-" NOTA posso esseci anche solo lettere
      */
     //<editor-fold desc="Controllo UserId">
     //nome utente formato da caratteri alfanumerici e da _ e - e deve essere di lungezza min 3 e max 15
@@ -310,7 +310,7 @@ public class Utenti {
                 break;
             } else {
                 System.out.println("non hai inserito nessun cognome o il cognome appena inserito è troppo corto.");
-                System.out.print("reinsirire il nome: ");
+                System.out.print("reinsirire il cognome: ");
                 cognome = brr.readLine();
             }
         } while (cognome == null && cognome.length() < 3);
@@ -366,16 +366,12 @@ public class Utenti {
      */
     //<editor-fold desc="Controllo Numero Civico non Nullo">
     public static String controlloNumeroCivico(String numcivico) throws IOException {
-        do {
-            if (numcivico != null) {
-                break;
-            } else {
-                System.out.println("non hai inserito niente.");
-                System.out.println("reinserire il numero civico");
-                numcivico = brr.readLine();
-            }
-        } while (numcivico == null);
-        numcivico = Utenti.formatoNumCivico(numcivico);
+
+        while (!numcivico.matches("[0-9]+([A-Za-z]*)")){
+            System.out.println("il numero civico inserito non rispetta il formato");
+            System.out.println("reinserire il numro civico");
+            numcivico = brr.readLine();
+        }
         return numcivico;
     }
     //</editor-fold>
@@ -388,20 +384,6 @@ public class Utenti {
      * @author Emilio Daverio
      * controlla il formato del numero civico nel seguente ordine: prima dei numeri [1,4] e poi ci può essere una lettera maiscola o minuscola
      */
-    //<editor-fold desc="Formato Numero Civico">
-    private static String formatoNumCivico(String civico) throws IOException {
-        do {
-            if (civico.matches("([0-9]{1,4})([a-zA-Z]{1})")) {
-                break;
-            } else {
-                System.out.println("il numero civico inserito non rispetta il formato");
-                System.out.println("reinserire il numro civico");
-                civico = brr.readLine();
-            }
-        } while (!(civico.matches("([0-9]{2,4})([A-Z]{1})")));
-        return civico;
-    }
-    //</editor-fold>
 
 
     //</editor-fold>

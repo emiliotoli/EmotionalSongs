@@ -143,7 +143,7 @@ public class EmotionalSongs {
                     password = Utenti.controlloPassword(password);
 
 
-                    Utenti nuovoutente = new Utenti();
+                    //Utenti nuovoutente = new Utenti();
                     Utenti.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);
                     Utenti.ScriviFile(Utenti.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"); //inserisco un nuovo utente nel file
                     System.out.println("\nregistrazione completata");
