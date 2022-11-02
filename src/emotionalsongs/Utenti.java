@@ -42,15 +42,9 @@ public class Utenti {
     public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
                                      String Provincia, String Email, String UserID, String PW) throws IOException {
 
-        boolean nonesistente = true;
+
         BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt", true));
         //return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
-        nonesistente = esisteUtente(UserID);
-        if (!nonesistente) {
-            wr.write(toString(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW));
-        } else {
-            System.out.println("ID UTENTE gia' esistente! Utente non creato");
-        }
     }
     //</editor-fold>
 
@@ -223,6 +217,34 @@ public class Utenti {
 
 
     /**
+     * @param username
+     * @return nome utente
+     * @throws IOException
+     * @author Emilio Daverio
+     * questo metodo controlla che il nome utente inserito non sia gia presente nel fil e richiama il metodo privato controlloUser
+     */
+    public static String controlloUserEsistente(String username) throws IOException {
+        boolean esisteut;
+        do {
+            esisteut = esisteUtente(username);
+
+            if (!esisteut) {
+                System.out.println("nome utente valido.");
+                break;
+
+            } else {
+
+                System.out.println("ID UTENTE gia' esistente! Scegliere un nuovo nomeUtente");
+                System.out.println("rinserire il nome utente: ");
+                username = brr.readLine();
+            }
+        } while (esisteut);
+
+        username=Utenti.controlloUser(username);
+        return username;
+    }
+
+    /**
      * @param user
      * @return nome utente corretto
      * @throws IOException
@@ -231,7 +253,8 @@ public class Utenti {
      */
     //<editor-fold desc="Controllo UserId">
     //nome utente formato da caratteri alfanumerici e da _ e - e deve essere di lungezza min 3 e max 15
-    static String controlloUser(String user) throws IOException {
+    private static String controlloUser(String user) throws IOException {
+
         do {
             if (user.matches("^[a-zA-Z0-9_-]{3,15}$")) {
                 break;
@@ -240,6 +263,7 @@ public class Utenti {
                 System.out.print("reinserisci lo UserId: ");
                 user = brr.readLine();
             }
+
 
         } while (!user.matches("^[a-zA-Z0-9_-]{3,15}$"));
         return user;
@@ -354,38 +378,23 @@ public class Utenti {
     //</editor-fold>
 
 
-    //<editor-fold desc="Metodi Controllo Numero_Civico">
-
-
     /**
      * @param numcivico
      * @return numero civico corretto secondo le specifiche
      * @throws IOException
      * @author Emilio Daverio
-     * controlla che il numero civico non sia nullo e che segua il formato prestabilito
+     * controlla che il numero civico segua il formato prestabilito
      */
-    //<editor-fold desc="Controllo Numero Civico non Nullo">
+    //<editor-fold desc="Controllo Numero Civico">
     public static String controlloNumeroCivico(String numcivico) throws IOException {
 
-        while (!numcivico.matches("[0-9]+([A-Za-z]*)")){
+        while (!numcivico.matches("[0-9]+([A-Za-z]*)")) {
             System.out.println("il numero civico inserito non rispetta il formato");
             System.out.println("reinserire il numro civico");
             numcivico = brr.readLine();
         }
         return numcivico;
     }
-    //</editor-fold>
-
-
-    /**
-     * @param civico
-     * @return numero civico corretto secondo il formato
-     * @throws IOException
-     * @author Emilio Daverio
-     * controlla il formato del numero civico nel seguente ordine: prima dei numeri [1,4] e poi ci può essere una lettera maiscola o minuscola
-     */
-
-
     //</editor-fold>
 
 

@@ -136,7 +136,7 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci user: ");
                     username = br.readLine();
-                    Utenti.controlloUser(username);
+                    username=Utenti.controlloUserEsistente(username);
 
                     System.out.print("inserisci password: ");
                     password = br.readLine();
