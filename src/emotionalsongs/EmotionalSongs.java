@@ -217,12 +217,17 @@ public class EmotionalSongs {
                                     break;
 
                                 case 4:
-
-                                    System.out.println("Inserire nome playlist in cui aggiungere canzoni: ");
-                                    playlist = br.readLine();
-                                    System.out.println("inserire nome brano da aggiungere alla playlist");
-                                    brano = br.readLine();
-                                    Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob, playlist, brano);
+                                    boolean srv=false;
+                                    do {
+                                        System.out.println("Inserire nome playlist da cui eliminare canzoni: ");
+                                        playlist = br.readLine();
+                                        srv = Playlist.controlloPlaylistEsistente(idUtenteGlob, playlist);
+                                        if(!srv)
+                                            System.out.println("Errore, reinseire nome playlist");
+                                    }while(!srv);
+                                        System.out.println("inserire nome brano da eliminare dalla playlist");
+                                        brano = br.readLine();
+                                        Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob, playlist, brano);
                                     break;
 
                                 case 5:

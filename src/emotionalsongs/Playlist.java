@@ -314,10 +314,10 @@ public class Playlist {
     //<editor-fold desc="Eliminazione canzone da playlist">
     public static boolean eliminaCanzoneDaPlaylist(String uid, String nomeplaylist, String titolo) throws IOException {
         StringBuilder stb;
-        if (!controlloPlaylistEsistente(uid, nomeplaylist)) {
+        /*if (!controlloPlaylistEsistente(uid, nomeplaylist)) {
             System.out.println("Playlist non esistente!");
             return false;
-        } else {
+        } else {*/
             if (!Canzoni.controlloCanzoneEsistente(titolo)) {
                 System.out.println("Canzone non esistente");
                 return false;
@@ -339,7 +339,7 @@ public class Playlist {
                     }
                 }
             }
-        }
+        //}
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false)), true);
         String tmp = stb.toString();
         pw.println(tmp);
