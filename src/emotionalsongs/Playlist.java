@@ -318,6 +318,7 @@ public class Playlist {
             System.out.println("Playlist non esistente!");
             return false;
         } else {*/
+        int TOT_PLAYLISTS = Playlist.numTotPlaylist(), j = 0;
             if (!Canzoni.controlloCanzoneEsistente(titolo)) {
                 System.out.println("Canzone non esistente");
                 return false;
@@ -328,23 +329,30 @@ public class Playlist {
                 stb = new StringBuilder();
                 while ((sup = br.readLine()) != null) {
                     spl = sup.split("\\|");
+                    j++;
                     if (spl[0].equals(uid) && spl[1].equals(nomeplaylist)) {      //se nome utente e nome playlist coincidono vado ad aggiungere sullo stringbuilder tutti i titoli delle canzoni, tranne quello che si voleva eliminare
                         stb.append(spl[0] + "|" + spl[1]);
                         for (int i = 2; i < spl.length; i++) {
                             if (!(spl[i].trim()).equals(titolo.trim()))
                                 stb.append("|" + spl[i]);
+                            if(i>=spl.length-1)
+                                stb.append("\n");
                         }
                     } else {
-                        stb.append(sup + "\n");
+                        if(j>= TOT_PLAYLISTS)
+                            stb.append(sup);
+                        else
+                            stb.append(sup + "\n");
                     }
+
                 }
             }
-        //}
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false)), true);
         String tmp = stb.toString();
         pw.println(tmp);
         System.out.println("Cancellazione andata a buon fine!");
         return true;
+        //}
     }
     //</editor-fold>
 

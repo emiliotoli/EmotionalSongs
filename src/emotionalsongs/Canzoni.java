@@ -183,7 +183,7 @@ public class Canzoni {
         String[] supporto;
         while ((str = br.readLine()) != null) {
             supporto = str.split("\\|");
-            if (supporto[0].toLowerCase().trim().equals(titolo.toLowerCase().trim())) ;
+            if ((supporto[0].toLowerCase().trim()).equals(titolo.toLowerCase().trim()))
             {
                 return true;
             }

@@ -225,9 +225,14 @@ public class EmotionalSongs {
                                         if(!srv)
                                             System.out.println("Errore, reinseire nome playlist");
                                     }while(!srv);
-                                        System.out.println("inserire nome brano da eliminare dalla playlist");
-                                        brano = br.readLine();
-                                        Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob, playlist, brano);
+                                        srv=false;
+                                        do {
+                                            System.out.println("inserire nome brano da eliminare dalla playlist");
+                                            brano = br.readLine();
+                                            srv = Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob, playlist, brano);
+                                            if(!srv)
+                                                System.out.println("Canzone inesistente! Reinserire il titolo della canzone");
+                                        }while(!srv);
                                     break;
 
                                 case 5:
