@@ -39,7 +39,7 @@ public class Utenti {
      * metodo per registrare un nuonvo utente
      */
     //<editor-fold desc="Registrazione nuovo Utente">
-    public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune,
+    public static void Registrazione(String Nome, String Cognome, String CF, String Via, String NumeroCivico, String Cap, String Comune,
                                      String Provincia, String Email, String UserID, String PW) throws IOException {
 
 
@@ -64,7 +64,7 @@ public class Utenti {
      * @return ritorna i dati personali dell'utente
      * @author Emilio Daverio
      */
-    public static String toString(String Nome, String Cognome, String CF, String Via, String NumeroCivico, int Cap, String Comune, String Provincia, String Email, String UserID, String PW) {
+    public static String toString(String Nome, String Cognome, String CF, String Via, String NumeroCivico, String Cap, String Comune, String Provincia, String Email, String UserID, String PW) {
 
         return Nome + "|" + Cognome + "|" + CF + "|" + Via + "|" + NumeroCivico + "|" + Cap + "|" + Comune + "|" + Provincia + "|" + Email + "|" + UserID + "|" + PW;
     }
@@ -360,7 +360,7 @@ public class Utenti {
                 System.out.println("cap non valido");
                 System.out.println("reinserire il cap: ");
                 Scanner in = new Scanner(System.in);
-                in.nextInt();
+                cap=in.nextInt();
             } else {
                 check = true;
             }

@@ -18,7 +18,7 @@ public class EmotionalSongs {
 
     public static void main(String[] args) throws IOException, NumberFormatException {
         String nome, cognome, codfisc, indirizzo, numerocivico, comune, provincia, email, username, password;
-        int cap;
+        String cap;
         String titolo, autore, anno, album, durata, genere;
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
@@ -121,8 +121,8 @@ public class EmotionalSongs {
                     numerocivico = Utenti.controlloNumeroCivico(numerocivico);
 
                     System.out.print("inserisci cap: ");
-                    cap = Integer.parseInt(br.readLine());
-                    cap = Integer.parseInt(Utenti.controlloCAP(cap));
+                    cap = br.readLine();
+                    cap = Utenti.controlloCAP(Integer.parseInt(cap));
 
                     System.out.print("inserire il comune: ");
                     comune = br.readLine();
