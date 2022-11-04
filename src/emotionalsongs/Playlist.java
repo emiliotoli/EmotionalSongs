@@ -400,6 +400,7 @@ public class Playlist {
      */
     //<editor-fold desc="Cancellazione playlist">
     public static boolean cancellaPlaylist(String uid, String nomeplaylist) throws IOException {
+        int TOT_PLAYLIST = Playlist.numTotPlaylist() , j=0;
         BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
         String sup;
         String[] spl;
@@ -407,14 +408,17 @@ public class Playlist {
         StringBuilder stb = new StringBuilder();
 
         if (!controlloPlaylistEsistente(uid, nomeplaylist)) {
-            System.out.println("La playlist che hai inserito non è esistente!");
+            System.out.println("La playlist che hai inserito non esiste!");
             return false;
         }
 
         while ((sup = br.readLine()) != null) {
+            j++;
             spl = sup.split("\\|");
             if (!spl[1].toLowerCase().trim().equals(nomeplaylist.toLowerCase().trim())) {
-                stb.append(sup + "\n");
+                stb.append(sup);
+                if(j<numTotPlaylist())
+                    stb.append("\n");
             }
         }
         pw = new PrintWriter(new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt", false)), true);
