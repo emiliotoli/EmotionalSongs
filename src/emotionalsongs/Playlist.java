@@ -335,14 +335,18 @@ public class Playlist {
                         for (int i = 2; i < spl.length; i++) {
                             if (!(spl[i].trim()).equals(titolo.trim()))
                                 stb.append("|" + spl[i]);
-                            if(i>=spl.length-1)
-                                stb.append("\n");
+                            if(i>=spl.length-1) {
+                                if(j<TOT_PLAYLISTS)
+                                    stb.append("\n");
+                            }
                         }
                     } else {
-                        if(j>= TOT_PLAYLISTS)
+                        if(j > TOT_PLAYLISTS)
                             stb.append(sup);
-                        else
-                            stb.append(sup + "\n");
+                        else {
+                            stb.append(sup);
+                            stb.append("\n");
+                        }
                     }
 
                 }

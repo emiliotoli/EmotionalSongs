@@ -1,5 +1,6 @@
-emi|PESCMAN| Respect
+emi|PESCMAN| Stein Song (University of Maine)
 emi|GYM| Girls Just Want To Have Fun| Respect| Respect| I Still Haven't Found What I'm Looking For| American Pie| Respect
-emi|DALA| Respect| El Paso| Girls Just Want To Have Fun
-emi|DELE| Please Please Me| I Still Haven't Found What I'm Looking For| Girls Just Want To Have Fun
-emi|HAHAHA| Moonlight Serenadeemi|MANPESC| Nothing Compares 2 U| Respect
+emi|DALA| Girls Just Want To Have Fun
+emi|DELE| I Still Haven't Found What I'm Looking For
+emi|HAHAHA| Moonlight Serenade
+emi|MANPESC| Nothing Compares 2 U
