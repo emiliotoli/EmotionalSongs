@@ -444,7 +444,14 @@ public class Playlist {
     }
     //</editor-fold>
 
-
+    /**
+     * @author Emilio Toli
+     * @param UID nome utente
+     * @param nomeplaylist nome della playlist di cui visualizzare le canzoni
+     * @throws IOException eccezione input/output
+     * Metodo che visualizza i titoli delle canzoni presenti in una playlist
+     */
+    //<editor-fold desc="Visualizza canzoni in una playlist">
     public static void visualizzaCanzoniPlaylist(String UID , String nomeplaylist) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
         String sup;
@@ -464,6 +471,7 @@ public class Playlist {
             }
         }
     }
+    //</editor-fold>
 
 
 }
