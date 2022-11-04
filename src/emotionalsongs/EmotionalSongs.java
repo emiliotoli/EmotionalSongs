@@ -177,11 +177,12 @@ public class EmotionalSongs {
                                 System.out.println("-------------------- menu' area personale ----------------------");
                                 System.out.println("Digitare 1 per creare una playlist: ");
                                 System.out.println("Digitare 2 per visualizzare le playList: ");
-                                System.out.println("Digitare 3 per inserire una canzone in una playlist esistente: ");
-                                System.out.println("Digitare 4 per eliminare una canzone da una playlist esistente: ");
-                                System.out.println("Digitare 5 per eliminare una playlist: ");
-                                System.out.println("Digitare 6 per tornare al menu' principale: ");
-                                System.out.println("Digitare 7 per fare il logout: ");
+                                System.out.println("Digitare 3 per visualizzare le canzoni di una playlist: ");
+                                System.out.println("Digitare 4 per inserire una canzone in una playlist esistente: ");
+                                System.out.println("Digitare 5 per eliminare una canzone da una playlist esistente: ");
+                                System.out.println("Digitare 6 per eliminare una playlist: ");
+                                System.out.println("Digitare 7 per tornare al menu' principale: ");
+                                System.out.println("Digitare 8 per fare il logout: ");
                                 System.out.println("----------------------------------------------------------------");
                                 System.out.print("scelta: ");
                                 try {
@@ -210,13 +211,24 @@ public class EmotionalSongs {
                                     Playlist.visualizzaPlaylistUtente(idUtenteGlob);
                                     break;
                                 case 3:
+                                    boolean srv3=false;
+                                    do {
+                                        System.out.println("Inserisci nome della playlist di cui visualizzare le canzoni: ");
+                                        playlist = br.readLine();
+                                        srv3= Playlist.controlloPlaylistEsistente(idUtenteGlob,playlist);
+                                        if(!srv3)
+                                            System.out.println("Nome playlist inesistente! ");
+                                    }while(!srv3);
+                                    Playlist.visualizzaCanzoniPlaylist(idUtenteGlob, playlist);
+                                    break;
+                                case 4:
 
                                     System.out.println("Inserire nome playlist in cui aggiungere canzoni: ");
                                     playlist = br.readLine();
                                     Playlist.aggiungiDopoInPlaylist(playlist, idUtenteGlob);
                                     break;
 
-                                case 4:
+                                case 5:
                                     boolean srv=false;
                                     do {
                                         System.out.println("Inserire nome playlist da cui eliminare canzoni: ");
@@ -235,19 +247,18 @@ public class EmotionalSongs {
                                         }while(!srv);
                                     break;
 
-                                case 5:
+                                case 6:
                                     System.out.println("Inserisci nome playlist da eliminare");
                                     playlist = br.readLine();
                                     Playlist.cancellaPlaylist(idUtenteGlob, playlist);
 
-                                case 6:
+                                case 7:
                                     varmenu = 0;
                                     break;
-                                case 7:
+                                case 8:
                                     loggatoglob = false;
                                     varmenu = 0;
                                     break;
-
                             }
 
                         } while (varmenu != 0);

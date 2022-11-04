@@ -445,6 +445,25 @@ public class Playlist {
     //</editor-fold>
 
 
+    public static void visualizzaCanzoniPlaylist(String UID , String nomeplaylist) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Playlist.dati.txt"));
+        String sup;
+        String[] spl;
+        while((sup = br.readLine())!=null){
+            spl=sup.split("\\|");
+            if(spl[0].equals(UID) && spl[1].equals(nomeplaylist)) {
+                if(spl.length>2) {
+                    for (int i = 2; i < spl.length; i++) {
+                        System.out.println(spl[i]);
+                    }
+                }
+                else
+                {
+                    System.out.println("Nessuna canzone presente nella playlist");
+                }
+            }
+        }
+    }
 
 
 }
