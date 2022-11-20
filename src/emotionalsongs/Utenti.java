@@ -43,8 +43,9 @@ public class Utenti {
                                      String Provincia, String Email, String UserID, String PW) throws IOException {
 
 
-        BufferedWriter wr = new BufferedWriter(new FileWriter(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt", true));
-        //return new Utenti(Nome, Cognome, CF, Via, NumeroCivico, Cap, Comune, Provincia, Email, UserID, PW);
+        File file = new File("data" + sep + "UtentiRegistrati.dati.txt");
+        String path = file.getAbsolutePath();
+        BufferedWriter wr = new BufferedWriter(new FileWriter(path, true));
     }
     //</editor-fold>
 
@@ -132,7 +133,6 @@ public class Utenti {
 
         System.out.println(" digita nuovamente la password per confermarla: ");
         pwd2 = brr.readLine();
-        pwd2 = Utenti.controlloNonNulla(pwd2);
         System.out.println("controllo delle password per vedere se coincidono: ");
         Utenti.controlloPassUguale(pwd1, pwd2);
         return pwd1;
@@ -423,7 +423,9 @@ public class Utenti {
     //<editor-fold desc="Login">
     public static boolean Login(String Id, String Pw) throws IOException {
 
-        FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt");
+        File file = new File("data" + sep + "UtentiRegistrati.dati.txt");
+        String path = file.getAbsolutePath();
+        FileReader fread = new FileReader(path);
         BufferedReader bufread = new BufferedReader(fread);
         boolean esiste = false;
         String sup;
@@ -441,7 +443,6 @@ public class Utenti {
         }
         if (!esiste) {
             System.out.println("non ti sei ancora registrato");
-            //richimare funzione regitra
         }
         return esiste;
     }
@@ -457,7 +458,9 @@ public class Utenti {
      */
     //<editor-fold desc="UserId Esistente">
     private static boolean esisteUtente(String nomeUtente) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"));
+        File file = new File("data" + sep + "UtentiRegistrati.dati.txt");
+        String path = file.getAbsolutePath();
+        BufferedReader br = new BufferedReader(new FileReader(path));
         String str;
         String[] supporto;
 

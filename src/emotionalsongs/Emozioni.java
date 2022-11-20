@@ -116,7 +116,6 @@ public class Emozioni {
         do {
             if (note.length() == 0) {
                 System.out.println("Reinserire una nota");
-                //note = br.readLine().toLowerCase();
                 note = scan.nextLine();
             } else {
                 if (note.length() > 250) {
@@ -133,12 +132,7 @@ public class Emozioni {
 
         File file = new File("data" + sep + "Emozioni.dati.txt");
         String path = file.getAbsolutePath();
-
-        /*BufferedWriter bw = new BufferedWriter(new FileWriter(path, true)); // sbagliata questa riga
-        bw.write(emozioneNuova);
-        bw.flush(); //svuoto lo stream
-        bw.close();*/
-        String filePath = ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt";
+        String filePath = path;
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
         bw.write(emozioneNuova);
         bw.newLine();
@@ -155,7 +149,9 @@ public class Emozioni {
      */
     //<editor-fold desc="Visulaizzare Le Emozioni">
     public static void visualizzaEmozioni(String tit) throws IOException {
-        FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Emozioni.dati.txt");
+        File file = new File("data" + sep + "Emozioni.dati.txt");
+        String path = file.getAbsolutePath();
+        FileReader fread = new FileReader(path);
         BufferedReader bufread = new BufferedReader(fread);
         double count_Amazement = 0, count_Solemnity = 0, count_Tenderness = 0, count_Nostalgia = 0, count_Calmness = 0, count_Power = 0, count_Joy = 0, count_Tension = 0, count_Sadness = 0;
         double countGenerale = 0;

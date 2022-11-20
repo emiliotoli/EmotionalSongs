@@ -33,10 +33,8 @@ public class EmotionalSongs {
         int varswich = 0;
         int varmenu = 0;
 
-        File file = new File("data" + sep + "Emozioni.dati.txt");
+        File file = new File("data" + sep + "UtentiRegistrati.dati.txt");
         String path = file.getAbsolutePath();
-        System.out.println(path);
-
 
         do {
             do {
@@ -143,9 +141,8 @@ public class EmotionalSongs {
                     password = Utenti.controlloPassword(password);
 
 
-                    //Utenti nuovoutente = new Utenti();
                     Utenti.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);
-                    Utenti.ScriviFile(Utenti.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "UtentiRegistrati.dati.txt"); //inserisco un nuovo utente nel file
+                    Utenti.ScriviFile(Utenti.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password), path); //inserisco un nuovo utente nel file
                     System.out.println("\nregistrazione completata");
                     break;
                 //</editor-fold>
@@ -273,32 +270,5 @@ public class EmotionalSongs {
             }
 
         } while (varswich != 0);
-
-        //<editor-fold desc="REGISTRAZIONE NUOVA CANZONE">
-        /*System.out.println("inizio procedura inserimento canzoni:\n");
-        System.out.print("inserisci il Titolo della canzone: ");
-        titolo = br.readLine();
-
-        System.out.print("inserisci l'Autore della canzone: ");
-        autore = br.readLine();
-
-        System.out.print("inserisci l' Anno della canzone: ");
-        anno = br.readLine();
-
-        System.out.print("inserisci l'Album della canzone: ");
-        album = br.readLine();
-
-        System.out.print("inserisci la Durata della canzone: ");
-        durata = br.readLine();
-
-        System.out.print("inserisci il Genere della canzone: ");
-        genere = br.readLine();
-
-        Canzoni canzonenuova = new Canzoni();
-        canzonenuova.creaCanzone(titolo, autore, anno, album, durata, genere);
-        Canzoni.ScriviFile(canzonenuova.ToString(titolo, autore, anno, album, durata, genere), ".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
-        System.out.println("\nprocedura terminata");*/
-        //</editor-fold>
-
     }
 }

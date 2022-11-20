@@ -32,9 +32,10 @@ public class Canzoni {
     //<editor-fold desc="Ricerca Canzone per Titolo">
     public static void cercaBranoMusicaleTitolo(String Titolo, boolean loggato) throws IOException {
 
-        FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
+        File file = new File("data" + sep + "Canzoni.dati.txt");
+        String path = file.getAbsolutePath();
+        FileReader fread = new FileReader(path);
         BufferedReader bufread = new BufferedReader(fread);
-        //LineNumberReader lnread=new LineNumberReader(fread); // restituisce il numero della linea dove trova la canzone
         boolean trovato = false;
         String sup;
         String AutoreFile = null;
@@ -105,9 +106,11 @@ public class Canzoni {
      * ricerca la canzone per autore ed anno, ne file Canzoni.dati
      */
     //<editor-fold desc="Ricerca canzone per Autore ed Anno">
-    public static void cercaBranoMusicaleAutoreAnno(String Autore, String Anno, boolean loggato) throws IOException { //vers1
+    public static void cercaBranoMusicaleAutoreAnno(String Autore, String Anno, boolean loggato) throws IOException {
 
-        FileReader fread = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
+        File file = new File("data" + sep + "Canzoni.dati.txt");
+        String path = file.getAbsolutePath();
+        FileReader fread = new FileReader(path);
         BufferedReader bufread = new BufferedReader(fread);
         boolean trovato = false;
         String sup;
@@ -177,8 +180,11 @@ public class Canzoni {
      */
     //<editor-fold desc="Controllo canzone esistente">
     public static boolean controlloCanzoneEsistente(String titolo) throws IOException {
+
+        File file = new File("data" + sep + "Canzoni.dati.txt");
+        String path = file.getAbsolutePath();
         boolean esiste = false;
-        BufferedReader br = new BufferedReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
+        BufferedReader br = new BufferedReader(new FileReader(path));
         String str;
         String[] supporto;
         while ((str = br.readLine()) != null) {
@@ -203,7 +209,9 @@ public class Canzoni {
     //<editor-fold desc="Ricerca canzone e numero riga">
     public static boolean ricercaCanzoni(String titolo) throws IOException {
 
-        FileReader fr = new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt");
+        File file = new File("data" + sep + "Canzoni.dati.txt");
+        String path = file.getAbsolutePath();
+        FileReader fr = new FileReader(path);
         BufferedReader br = new BufferedReader(fr);
         String srv;
         String[] spl;
@@ -233,7 +241,10 @@ public class Canzoni {
      */
     //<editor-fold desc="numero canzoni nel file">
     public static int numeroTotaleCanzoni() throws IOException {
-        LineNumberReader lnr = new LineNumberReader(new FileReader(".." + sep + "EmotionalSongs" + sep + ".data" + sep + "Canzoni.dati.txt"));
+
+        File file = new File("data" + sep + "Canzoni.dati.txt");
+        String path = file.getAbsolutePath();
+        LineNumberReader lnr = new LineNumberReader(new FileReader(path));
         lnr.skip(Long.MAX_VALUE);
         return (lnr.getLineNumber() + 1);
     }
