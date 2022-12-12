@@ -6,27 +6,32 @@ import java.util.Scanner;
 
 /**
  * @author Emilio Toli
- * la classe serve per lavorare sulla playlist.
+ *         la classe serve per lavorare sulla playlist.
  */
 public class Playlist {
     private String nomeplaylist;
     private String nomebrano;
     String idutente;
-    private final static String sep = System.getProperty("file.separator");
+    private static final String sep = System.getProperty("file.separator");
 
     /**
      * @param ID       id dell'utente al quale viene associata la playlist
      * @param NomePlay nome della playlist da registrare
-     * @return true o false a seconda che la registrazione sia andata a buon fine o meno
+     * @return true o false a seconda che la registrazione sia andata a buon fine o
+     *         meno
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * Metodo che inserisce una nuova playlist e nuove canzoni all'interno di essa
+     *         Metodo che inserisce una nuova playlist e nuove canzoni all'interno
+     *         di essa
      */
-    //<editor-fold desc="Registrazione Playlist">
-    public static boolean registraPlaylist(String ID, String NomePlay) throws IOException {
+    // <editor-fold desc="Registrazione Playlist">
+    public static boolean registraPlaylist(String ID, String NomePlay)
+            throws IOException {
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
-        PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter(path)), true);
+        PrintWriter wr = new PrintWriter(
+                new BufferedWriter(new FileWriter(path)),
+                true);
         StringBuilder str = new StringBuilder();
         String brano, aggiuntaCanzoni;
         int linea;
@@ -38,7 +43,8 @@ public class Playlist {
             str.append(NomePlay);
 
             do {
-                System.out.println("Vuoi aggiungere canzoni alla Playlist? Digitare si o no");
+                System.out.println(
+                        "Vuoi aggiungere canzoni alla Playlist? Digitare si o no");
                 sc.reset();
                 aggiuntaCanzoni = sc.next().trim().toLowerCase();
                 switch (aggiuntaCanzoni) {
@@ -54,7 +60,6 @@ public class Playlist {
                         uscitaciclo = false;
                         break;
                 }
-
             } while (!uscitaciclo);
             System.out.println(str);
             wr.println(str.toString());
@@ -64,18 +69,18 @@ public class Playlist {
         System.out.println("PLAYLIST GIA' ESISTENTE!");
         return false;
     }
-    //</editor-fold>
 
-
-
+    // </editor-fold>
 
     /**
-     * @return ritorna il numero di linea che identifica univocamente una canzone,per poterla poi inserire nella playlist
+     * @return ritorna il numero di linea che identifica univocamente una
+     *         canzone,per poterla poi inserire nella playlist
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * Metodo privato che viene chiamato da metodi pubblici per selezionare canzoni dato il titolo o una parte di esso
+     *         Metodo privato che viene chiamato da metodi pubblici per selezionare
+     *         canzoni dato il titolo o una parte di esso
      */
-    //<editor-fold desc="Aggiungi Canzone">
+    // <editor-fold desc="Aggiungi Canzone">
     private static int aggiuntaCanzoniServ() throws IOException {
         String brano;
         Scanner sc = new Scanner(System.in);
@@ -96,10 +101,9 @@ public class Playlist {
             }
             return linea;
         }
-
     }
-    //</editor-fold>
 
+    // </editor-fold>
 
     /**
      * @param IdUtente id dell'utente associato alla playlist
@@ -108,9 +112,12 @@ public class Playlist {
      * @throws IOException eccezione input/output
      * @author Emilio Toli
      */
-    //<editor-fold desc="Controllo Playlist Esistente">
-    public static boolean controlloPlaylistEsistente(String IdUtente, String NomePlay) throws IOException {             //metodo che ritorna true se esiste, false se non esiste
-
+    // <editor-fold desc="Controllo Playlist Esistente">
+    public static boolean controlloPlaylistEsistente(
+            String IdUtente,
+            String NomePlay)
+            throws IOException {
+        // metodo che ritorna true se esiste e false se non esiste
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
         FileReader fread = new FileReader(path);
@@ -118,28 +125,31 @@ public class Playlist {
         String sup;
         while ((sup = bufread.readLine()) != null) {
             String[] supporto = sup.split("\\|");
-            if (IdUtente.equals(supporto[0].trim().toLowerCase()) && NomePlay.equals(supporto[1].trim())) {
+            if (IdUtente.equals(supporto[0].trim().toLowerCase()) &&
+                    NomePlay.equals(supporto[1].trim())) {
                 return true;
             }
         }
         return false;
     }
-    //</editor-fold>
 
+    // </editor-fold>
 
     public String toString(String Idutente, String NomePlay) {
         return Idutente + "|" + NomePlay;
     }
 
     /**
-     * @param linea inserito come parametro il numero di linea al quale si trova la canzone
+     * @param linea inserito come parametro il numero di linea al quale si trova la
+     *              canzone
      * @return ritornato il nome del titolo che verrà aggiunto poi alla playlist
      * @throws IOException eccezione input/output
      * @autor Emilio Toli
-     * Metodo che restituisce il nome della canzone dato il numero della linea in cui si trova all'interno del file per
-     * poi farla inserire nel file Playlist
+     *        Metodo che restituisce il nome della canzone dato il numero della
+     *        linea in cui si trova all'interno del file per
+     *        poi farla inserire nel file Playlist
      */
-    //<editor-fold desc="insertByLine">
+    // <editor-fold desc="insertByLine">
     private static String insertByLine(int linea) throws IOException {
         String srv;
         String[] spl;
@@ -159,19 +169,21 @@ public class Playlist {
         }
         return titolo;
     }
-    //</editor-fold>
 
+    // </editor-fold>
 
     /**
-     * @param playlist indica il nome della playlist in cui si richiede l'aggiunta di una canzone
+     * @param playlist indica il nome della playlist in cui si richiede l'aggiunta
+     *                 di una canzone
      * @param uid      nome utente al quale è associata la playlist
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * Metodo per l'aggiunta di una canzone nella playlist, slegata dalla creazione di essa
+     *         Metodo per l'aggiunta di una canzone nella playlist, slegata dalla
+     *         creazione di essa
      */
-    //<editor-fold desc="Aggiunta canzine in un secondo momento">
-    public static void aggiungiDopoInPlaylist(String playlist, String uid) throws IOException {
-
+    // <editor-fold desc="Aggiunta canzine in un secondo momento">
+    public static void aggiungiDopoInPlaylist(String playlist, String uid)
+            throws IOException {
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
         Scanner sc = new Scanner(System.in);
@@ -181,7 +193,7 @@ public class Playlist {
         String scelta = "si";
         if (!controlloPlaylistEsistente(uid, playlist)) {
             System.out.println("Playlist non esistente!");
-            //return false;
+            // return false;
         } else {
             do {
                 stb.setLength(0);
@@ -215,84 +227,95 @@ public class Playlist {
                 }
             } while (!uscitaciclo);
 
-            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)), true);
+            PrintWriter pw = new PrintWriter(
+                    new BufferedWriter(new FileWriter(path, false)),
+                    true);
             String tmp = stb.toString();
             pw.println(tmp);
-            System.out.println("inserimento andato a buon fine si spera");
+            System.out.println("inserimento andato a buon fine.");
         }
-
     }
-    //</editor-fold>
 
+    // </editor-fold>
 
     /**
      * @param uid          user id associato all'utente
      * @param nomeplaylist nome della playlist in cui eliminare una canzone
      * @param titolo       nome della canzone da eliminare dalla playlist
-     * @return true o false a seconda che la cancellazione sia andata a buon fine o meno
+     * @return true o false a seconda che la cancellazione sia andata a buon fine o
+     *         meno
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * Eliminazione di una canzone da una playlist
+     *         Eliminazione di una canzone da una playlist
      */
-    //<editor-fold desc="Eliminazione canzone da playlist">
-    public static boolean eliminaCanzoneDaPlaylist(String uid, String nomeplaylist, String titolo) throws IOException {
-
+    // <editor-fold desc="Eliminazione canzone da playlist">
+    public static boolean eliminaCanzoneDaPlaylist(
+            String uid,
+            String nomeplaylist,
+            String titolo)
+            throws IOException {
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
         StringBuilder stb;
         int TOT_PLAYLISTS = Playlist.numTotPlaylist(), j = 0;
-            if (!Canzoni.controlloCanzoneEsistente(titolo)) {
-                System.out.println("Canzone non esistente");
-                return false;
-            } else {
-                BufferedReader br = new BufferedReader(new FileReader(path));
-                String sup;
-                String[] spl;
-                stb = new StringBuilder();
-                while ((sup = br.readLine()) != null) {
-                    spl = sup.split("\\|");
-                    j++;
-                    if (spl[0].equals(uid) && spl[1].equals(nomeplaylist)) {      //se nome utente e nome playlist coincidono vado ad aggiungere sullo stringbuilder tutti i titoli delle canzoni, tranne quello che si voleva eliminare
-                        stb.append(spl[0] + "|" + spl[1]);
-                        for (int i = 2; i < spl.length; i++) {
-                            if (!(spl[i].trim()).equals(titolo.trim()))
-                                stb.append("|" + spl[i]);
-                            if(i>=spl.length-1) {
-                                if(j<TOT_PLAYLISTS)
-                                    stb.append("\n");
-                            }
-                        }
-                    } else {
-                        if(j > TOT_PLAYLISTS)
-                            stb.append(sup);
-                        else {
-                            stb.append(sup);
-                            stb.append("\n");
+        if (!Canzoni.controlloCanzoneEsistente(titolo)) {
+            System.out.println("Canzone non esistente");
+            return false;
+        } else {
+            BufferedReader br = new BufferedReader(new FileReader(path));
+            String sup;
+            String[] spl;
+            stb = new StringBuilder();
+            while ((sup = br.readLine()) != null) {
+                spl = sup.split("\\|");
+                j++;
+                if (spl[0].equals(uid) && spl[1].equals(nomeplaylist)) { // se nome utente e nome playlist coincidono
+                    // vado ad aggiungere sullo stringbuilder tutti
+                    // i titoli delle canzoni, tranne quello che si
+                    // voleva eliminare
+                    stb.append(spl[0] + "|" + spl[1]);
+                    for (int i = 2; i < spl.length; i++) {
+                        if (!(spl[i].trim()).equals(titolo.trim()))
+                            stb.append(
+                                    "|" + spl[i]);
+                        if (i >= spl.length - 1) {
+                            if (j < TOT_PLAYLISTS)
+                                stb.append("\n");
                         }
                     }
-
+                } else {
+                    if (j > TOT_PLAYLISTS)
+                        stb.append(sup);
+                    else {
+                        stb.append(sup);
+                        stb.append("\n");
+                    }
                 }
             }
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)), true);
+        }
+        PrintWriter pw = new PrintWriter(
+                new BufferedWriter(new FileWriter(path, false)),
+                true);
         String tmp = stb.toString();
         pw.println(tmp);
         System.out.println("Cancellazione andata a buon fine!");
         return true;
-        //}
+        // }
     }
-    //</editor-fold>
 
-
-
+    // </editor-fold>
 
     /**
      * @param idUtente nome utente di cui bisogna visualizzare le playlist
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * metodo per visualizzare tutte le playlist associate ad un id utente
+     *         metodo per visualizzare tutte le playlist associate ad un id utente
      */
-    //<editor-fold desc="Visualizzare playlist">
-    public static void visualizzaPlaylistUtente(String idUtente) throws IOException { // da vedere il senso, se si vogliono visualizzare tutte le playlist dell'utente o se si vogliono vedere la canzoni di una certa playlist
+    // <editor-fold desc="Visualizzare playlist">
+    public static void visualizzaPlaylistUtente(String idUtente)
+            throws IOException {
+        // da vedere il senso, se si vogliono visualizzare tutte le playlist dell'utente
+        // o se si vogliono vedere la canzoni di una certa playlist
 
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
@@ -304,31 +327,34 @@ public class Playlist {
         while ((sup = bufread.readLine()) != null) {
             String[] supporto = sup.split("\\|");
             supportoIdUtente = supporto[0].trim().toLowerCase();
-            if (idUtente.trim().toLowerCase(Locale.ROOT).equals(supportoIdUtente.trim().toLowerCase())) {
+            if (idUtente
+                    .trim()
+                    .toLowerCase(Locale.ROOT)
+                    .equals(supportoIdUtente.trim().toLowerCase())) {
                 System.out.println(supporto[1]);
             } else {
                 System.out.println("questo utente non ha ancora una playlist");
             }
         }
     }
-    //</editor-fold>
 
-
+    // </editor-fold>
 
     /**
      * @param uid          nome dell'utente associato alla playlist
      * @param nomeplaylist nome della playlist da eliminare
-     * @return true o false a seconda che la cancellazione sia andata a buon fine o meno
+     * @return true o false a seconda che la cancellazione sia andata a buon fine o
+     *         meno
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * Eliminazione di una playlist
+     *         Eliminazione di una playlist
      */
-    //<editor-fold desc="Cancellazione playlist">
-    public static boolean cancellaPlaylist(String uid, String nomeplaylist) throws IOException {
-
+    // <editor-fold desc="Cancellazione playlist">
+    public static boolean cancellaPlaylist(String uid, String nomeplaylist)
+            throws IOException {
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
-        int TOT_PLAYLIST = Playlist.numTotPlaylist() , j=0;
+        int TOT_PLAYLIST = Playlist.numTotPlaylist(), j = 0;
         BufferedReader br = new BufferedReader(new FileReader(path));
         String sup;
         String[] spl;
@@ -345,7 +371,7 @@ public class Playlist {
             spl = sup.split("\\|");
             if (!spl[1].toLowerCase().trim().equals(nomeplaylist.toLowerCase().trim())) {
                 stb.append(sup);
-                if(j<numTotPlaylist())
+                if (j < numTotPlaylist())
                     stb.append("\n");
             }
         }
@@ -354,17 +380,16 @@ public class Playlist {
         System.out.println("Cancellazione andata a buon fine!");
         return true;
     }
-    //</editor-fold>
 
-
+    // </editor-fold>
 
     /**
      * @return ritorna il numero totale di playlist
      * @throws IOException eccezione input/output
      * @author Emilio Toli
-     * Metodo che ritorna il numero totale di playlist nel file
+     *         Metodo che ritorna il numero totale di playlist nel file
      */
-    //<editor-fold desc="Totale di playlist">
+    // <editor-fold desc="Totale di playlist">
     private static int numTotPlaylist() throws IOException {
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
@@ -372,38 +397,38 @@ public class Playlist {
         lnr.skip(Long.MAX_VALUE);
         return (lnr.getLineNumber()) - 1;
     }
-    //</editor-fold>
+
+    // </editor-fold>
 
     /**
      * @author Emilio Toli
-     * @param UID nome utente
+     * @param UID          nome utente
      * @param nomeplaylist nome della playlist di cui visualizzare le canzoni
      * @throws IOException eccezione input/output
-     * Metodo che visualizza i titoli delle canzoni presenti in una playlist
+     *                     Metodo che visualizza i titoli delle canzoni presenti in
+     *                     una playlist
      */
-    //<editor-fold desc="Visualizza canzoni in una playlist">
-    public static void visualizzaCanzoniPlaylist(String UID , String nomeplaylist) throws IOException {
-
+    // <editor-fold desc="Visualizza canzoni in una playlist">
+    public static void visualizzaCanzoniPlaylist(String UID, String nomeplaylist)
+            throws IOException {
         File file = new File("data" + sep + "Playlist.dati.txt");
         String path = file.getAbsolutePath();
         BufferedReader br = new BufferedReader(new FileReader(path));
         String sup;
         String[] spl;
-        while((sup = br.readLine())!=null){
-            spl=sup.split("\\|");
-            if(spl[0].equals(UID) && spl[1].equals(nomeplaylist)) {
-                if(spl.length>2) {
+        while ((sup = br.readLine()) != null) {
+            spl = sup.split("\\|");
+            if (spl[0].equals(UID) && spl[1].equals(nomeplaylist)) {
+                if (spl.length > 2) {
                     for (int i = 2; i < spl.length; i++) {
                         System.out.println(spl[i]);
                     }
-                }
-                else
-                {
+                } else {
                     System.out.println("Nessuna canzone presente nella playlist");
                 }
             }
         }
     }
-    //</editor-fold>
+    // </editor-fold>
 
 }
