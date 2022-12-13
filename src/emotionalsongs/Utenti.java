@@ -47,6 +47,7 @@ public class Utenti {
         File file = new File("data" + sep + "UtentiRegistrati.dati.txt");
         String path = file.getAbsolutePath();
         BufferedWriter wr = new BufferedWriter(new FileWriter(path, true));
+        wr.close();
     }
     // </editor-fold>
 
@@ -311,7 +312,7 @@ public class Utenti {
                 System.out.print("reinsirire il nome: ");
                 nome = brr.readLine();
             }
-        } while (nome == null && nome.length() < 3);
+        } while (nome == null || nome.length() < 3);
         nome = Utenti.soloLettere(nome);
         return nome;
     }
@@ -358,7 +359,7 @@ public class Utenti {
                 System.out.print("reinsirire il cognome: ");
                 cognome = brr.readLine();
             }
-        } while (cognome == null && cognome.length() < 3);
+        } while (cognome == null || cognome.length() < 3);
         cognome = Utenti.soloLettere(cognome);
         return cognome;
     }
@@ -382,6 +383,7 @@ public class Utenti {
                 System.out.println("reinserire il cap: ");
                 Scanner in = new Scanner(System.in);
                 cap = in.nextInt();
+                in.close();
             } else {
                 check = true;
             }
@@ -459,6 +461,7 @@ public class Utenti {
                 esiste = true;
                 break;
             }
+            bufread.close();
         }
         if (!esiste) {
             System.out.println("non ti sei ancora registrato");
@@ -484,9 +487,12 @@ public class Utenti {
 
         while ((str = br.readLine()) != null) {
             supporto = str.split("\\|");
-            if (supporto[9].equals(nomeUtente))
+            if (supporto[9].equals(nomeUtente)) {
+                br.close();
                 return true;
+            }
         }
+        br.close();
         return false;
     }
     // </editor-fold>

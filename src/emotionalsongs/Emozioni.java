@@ -225,6 +225,7 @@ public class Emozioni {
 
         formattedDouble = decimalFormat.format((count_Sadness / countGenerale) * 100);
         System.out.println("Sadness = " + formattedDouble + "%");
+        bufread.close();
     }
     // </editor-fold>
 }
