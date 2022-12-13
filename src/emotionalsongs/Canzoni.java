@@ -45,7 +45,7 @@ public class Canzoni {
 
         while ((sup = bufread.readLine()) != null) {
             supporto = sup.split("\\|");
-            TitoloFile = supporto[0].trim().toLowerCase();
+            TitoloFile =supporto[0].trim().toLowerCase();
             if (Titolo.equals(TitoloFile.trim().toLowerCase())) {
                 AutoreFile = supporto[1].trim().toLowerCase();
                 AnnoFile = supporto[2].trim().toLowerCase();

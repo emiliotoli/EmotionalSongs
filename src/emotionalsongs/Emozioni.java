@@ -32,7 +32,9 @@ public class Emozioni {
         String emozione = null;
         //</editor-fold>
         String spiegazione;
-        int punteggio;
+        int punteggio = 0;
+        boolean controlloScelta;
+        boolean controlloPunteggio;
 
         System.out.println("scegli categora emozioni: " + "\n");
         System.out.println("Digitare 1 per --> Amazement");
@@ -46,9 +48,21 @@ public class Emozioni {
         System.out.println("Digitare 9 per --> Sadness");
 
         System.out.print("scelta: ");
-        int scelta;
+        int scelta = 0;
+
         do {
-            scelta = Integer.parseInt(br.readLine());
+            do {
+                try {
+                    scelta = Integer.parseInt(br.readLine());
+                    controlloScelta = true;
+
+                } catch (Exception e) {
+                    System.out.println("puoi inserire solo dei numeri conpresi tra 1 e 9");
+                    System.out.println("reinserisci la scelta: ");
+                    controlloScelta = false;
+                }
+            } while (!controlloScelta);
+
             if (scelta < 1 || scelta > 9) {
                 System.out.println("scelta non valida, inserire da 1 a 9: ");
             }
@@ -85,22 +99,39 @@ public class Emozioni {
 
         //passo 2
         System.out.println("motiva la scelta di questa emozione con un breve frase: ");
+        spiegazione = br.readLine().toLowerCase();
         do {
-            spiegazione = br.readLine().toLowerCase();
             if (spiegazione.length() == 0) {
-                System.out.println("inserire una spiegazione");
+                System.out.println("inserisci almeno una spiegazione: ");
+                spiegazione = br.readLine().toLowerCase();
             } else {
-                if (spiegazione.length() > 50) {
-                    System.out.println("spiegazione troppo lungha.");
-                    System.out.println("inserire al massimo 50 caratteri.");
-                }
+                break;
+            }
+        } while (spiegazione.length() == 0);
+        do {
+            if (spiegazione.length() > 50) {
+                System.out.println("spiegazione troppo lungha.");
+                System.out.println("inserire al massimo 50 caratteri.");
+                spiegazione = br.readLine().toLowerCase();
+            } else {
+                break;
             }
         } while (spiegazione.length() > 50);
 
         //passo 3
         System.out.println("inserisci punteggio emopzione da 1 a 5: ");
         do {
-            punteggio = scan.nextInt();
+            do {
+                try {
+                    punteggio = Integer.parseInt(br.readLine());
+                    controlloPunteggio = true;
+                } catch (Exception e) {
+                    System.out.println("Puoi inserire solo un numero da 1 a 5 ");
+                    System.out.println("reinserisci il punteggio: ");
+                    controlloPunteggio = false;
+                }
+            } while (!controlloPunteggio);
+
             //punteggio = br.read();
             if (punteggio < 1 || punteggio > 5) {
                 System.out.println("punteggio non valido, inserire da 1 a 5: ");
@@ -111,23 +142,28 @@ public class Emozioni {
         System.out.println("inserisci Note (massimo 250 caratteri):  ");
 
         String note = br.readLine().toLowerCase();
-        //String note =scan.nextLine();
-
         do {
             if (note.length() == 0) {
                 System.out.println("Reinserire una nota");
-                note = scan.nextLine();
-            } else {
-                if (note.length() > 250) {
+                note = br.readLine();
+            }
+            else{
+                break;
+            }
+        } while (note.length()==0);
+
+        do {
+             if(note.length() > 250) {
                     System.out.println("nota troppo lunga.");
                     System.out.println("inserire al massimo 250 caratteri.");
                     note = br.readLine().toLowerCase();
-                    //note =scan.nextLine();
                 }
+             else {
+                 break;
             }
-        } while (note.length() > 250 || note.length() == 0);
+        } while (note.length() > 250 );
 
-        String emozioneNuova = titolo + "|" + emozione + "|" + spiegazione + "|" + punteggio + "|" + note;
+        String emozioneNuova =titolo + "|" + emozione + "|" + spiegazione + "|" + punteggio + "|" + note;
 
 
         File file = new File("data" + sep + "Emozioni.dati.txt");

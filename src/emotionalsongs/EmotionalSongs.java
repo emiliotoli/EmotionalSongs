@@ -18,7 +18,7 @@ public class EmotionalSongs {
 
     public static void main(String[] args) throws IOException, NumberFormatException {
         String nome, cognome, codfisc, indirizzo, numerocivico, comune, provincia, email, username, password;
-        String cap;
+        String cap = null;
         String titolo, autore, anno, album, durata, genere;
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
@@ -26,6 +26,7 @@ public class EmotionalSongs {
         String nomePlaylist;
         String idUtenteGlob = null; //variabile globale che serve ad avere l'id-utente
         String idUtente;
+        Boolean controlloCap;
         boolean esiste;
         boolean loggatoglob = false;
         boolean controlloMenuPrincipale;
@@ -120,8 +121,18 @@ public class EmotionalSongs {
                     numerocivico = Utenti.controlloNumeroCivico(numerocivico);
 
                     System.out.print("inserisci cap: ");
-                    cap = br.readLine();
-                    cap = Utenti.controlloCAP(Integer.parseInt(cap));
+                    do{
+                        try{
+                            cap = br.readLine();
+                            cap = Utenti.controlloCAP(Integer.parseInt(cap));
+                            controlloCap=true;
+                        }
+                        catch (Exception e){
+                            System.out.println("puoi inserire solo numeri");
+                            System.out.println("Rinseriscilo: ");
+                            controlloCap=false;
+                        }
+                    }while(!controlloCap);
 
                     System.out.print("inserire il comune: ");
                     comune = br.readLine();
