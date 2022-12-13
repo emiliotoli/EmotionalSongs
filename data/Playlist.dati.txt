@@ -1,4 +1,26 @@
-emi|GYM| Girls Just Want To Have Fun| Respect| Respect| I Still Haven't Found What I'm Looking For| American Pie| Respect
-emi|DELE| I Still Haven't Found What I'm Looking For
-emi|HAHAHA| Moonlight Serenadeemi|MANPESC| Nothing Compares 2 U
-emi|ASDF| 
+emi|università|Respect|
+etoli|pop|That's All Right|That's All Right|Hound Dog|Hound Dog|That's All Right|Under The Boardwalk|American Pie|
+demi||American Pie|Under The Boardwalk|Green Onions|
+demi|pullman|Respect|That's All Right|
+emi|studio|American Pie|
+emi|rock|My Girl|Hey Jude|Work With Me Annie|Work With Me Annie|
+emi|personale|My Girl|
+demi||Under The Boardwalk|Under The Boardwalk|
+demi|studio|Under The Boardwalk|Respect|American Pie|In The Mood|Under The Boardwalk|In The Mood|Green Onions|
+demi|università|My Girl|That's All Right|Hey Jude|
+cri|università|Hey Jude|
+etoli||Under The Boardwalk|That's All Right|
+etoli|rock|Respect|Georgia On My Mind|My Girl|My Girl|
+etoli|pop|In The Mood|
+demi|università|In The Mood|Under The Boardwalk|That's All Right|Hound Dog|My Girl|
+etoli||Georgia On My Mind|Respect|
+emi|studio|American Pie|Green Onions|Hey Jude|Green Onions|
+etoli|università|Green Onions|American Pie|My Girl|Hey Jude|Respect|Under The Boardwalk|
+emi|università|That's All Right|
+demi|rock|Green Onions|Hound Dog|Hound Dog|Georgia On My Mind|
+demi|rock|Under The Boardwalk|My Girl|Hey Jude|American Pie|Under The Boardwalk|
+emi|rock|Hound Dog|Georgia On My Mind|My Girl|That's All Right|Hey Jude|
+cri||In The Mood|American Pie|Green Onions|
+etoli|università|My Girl|That's All Right|Hey Jude|
+emi|università|Green Onions|Hound Dog|
+emi|università|Hound Dog|
