@@ -1,14 +1,200 @@
-Respect|Nostalgia|eeee|4|wwwwwwwww
-White Christmas|Nostalgia|bella|3|molto bellaaaa
-The Christmas Song|Calmness|abbastanza carina|3|mi aspettavo di meglio
-I Will Survive|Sadness|molto bella|5|mi é piaciuta tantissimo
-I Will Survive|Amazement|non molto bella|1|mi aspettavo qualcosa di diverso
-Mack The Knife|Nostalgia|mi ha ratttristato|3|canzone molto triste
-Respect|Tension|mi ha tenuto sulle spine|4|mi è piaciuta davvero tanto
-I Will Survive|Power|molto energica|5|davvero bella
-I Will Survive|Solemnity|non mi è piaciuta|1|da cancellare
-Johnny B. Goode|Solemnity|mi aspettavo qualcosa di meglio|1|non la ascolterò più 
-Respect|Nostalgia|cfv|5|wsedrftgyhujikol
- Respect|Tenderness|aaaaaaaaaaaaaaaaaaaaaaa|4|aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
- Respect|Nostalgia|eeeeeeeeeeeeeeeeeeeeeee|1|eeeeeeeeeeeeeeeeeeeeeeeeeeeee
- Respect|Power|aaaaaaaaaaaaa|5|qweoghwehgerwuhgrieuqhgower
+Hound Dog|Power|La consiglio|3|La odio
+My Girl|Calmness|Non mi ha fatto impazzire|3|Molto Bella
+Hound Dog|Calmness|La adoro|2|La odio
+Respect|Sadness|Non mi ha fatto impazzire|5|La odio
+Green Onions|Nostalgia|La odio|3|Non mi ha fatto impazzire
+Respect|Nostalgia|Non la consiglio|0|Non la consiglio
+Respect|Tenderness|Non mi ha fatto impazzire|5|La odio
+In The Mood|Sadness|Mi ha emozionato|4|Molto Bella
+Hound Dog|Tenderness|La odio|1|La consiglio
+In The Mood|Sadness|Non la consiglio|0|Mi ha emozionato
+That's All Right|Nostalgia|La adoro|0|La odio
+Hound Dog|Calmness|La consiglio|1|Non mi ha fatto impazzire
+Green Onions|Calmness|Non la consiglio|4|Non la consiglio
+Hey Jude|Sadness|La odio|4|Non mi ha fatto impazzire
+Hound Dog|Sadness|La consiglio|4|Molto Bella
+My Girl|Tenderness|Molto Bella|2|La adoro
+Georgia On My Mind|Tenderness|La consiglio|0|Non la consiglio
+Work With Me Annie|Power|Molto Bella|2|Non mi ha fatto impazzire
+Respect|Tenderness|Non la consiglio|1|Non la consiglio
+Georgia On My Mind|Tenderness|Non mi ha fatto impazzire|3|Mi ha emozionato
+That's All Right|Power|Molto Bella|0|Non la consiglio
+That's All Right|Amazement|La odio|3|La odio
+Green Onions|Tenderness|La odio|3|La odio
+My Girl|Nostalgia|Non mi ha fatto impazzire|1|Non mi ha fatto impazzire
+My Girl|Nostalgia|Non mi ha fatto impazzire|0|Mi ha emozionato
+That's All Right|Nostalgia|Non la consiglio|3|Non la consiglio
+Respect|Amazement|La adoro|5|Mi ha emozionato
+Hey Jude|Tenderness|Non la consiglio|4|La odio
+Georgia On My Mind|Amazement|Non la consiglio|4|Mi ha emozionato
+Georgia On My Mind|Amazement|La odio|5|Non la consiglio
+Respect|Amazement|Mi ha emozionato|0|La odio
+In The Mood|Calmness|La adoro|5|La adoro
+Respect|Tenderness|La adoro|4|La adoro
+Hound Dog|Amazement|La odio|1|La consiglio
+Georgia On My Mind|Tenderness|Mi ha emozionato|2|La adoro
+Hey Jude|Sadness|Non la consiglio|2|Non mi ha fatto impazzire
+Respect|Tenderness|Mi ha emozionato|3|Non la consiglio
+In The Mood|Tenderness|Mi ha emozionato|4|Non la consiglio
+My Girl|Tenderness|La consiglio|3|Non la consiglio
+Green Onions|Calmness|La odio|1|Non mi ha fatto impazzire
+Work With Me Annie|Tenderness|Molto Bella|1|Non la consiglio
+Under The Boardwalk|Tenderness|Non la consiglio|2|Molto Bella
+Hound Dog|Amazement|Non la consiglio|2|Mi ha emozionato
+My Girl|Calmness|Molto Bella|0|La odio
+Work With Me Annie|Amazement|Non mi ha fatto impazzire|5|Non la consiglio
+Work With Me Annie|Power|La consiglio|1|Molto Bella
+Work With Me Annie|Power|Non la consiglio|0|La odio
+That's All Right|Tenderness|La consiglio|5|La adoro
+American Pie|Amazement|La odio|1|La consiglio
+Green Onions|Amazement|Non mi ha fatto impazzire|3|Non mi ha fatto impazzire
+American Pie|Calmness|Mi ha emozionato|0|La adoro
+My Girl|Amazement|La consiglio|3|Mi ha emozionato
+Work With Me Annie|Calmness|Non mi ha fatto impazzire|5|Non la consiglio
+Georgia On My Mind|Power|La adoro|3|Mi ha emozionato
+Hound Dog|Calmness|Mi ha emozionato|4|La consiglio
+That's All Right|Nostalgia|La consiglio|1|Molto Bella
+Georgia On My Mind|Tenderness|Non mi ha fatto impazzire|3|Molto Bella
+Hound Dog|Amazement|Mi ha emozionato|0|La adoro
+Green Onions|Nostalgia|Mi ha emozionato|0|La odio
+Respect|Amazement|La consiglio|5|La adoro
+American Pie|Sadness|La adoro|4|Mi ha emozionato
+American Pie|Nostalgia|La odio|3|La consiglio
+Work With Me Annie|Nostalgia|Mi ha emozionato|2|La odio
+That's All Right|Amazement|Molto Bella|0|La consiglio
+American Pie|Power|Mi ha emozionato|2|La consiglio
+In The Mood|Calmness|La adoro|2|Non la consiglio
+Respect|Tenderness|Non la consiglio|0|Non la consiglio
+My Girl|Amazement|Non mi ha fatto impazzire|3|Molto Bella
+Under The Boardwalk|Sadness|Mi ha emozionato|3|Mi ha emozionato
+Work With Me Annie|Tenderness|La adoro|2|Mi ha emozionato
+In The Mood|Sadness|La consiglio|1|La odio
+My Girl|Power|La adoro|2|La adoro
+Under The Boardwalk|Sadness|La odio|1|Non mi ha fatto impazzire
+Green Onions|Nostalgia|La consiglio|5|Non la consiglio
+Hey Jude|Tenderness|Molto Bella|1|Non mi ha fatto impazzire
+Georgia On My Mind|Nostalgia|Non la consiglio|0|Mi ha emozionato
+Work With Me Annie|Amazement|Mi ha emozionato|3|La consiglio
+In The Mood|Amazement|La odio|0|La consiglio
+Under The Boardwalk|Sadness|La consiglio|0|Non mi ha fatto impazzire
+Hound Dog|Sadness|La odio|4|La consiglio
+Green Onions|Nostalgia|Non la consiglio|4|Molto Bella
+In The Mood|Nostalgia|Non mi ha fatto impazzire|3|Non mi ha fatto impazzire
+Respect|Amazement|Mi ha emozionato|0|La consiglio
+Hey Jude|Tenderness|La consiglio|0|Non la consiglio
+Respect|Power|La adoro|0|La consiglio
+In The Mood|Power|La consiglio|3|Non mi ha fatto impazzire
+Work With Me Annie|Power|La consiglio|0|La consiglio
+That's All Right|Calmness|Non la consiglio|1|Molto Bella
+Hound Dog|Sadness|La adoro|1|La consiglio
+In The Mood|Calmness|Molto Bella|0|Non la consiglio
+Hound Dog|Power|Non la consiglio|2|Molto Bella
+American Pie|Sadness|La consiglio|1|La adoro
+My Girl|Nostalgia|La consiglio|4|Molto Bella
+American Pie|Sadness|La odio|1|Molto Bella
+Respect|Sadness|Molto Bella|5|Molto Bella
+American Pie|Tenderness|La odio|1|Non mi ha fatto impazzire
+American Pie|Power|Molto Bella|2|La adoro
+American Pie|Calmness|Molto Bella|4|Molto Bella
+Respect|Calmness|Mi ha emozionato|3|Non la consiglio
+Georgia On My Mind|Calmness|Non la consiglio|1|La consiglio
+Green Onions|Power|Non la consiglio|1|Non la consiglio
+Hey Jude|Tenderness|La adoro|0|La odio
+Hey Jude|Nostalgia|Non mi ha fatto impazzire|4|Molto Bella
+Green Onions|Amazement|La odio|5|La adoro
+American Pie|Nostalgia|La odio|4|Mi ha emozionato
+Green Onions|Calmness|La adoro|5|La consiglio
+Work With Me Annie|Nostalgia|La adoro|2|Non la consiglio
+Georgia On My Mind|Nostalgia|La odio|0|La adoro
+Green Onions|Power|Non mi ha fatto impazzire|4|La consiglio
+Work With Me Annie|Tenderness|Mi ha emozionato|0|Non mi ha fatto impazzire
+In The Mood|Calmness|La consiglio|4|Non la consiglio
+Hound Dog|Sadness|La odio|1|La odio
+That's All Right|Nostalgia|Mi ha emozionato|4|La adoro
+American Pie|Amazement|Non la consiglio|2|Non mi ha fatto impazzire
+American Pie|Tenderness|La consiglio|4|La adoro
+That's All Right|Nostalgia|Non la consiglio|4|Non la consiglio
+Green Onions|Tenderness|Molto Bella|3|La adoro
+Under The Boardwalk|Nostalgia|Non la consiglio|3|La adoro
+Under The Boardwalk|Amazement|Non la consiglio|5|Non mi ha fatto impazzire
+In The Mood|Calmness|Mi ha emozionato|4|Mi ha emozionato
+Hound Dog|Amazement|La consiglio|3|La adoro
+Hound Dog|Amazement|La adoro|3|Molto Bella
+American Pie|Power|La odio|2|Non mi ha fatto impazzire
+Respect|Amazement|La adoro|0|La consiglio
+Georgia On My Mind|Sadness|La consiglio|2|La adoro
+Hey Jude|Calmness|Non mi ha fatto impazzire|4|Molto Bella
+My Girl|Nostalgia|La adoro|3|La consiglio
+Hey Jude|Calmness|La consiglio|2|La adoro
+Green Onions|Tenderness|Non la consiglio|5|La consiglio
+In The Mood|Amazement|Mi ha emozionato|0|La consiglio
+American Pie|Calmness|Non la consiglio|1|Molto Bella
+In The Mood|Sadness|Non mi ha fatto impazzire|2|Non mi ha fatto impazzire
+Work With Me Annie|Amazement|Non mi ha fatto impazzire|0|Molto Bella
+In The Mood|Calmness|Molto Bella|4|La odio
+My Girl|Power|La adoro|3|La adoro
+Hey Jude|Amazement|Non la consiglio|2|Mi ha emozionato
+Hound Dog|Tenderness|Non la consiglio|0|Mi ha emozionato
+My Girl|Calmness|Non la consiglio|1|Non mi ha fatto impazzire
+Georgia On My Mind|Power|Non la consiglio|4|Non la consiglio
+Georgia On My Mind|Nostalgia|Non la consiglio|1|La odio
+Respect|Power|La adoro|5|Non la consiglio
+Under The Boardwalk|Nostalgia|Non mi ha fatto impazzire|3|La odio
+Green Onions|Nostalgia|La odio|1|La consiglio
+In The Mood|Amazement|La odio|1|Mi ha emozionato
+Respect|Calmness|Non mi ha fatto impazzire|2|Molto Bella
+Green Onions|Sadness|Non mi ha fatto impazzire|4|La adoro
+American Pie|Nostalgia|La consiglio|0|La odio
+American Pie|Tenderness|Non la consiglio|5|La odio
+Georgia On My Mind|Sadness|La consiglio|4|La consiglio
+Georgia On My Mind|Calmness|Non la consiglio|1|La odio
+Under The Boardwalk|Calmness|La consiglio|1|Non mi ha fatto impazzire
+Respect|Power|Non la consiglio|1|Molto Bella
+Hey Jude|Nostalgia|Mi ha emozionato|4|Molto Bella
+Under The Boardwalk|Power|Molto Bella|2|Molto Bella
+American Pie|Calmness|Non la consiglio|0|Non la consiglio
+That's All Right|Nostalgia|Molto Bella|4|La adoro
+Hound Dog|Nostalgia|Non mi ha fatto impazzire|3|La odio
+Under The Boardwalk|Nostalgia|Molto Bella|1|Non mi ha fatto impazzire
+Georgia On My Mind|Sadness|Non la consiglio|3|Molto Bella
+That's All Right|Tenderness|Non mi ha fatto impazzire|2|La odio
+Green Onions|Sadness|Mi ha emozionato|1|La odio
+In The Mood|Power|La odio|3|Mi ha emozionato
+Hey Jude|Nostalgia|La consiglio|5|La odio
+American Pie|Sadness|Non la consiglio|0|La odio
+In The Mood|Amazement|La odio|3|Molto Bella
+Respect|Amazement|Mi ha emozionato|2|La adoro
+Hound Dog|Sadness|La adoro|0|La adoro
+Georgia On My Mind|Sadness|Mi ha emozionato|1|Non mi ha fatto impazzire
+That's All Right|Amazement|La adoro|1|Molto Bella
+Under The Boardwalk|Nostalgia|Non mi ha fatto impazzire|5|La odio
+Respect|Power|La odio|2|La adoro
+Work With Me Annie|Amazement|Mi ha emozionato|4|Non la consiglio
+Hound Dog|Amazement|Non mi ha fatto impazzire|4|Mi ha emozionato
+Green Onions|Tenderness|Non mi ha fatto impazzire|5|La consiglio
+My Girl|Power|Non mi ha fatto impazzire|0|La odio
+My Girl|Nostalgia|La adoro|0|Non la consiglio
+Work With Me Annie|Calmness|Molto Bella|3|La consiglio
+Georgia On My Mind|Amazement|La odio|1|La adoro
+Under The Boardwalk|Amazement|La odio|0|Non mi ha fatto impazzire
+My Girl|Amazement|Non mi ha fatto impazzire|1|La odio
+Hound Dog|Amazement|Mi ha emozionato|0|Non la consiglio
+American Pie|Sadness|Molto Bella|0|Non la consiglio
+American Pie|Amazement|Non mi ha fatto impazzire|5|Molto Bella
+American Pie|Power|Mi ha emozionato|3|Molto Bella
+Work With Me Annie|Calmness|La adoro|4|Mi ha emozionato
+That's All Right|Tenderness|La consiglio|0|Mi ha emozionato
+In The Mood|Nostalgia|Non la consiglio|0|La consiglio
+Green Onions|Power|Mi ha emozionato|5|Non la consiglio
+Under The Boardwalk|Nostalgia|La consiglio|1|La adoro
+Work With Me Annie|Power|Non la consiglio|4|La consiglio
+Georgia On My Mind|Sadness|La odio|3|Mi ha emozionato
+Hey Jude|Tenderness|Molto Bella|2|Non mi ha fatto impazzire
+My Girl|Nostalgia|La consiglio|3|La adoro
+Georgia On My Mind|Power|Non mi ha fatto impazzire|5|Non la consiglio
+Respect|Sadness|Molto Bella|5|Molto Bella
+Green Onions|Tenderness|La adoro|5|La adoro
+In The Mood|Calmness|Non mi ha fatto impazzire|2|La adoro
+My Girl|Calmness|La consiglio|3|Molto Bella
+Hound Dog|Amazement|Molto Bella|0|La odio
+American Pie|Calmness|La consiglio|1|Molto Bella
