@@ -240,7 +240,7 @@ public class Utenti {
             }
         } while (esisteut);
 
-        username=Utenti.controlloUser(username);
+        username = Utenti.controlloUser(username);
         return username;
     }
 
@@ -360,7 +360,7 @@ public class Utenti {
                 System.out.println("cap non valido");
                 System.out.println("reinserire il cap: ");
                 Scanner in = new Scanner(System.in);
-                cap=in.nextInt();
+                cap = in.nextInt();
             } else {
                 check = true;
             }
@@ -442,8 +442,12 @@ public class Utenti {
             }
         }
         if (!esiste) {
-            System.out.println("non ti sei ancora registrato");
+            System.out.println("\nlogin inserito Errato.\n");
+            System.out.println("inserimento sbagliato dello UserId e/o della password .");
+            System.out.println("oppure non vi siete ancora registrati.");
+            esiste = false;
         }
+
         return esiste;
     }
     //</editor-fold>

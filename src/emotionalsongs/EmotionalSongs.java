@@ -30,6 +30,7 @@ public class EmotionalSongs {
         boolean loggatoglob = false;
         boolean controlloMenuPrincipale;
         boolean controllomenupersonale;
+        boolean nonLoggato;
         int varswich = 0;
         int varmenu = 0;
 
@@ -155,10 +156,24 @@ public class EmotionalSongs {
                             System.out.print("inserisci la password: ");
                             password = br.readLine().trim();
                             loggatoglob = Utenti.Login(idUtente, password);
+                            if(!loggatoglob)
+                            {
+                                nonLoggato=false;
+                                break;
+                            }
+                            else {
+                                nonLoggato=true;
+                            }
                         } while (!loggatoglob);
-                        loggatoglob = true;
-                        idUtenteGlob = idUtente;
-                        System.out.println("sei loggato");
+                        if(!nonLoggato){
+                            loggatoglob=false;
+                        }
+                        else {
+                            loggatoglob = true;
+                            idUtenteGlob = idUtente;
+                            System.out.println("sei loggato");
+                        }
+
                     } else {
                         loggatoglob = false;
                         varmenu = 0;

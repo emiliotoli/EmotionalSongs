@@ -1,0 +1,599 @@
+ Respect|Aretha Franklin|1967
+ In The Mood|Glenn Miller|1939 
+ White Christmas|Bing Crosby|1942
+ Johnny B. Goode|Chuck Berry|1958
+ Over The Rainbow|Judy Garland|1939
+ Louie Louie|Kingsmen|1963
+ Yesterday|Beatles|1965
+ I Heard It Through The Grapevine|Marvin Gaye|1968
+ Rock Around The Clock|Bill Haley & His Comets|1954
+ Jailhouse Rock|Elvis Presley|1957
+ Billie Jean|Michael Jackson|1982
+ (I Can't Get No) Satisfaction|Rolling Stones|1965
+ The Christmas Song|Nat "King" Cole|1946
+ I Will Survive|Gloria Gaynor|1978
+ My Way|Frank Sinatra|1969
+ God Bless The Child|Billie Holiday|1941
+ Hound Dog|Elvis Presley|1956
+ Like A Rolling Stone|Bob Dylan|1965
+ Your Cheatin' Heart|Hank Williams|1953
+ God Bless America|Kate Smith|1939
+ Sing, Sing, Sing (With A Swing) [Live at Carnegie Hall]|Benny Goodman|1938
+ Good Vibrations|Beach Boys|1966
+ My Girl|Temptations|1964
+ Mack The Knife|Bobby Darin|1959
+ Stairway to Heaven|Led Zeppelin|1971
+ Hey Jude|Beatles|1968
+ You've Lost That Lovin' Feeling|Righteous Brothers|1964
+ Celebration|Kool & The Gang|1980
+ Tutti Frutti|Little Richard|1955
+ Smells Like Teen Spirit|Nirvana|1991
+ Take The "A" Train|Duke Ellington|1941
+ Star Dust|Artie Shaw|1940
+ The Stars And Stripes Forever|John Philip Sousa's Band|1897
+ Stand By Me|Ben E. King|1961
+ Swanee|Al Jolson|1920
+ West End Blues|Louis Armstrong|1928
+ Don't Be Cruel|Elvis Presley|1956
+ Minnie The Moocher|Cab Calloway|1931
+ Papa's Got A Brand New Bag|James Brown|1965
+ Bo Diddley|Bo Diddley|1955
+ Jambalaya (On The Bayou)|Hank Williams|1952
+ Georgia On My Mind|Ray Charles|1960
+ Maybellene|Chuck Berry|1955
+ Blowin' In The Wind|Bob Dylan|1963
+ Strange Fruit|Billie Holiday|1939
+ Heartbreak Hotel|Elvis Presley|1956
+ Earth Angel|Penguins|1954
+ Born to Run|Bruce Springsteen|1975
+ The Twist|Chubby Checker|1960
+ Stayin' Alive|Bee Gees|1977
+ What's Going On|Marvin Gaye|1971
+ I Want To Hold Your Hand|Beatles|1963
+ Rock-A-Bye Your Baby With A Dixie Melody|Al Jolson|1918
+ What'd I Say|Ray Charles|1959
+ I've Got You Under My Skin|Frank Sinatra|1956
+ Whole Lot of Shakin' Going On|Jerry Lee Lewis|1957
+ A Day In The Life|Beatles|1967
+ Rhapsody In Blue|Paul Whiteman feat. George Gershwin|1924
+ Take Me Out To The Ball Game|Haydn Quartet|1908
+ Ain't Misbehavin'|Fats Waller|1929
+ Crazy|Patsy Cline|1961
+ Superstition|Stevie Wonder|1972
+ Unforgettable|Nat "King" Cole|1951
+ Proud Mary|Creedence Clearwater Revival|1969
+ Rapper's Delight|Sugarhill Gang|1979
+ I Left My Heart In San Francisco|Tony Bennett|1962
+ A Change Is Gonna Come|Sam Cooke|1964
+ No Woman, No Cry|Bob Marley and the Wailers|1974
+ Crossroads Blues|Robert Johnson|1937
+ This Land Is Your Land|Woody Guthrie|1951
+ I'm So Lonesome I Could Cry|Hank Williams|1949
+ Moonlight Serenade|Glenn Miller|1939
+ Shout|Isley Brothers|1959
+ I Want You Back|Jackson 5|1969
+ I Walk The Line|Johnny Cash|1956
+ Good Rockin' Tonight|Wynonie Harris|1948
+ You Really Got Me|Kinks|1964
+ Why Do Fools Fall In Love|Frankie Lymon & the Teenagers|1955
+ She Loves You|Beatles|1963
+ Swinging On A Star|Bing Crosby|1944
+ Imagine|John Lennon|1971
+ Day-O (Banana Boat Song)|Harry Belafonte|1956
+ Shake, Rattle And Roll|Joe Turner|1954
+ Where Did Our Love Go|Supremes|1964
+ (Sittin' On) The Dock Of The Bay|Otis Redding|1968
+ Blue Suede Shoes|Carl Perkins|1956
+ Please, Please, Please|James Brown and the Famous Flames|1956
+ If I Didn't Care|Ink Spots|1939
+ Sixty Minute Man|Billy Ward and the Dominoes|1951
+ Twist And Shout|Beatles|1963
+ You Always Hurt The One You Love|Mills Brothers|1944
+ Mood Indigo|Duke Ellington|1930
+ Will You Love Me Tomorrow|Shirelles|1960
+ Be My Baby|Ronettes|1963
+ When A Man Loves A Woman|Percy Sledge|1966
+ Blueberry Hill|Fats Domino|1956
+ One O'Clock Jump|Count Basie|1937
+ T For Texas (Blue Yodel # 1)|Jimmie Rodgers|1928
+ Green Onions|Booker T. & the MG's|1962
+ Rudolph, The Red-Nosed Reindeer|Gene Autry|1949
+ The Great Pretender|Platters|1955
+ White Christmas|Drifters featuring Clyde McPhatter|1954
+ You Send Me|Sam Cooke|1957
+ Boogie Woogie Bugle Boy|Andrews Sisters|1941
+ That'll Be The Day|Buddy Holly and the Crickets|1957
+ A Hard Day's Night|Beatles|1964
+ Caldonia Boogie|Louis Jordan|1945
+ Wabash Cannon Ball|Roy Acuff|1938
+ All Shook Up|Elvis Presley|1957
+ Under The Boardwalk|Drifters|1964
+ Sunshine Of Your Love|Cream|1967
+ The Loco-Motion|Little Eva|1962
+ So What|Miles Davis|1959
+ Bohemian Rhapsody|Queen|1975
+ In The Midnight Hour|Wilson Pickett|1965
+ Only The Lonely|Roy Orbison|1960
+ People Get Ready|Impressions|1965
+ The Tennessee Waltz|Patti Page|1950
+ Suspicious Minds|Elvis Presley|1969
+ You Keep Me Hangin' On|Supremes|1966
+ The Tracks Of My Tears|Miracles|1965
+ Rock And Roll, Part 2|Gary Glitter|1972
+ Long Tall Sally|Little Richard|1956
+ Cry|Johnnie Ray|1951
+ Rocket 88|Jackie Brenston with Ike Turner's Band|1951
+ Something|Beatles|1969
+ American Pie|Don McLean|1971
+ Roll Over Beethoven|Chuck Berry|1956
+ In The Still Of The Nite|Five Satins|1956
+ Super Freak|Rick James|1981
+ Theme From Shaft|Isaac Hayes|1971
+ A Whiter Shade Of Pale|Procol Harum|1967
+ That's Life|Frank Sinatra|1966
+ I Can't Stop Loving You|Ray Charles|1962
+ Light My Fire|Doors|1967
+ Soul Man|Sam & Dave|1967
+ Purple Haze|Jimi Hendrix|1967
+ We Will Rock You/We Are the Champions|Queen|1977
+ Strawberry Fields Forever|Beatles|1967
+ Let's Get It On|Marvin Gaye|1973
+ Hotel California|Eagles|1976
+ In The Jailhouse Now|Jimmie Rodgers|1928
+ (Love Is Like A) Heat Wave|Martha and the Vandellas|1963
+ Y.M.C.A.|Village People|1978
+ House Of The Rising Sun|Animals|1964
+ I Just Want To Make Love To You|Muddy Waters|1954
+ Take Five|Dave Brubeck|1959
+ The Times They Are A-Changin'|Bob Dylan|1964
+ That's All Right|Elvis Presley with Scotty and Bill|1954
+ Oh. Pretty Woman|Roy Orbison|1964
+ Bridge Over Troubled Water|Simon and Garfunkel|1970
+ Lover Man (Oh Where Can You Be)|Billie Holiday|1945
+ Get Up (I Feel Like Being A) Sex Machine|James Brown|1970
+ Peggy Sue|Buddy Holly|1957
+ Summertime Blues|Eddie Cochran|1958
+ Goodnite Sweetheart Goodnite|Spaniels|1954
+ Pledging My Love|Johnny Ace|1954
+ Space Oddity|David Bowie|1969
+ Mr. Tambourine Man|Byrds|1965
+ Dancing In The Street|Martha and the Vandellas|1964
+ You've Really Got A Hold On Me|Miracles|1962
+ Sweet Home Alabama|Lynyrd Skynyrd|1974
+ Can The Circle Be Unbroken (Bye And Bye)|Carter Family|1935
+ Let It Be|The Beatles|1970
+ Sixteen Tons|Tennessee Ernie Ford|1955
+ My Generation|The Who|1965
+ He Stopped Loving Her Today|George Jones|1980
+ The St. Louis Blues|Bessie Smith|1925
+ Fight The Power|Public Enemy|1989
+ Unchained Melody|Righteous Brothers|1965
+ Stand By Your Man|Tammy Wynette|1968
+ The Wanderer|Dion|1961
+ Runaround Sue|Dion|1961
+ Up On The Roof|Drifters|1962
+ For What It's Worth|Buffalo Springfield|1966
+ I'll Take You There|The Staple Singers|1972
+ Never My Love|Association|1967
+ The Message|Grandmaster Flash & The Furious Five|1982
+ Everyday People|Sly and the Family Stone|1968
+ Ol' Man River|Paul Robeson|1928
+ For Your Precious Love|Jerry Butler & the Impressions|1958
+ Walk On By|Dionne Warwick|1964
+ The Girl From Ipanema|Stan Getz/Atrud Gilberto|1964
+ (You Gotta) Fight For Your Right (To Party)|Beastie Boys|1986
+ Great Balls Of Fire|Jerry Lee Lewis|1957
+ Smoke on the Water|Deep Purple|1972
+ Won't Get Fooled Again|The Who|1971
+ Be-Bop-A-Lula|Gene Vincent and the Blue Caps|1956
+ The Sounds Of Silence|Simon & Garfunkel|1965
+ Paper Doll|Mills Brothers|1942
+ Hoochie Coochie Man|Muddy Waters|1954
+ The Harder They Come|Jimmy Cliff|1972
+ All I Want For Christmas Is You|Mariah Carey|1994
+ Whole Lotta Love|Led Zeppelin|1969
+ Sympathy For The Devil|Rolling Stones|1968
+ Koko|Charlie Parker|1945
+ Sentimental Journey|Les Brown (Doris Day)|1945
+ April In Paris|Count Basie|1955
+ Folsom Prison Blues|Johnny Cash|1955
+ Suite: Judy Blue Eyes|Crosby, Stills & Nash|1969
+ When Doves Cry|Prince|1984
+ Work With Me Annie|Hank Ballard and the Midnighters|1954
+ Rock Your Baby|George McCrae|1974
+ Don't Worry Baby|Beach Boys|1964
+ Ain't Too Proud To Beg|Temptations|1966
+ Family Affair|Sly and the Family Stone|1971
+ Hey Good Lookin'|Hank Williams|1951
+ Tear The Roof Off The Sucker (Give Up the Funk)|Parliament|1976
+ Flying Home|Lionel Hampton|1942
+ Shotgun|Jr. Walker & the All-Stars|1965
+ Honky Tonk|Bill Doggett|1956
+ Walk, Don't Run|Ventures|1960
+ Rolling In The Deep|Adele|2010
+ Stay|Maurice Williams & the Zodiacs|1960
+ Get Ur Freak On|Missy Misdemeanor Elliot|2001
+ Walking The Floor Over You|Ernest Tubb|1941
+ Bring It On Home To Me|Sam Cooke|1962
+ Mona Lisa|Nat "King" Cole|1950
+ Bye Bye Love|Everly Brothers|1957
+ Lawdy Miss Clawdy|Lloyd Price|1952
+ Makin' Whoopee|Eddie Cantor|1928
+ Nights In White Satin|Moody Blues|1967
+ Crying In The Chapel|Orioles|1953
+ Money Honey|Drifters featuring Clyde McPhatter|1953
+ Superfly|Curtis Mayfield|1972
+ Stormy Weather|Lena Horne|1942
+ Body And Soul|Coleman Hawkins|1939
+ Casey Jones|American Quartet featuring Billy Murray|1910
+ The Thrill Is Gone|B.B. King|1969
+ I Only Have Eyes For You|Flamingos|1959
+ California Girls|Beach Boys|1965
+ I Got You (I Feel Good)|James Brown|1965
+ It's Now Or Never|Elvis Presley|1960
+ I'm In The Mood For Love|Louis Armstrong|1935
+ Sh-Boom|Chords|1954
+ Watermelon Man|Mongo Santamaria|1963
+ Chattanooga Choo Choo|Glenn Miller (Tex Beneke and the Modernaires)|1941
+ You Shook Me All Night Long|AC/DC|1980
+ Layla|Derek and the Dominos|1970
+ Get Your Kicks On Route 66|Nat "King" Cole|1946
+ Choo Choo Ch'Boogie|Louis Jordan|1946
+ Walk This Way|Aerosmith|1975
+ Cold Cold Heart|Hank Williams|1951
+ Let's Stay Together|Al Green|1971
+ Chances Are|Johnny Mathis|1957
+ Reach Out, I'll Be There|Four Tops|1966
+ Have Mercy Baby|Billy Ward and the Dominoes|1952
+ Jingle Bell Rock|Bobby Helms|1957
+ I Will Always Love You|Whitney Houston|1992
+ Gimme Some Lovin'|Spencer Davis Group|1966
+ Me And Bobby McGee|Janis Joplin|1971
+ Mardi Gras In New Orleans|Professor Longhair|1950
+ Begin The Beguine|Artie Shaw|1938
+ Whatever Will Be, Will Be|Doris Day|1956
+ La Bamba|Ritchie Valens|1958
+ Killing Me Softly With His Song|Roberta Flack|1973
+ Nel Blu Dipinto Di Blu (Volare)|Domenico Modugno|1958
+ I'll Be Seeing You|Bing Crosby|1944
+ One For My Baby|Frank Sinatra|1958
+ I've Got A Woman|Ray Charles|1954
+ Crazy Blues|Mamie Smith|1920
+ That's Amore|Dean Martin|1953
+ Jumpin' Jack Flash|Rolling Stones|1968
+ Good Golly Miss Molly|Little Richard|1958
+ Je T'aime ...Moi Non Plus|Jane Birkin & Serge Gainsbourg|1969
+ At Last|Etta James|1960
+ I Got You Babe|Sonny & Cher|1965
+ Boogie Chillen'|John Lee Hooker|1948
+ Crimson And Clover|Tommy James & Shondells|1968
+ Ain't It A Shame|Fats Domino|1955
+ New San Antonio Rose|Bob Wills and His Texas Playboys|1940
+ Dust My Broom|Elmore James|1951
+ Manish Boy|Muddy Waters|1955
+ Mystery Train|Elvis Presley with Scotty and Bill|1955
+ Smokestack Lightnin'|Howlin' Wolf|1956
+ Hey Ya!|OutKast|2003
+ Blue Moon Of Kentucky|Bill Monroe|1947
+ Beat It|Michael Jackson|1982
+ My Blue Heaven|Gene Austin|1927
+ God Only Knows|Beach Boys|1966
+ Fever|Little Willie John|1956
+ Why Don't You Do Right?|Benny Goodman (Peggy Lee)|1942
+ Sonny Boy|Al Jolson|1928
+ Summer Wind|Frank Sinatra|1966
+ Planet Rock|Afrika Bambaataa & the Soulsonic Force|1982
+ You Belong To Me|Jo Stafford|1952
+ Call It Stormy Monday (But Tuesday Is Just As Bad)|T-Bone Walker|1947
+ It's Too Late|Carole King|1971
+ Rockin' Around The Christmas Tree|Brenda Lee|1958
+ It's Like That|Run-D.M.C.|1983
+ A Love Supreme, Part 1: Acknowledgement|John Coltrane|1965
+ I'll Never Smile Again|Tommy Dorsey (Frank Sinatra and the Pied Pipers)|1940
+ Paranoid|Black Sabbath|1970
+ Baby What You Want Me To Do|Jimmy Reed|1959
+ Honky Tonk Women|Rolling Stones|1969
+ Michelle|Beatles|1965
+ A Natural Woman (You Make Me Feel Like)|Aretha Franklin|1967
+ Please Come Home For Christmas|Charles Brown|1960
+ I'm A Believer|Monkees|1966
+ I Get Around|Beach Boys|1964
+ Just My Imagination|Temptations|1971
+ End Of The Road|Boyz II Men|1992
+ I Can't Get Started|Bunny Berigan|1937
+ A Tisket, A Tasket|Ella Fitzgerald with Chick Webb's Orchestra|1938
+ Riders In The Sky (A Cowboy Legend)|Vaughn Monroe|1949
+ The Breaks|Kurtis Blow|1980
+ Truckin'|Grateful Dead|1970
+ Wouldn't It Be Nice|Beach Boys|1966
+ Dreams|Fleetwood Mac|1977
+ Also Sprach Zarathustra (2001)|Deodato|1972
+ Moody Mood For Love|King Pleasure|1952
+ Real Love|Mary J. Blige|1992
+ Peace Be Still|Rev. James Cleveland|1962
+ Somebody To Love|Jefferson Airplane|1967
+ All Or Nothing At All|Frank Sinatra with Harry James|1939
+ Another Brick in the Wall, Part 2|Pink Floyd|1979
+ Every Breath You Take|Police|1983
+ Don't Be That Way|Benny Goodman|1938
+ What I Like About You|Romantics|1979
+ Gonna Fly Now (Theme From "Rocky")|Bill Conti|1976
+ People|Barbra Streisand|1964
+ Straighten Up And Fly Right|Nat "King" Cole|1944
+ California Dreamin'|Mamas & Papas|1965
+ Think|Aretha Franklin|1968
+ Alexander's Ragtime Band|Arthur Collins and Byron Harland|1911
+ I've Been Loving You Too Long|Otis Redding|1965
+ London Calling|The Clash|1979
+ El Paso|Marty Robbins|1959
+ The Huckle-Buck|Paul Williams|1949
+ I Can't Help Myself|Four Tops|1965
+ Some Of These Days|Sophie Tucker|1911
+ Can't Help Falling In Love|Elvis Presley|1961
+ Pennies From Heaven|Bing Crosby|1936
+ For Your Love|Yardbirds|1965
+ Move On Up A Little Higher|Mahalia Jackson|1947
+ Come Go With Me|Del-Vikings|1956
+ I'm Sorry|Brenda Lee|1960
+ Subterranean Homesick Blues|Bob Dylan|1965
+ Three O'Clock Blues|B.B. King|1951
+ Papa Was a Rollin' Stone|Temptations|1972
+ Paradise by the Dashboard Light|Meat Loaf|1977
+ Sweet Child O' Mine|Guns N' Roses|1987
+ Lean on Me|Bill Withers|1972
+ Blues In The Night|Jimmie Lunceford (Willie Smith)|1942
+ Sukiyaki|Kyu Sakamoto|1961
+ With Or Without You|U2|1987
+ Can't Take My Eyes Off You|Frankie Valli|1967
+ Night Train|Jimmy Forrest|1952
+ Free Bird|Lynyrd Skynyrd|1973
+ Born In The U.S.A.|Bruce Springsteen|1984
+ For Once In My Life|Stevie Wonder|1968
+ What A Diff'rence A Day Makes|Dinah Washington|1959
+ What's Love Got To Do With It?|Tina Tuner|1984
+ (Mama) He Treats Your Daughter Mean|Ruth Brown|1953
+ We Are The World|U.S.A. For Africa|1985
+ In My Life|Beatles|1965
+ Brown Sugar|Rolling Stones|1971
+ Your Song|Elton John|1970
+ Mrs. Robinson|Simon & Garfunkel|1968
+ Only You|Platters|1955
+ Daddy's Little Girl|Mills Brothers|1950
+ Crazy Arms|Ray Price|1956
+ What A Wonderful World|Louis Armstrong|1967
+ Maggie May|Rod Stewart|1971
+ Got My Mojo Working|Muddy Waters|1957
+ Roundabout|Yes|1971
+ Don't Fence Me In|Bing Crosby and the Andrews Sisters|1944
+ Cherry Pink And Apple Blossom White|Perez Prado|1954
+ Waterloo Sunset|Kinks|1967
+ The Weight|The Band|1968
+ Sugar, Sugar|Archies|1969
+ Music! Music! Music!|Teresa Brewer|1950
+ Roll 'Em Pete|Pete Johnson & Joe Turner|1939
+ Auld Lang Syne|Guy Lombardo|1947
+ Tea For Two|Art Tatum|1939
+ Foggy Mountain Breakdown|Flatt & Scruggs|1950
+ Too Young|Nat "King" Cole|1951
+ Cool Water|Sons Of The Pioneers|1941
+ That's My Desire|Frankie Laine|1947
+ One|U2|1991
+ Don't You Want Me|Human League|1981
+ It Wasn't God Who Made Honky Tonk Angels|Kitty Wells|1952
+ It's All Right|Impressions|1963
+ La Vie en rose|Edith Piaf|1947
+ Le Freak|Chic|1978
+ Wichita Lineman|Glen Campbell|1968
+ Everybody Loves Somebody|Dean Martin|1964
+ Funky Town|Lipps Inc.|1979
+ Mr. Sandman|Chordettes|1954
+ Pink Panther Theme|Henry Mancini|1964
+ Goodnight, Irene|Weavers with Gordon Jenkins Orchestra|1950
+ Save The Last Dance For Me|Drifters|1960
+ Tuxedo Junction|Glenn Miller|1940
+ My Favorite Things|John Coltrane|1961
+ Strangers In The Night|Frank Sinatra|1966
+ Blue Monday|New Order|1983
+ You Are My Sunshine|Jimmie Davis|1940
+ Hey There|Rosemary Clooney|1954
+ Kansas City|Wilbert Harrison|1959
+ If You Don't Know Me By Now|Harold Melvin and the Bluenotes|1972
+ Heartaches|Ted Weems|1933
+ Our Father|Five Blind Boys|1950
+ Money For Nothing|Dire Straits|1985
+ Tainted Love|Soft Cell|1981
+ Brazil|Xavier Cugat|1942
+ Old Time Rock and Roll|Bob Seger|1978
+ Yakety Yak|Coasters|1958
+ Don't Stop 'Til You Get Enough|Michael Jackson|1979
+ The Old Folks At Home|Len Spencer|1892
+ Cheek To Cheek|Fred Astaire|1935
+ Sweet Caroline|Neil Diamond|1969
+ King Of The Road|Roger Miller|1965
+ Juicy|The Notorious B.I.G.|1994
+ Mony Mony|Tommy James & The Shondells|1968
+ A Night In Tunisia|Dizzy Gillespie|1946
+ Singing The Blues|Guy Mitchell|1956
+ Candle In The Wind (Live)|Elton John|1997
+ Jesus Walks|Kanye West|2004
+ Strange Things Are Happening Every Day|Sister Rosetta Tharpe|1945
+ Oye Coma Va|Tito Puente|1962
+ That Old Black Magic|Louis Prima & Keely Smith|1958
+ How High The Moon|Les Paul & Mary Ford|1951
+ Heart Of Glass|Blondie|1978
+ Deep Purple|Larry Clinton (Bea Wain)|1938
+ The Way We Were|Barbra Streisand|1973
+ Nature Boy|Nat "King" Cole|1948
+ I'm Movin' On|Hank Snow|1950
+ Joy To The World|Three Dog Night|1970
+ Blitzkrieg Bop|Ramones|1976
+ We Are Family|Sister Sledge|1979
+ A Taste Of Honey|Herb Alpert and the Tijuana Brass|1965
+ Ring Of Fire|Johnny Cash|1963
+ (They Long To Be) Close To You|Carpenters|1970
+ It Had To Be You|Isham Jones|1924
+ 'Round Midnight|Thelonius Monk|1947
+ Brown Eyed Girl|Van Morrison|1967
+ Don't Stop Believin'|Journey|1981
+ The Honeydripper|Joe Liggins|1945
+ Heart of Gold|Neil Young|1972
+ Diana|Paul Anka|1957
+ Boogie Woogie|Tommy Dorsey|1938
+ Paid in Full|Eric B. & Rakim|1987
+ Lonely Teardrops|Jackie Wilson|1958
+ Mama Tried|Merle Haggard|1968
+ Tom Dooley|Kingston Trio|1958
+ Into The Groove|Madonna|1985
+ Hot Stuff|Donna Summer|1979
+ Paranoid Android|Radiohead|1997
+ Nuthin' But A "G" Thang|Dr. Dre|1992
+ Green Eyes|Jimmy Dorsey (Bob Eberly & Helen O'Connell)|1941
+ Take Me Home, Country Roads|John Denver|1971
+ Enter Sandman|Metallica|1991
+ California Love|2Pac|1996
+ Walk On The Wild Side|Lou Reed|1972
+ Midnight Train To Georgia|Gladys Knight and the Pips|1973
+ Piano Man|Billy Joel|1973
+ At The Woodchopper's Ball|Woody Herman|1939
+ Rags To Riches|Tony Bennett|1953
+ All Along The Watchtower|Jimi Hendrix|1967
+ Friends In Low Places|Garth Brooks|1990
+ Theme From New York, New York|Frank Sinatra|1980
+ Dancing Queen|Abba|1976
+ Losing My Religion|R.E.M.|1991
+ Coal Miner's Daughter|Loretta Lynn|1970
+ The Wild Side Of Life|Hank Thompson|1952
+ With A Little Help From My Friends|Joe Cocker|1968
+ Happy Trails|Roy Rogers & Dale Evans|1952
+ Home For The Holidays|Perry Como|1954
+ Frenesi|Artie Shaw|1945
+ Born To Be Alive|Patrick Hernandez|1979
+ Love Will Tear Us Apart|Joy Division|1980
+ School Day (Ring! Ring! Goes The Bell)|Chuck Berry|1957
+ Misty|Johnny Mathis|1959
+ Doo Wop (That Thing)|Lauryn Hill|1998
+ Waterfalls|TLC|1994
+ Hold On|En Vogue|1990
+ Empire State Of Mind|Jay-Z featuring Alicia Keys|2009
+ The Cattle Call|Eddy Arnold|1945
+ On Broadway|Drifters|1963
+ You Oughta Know|Alanis Morissette|1995
+ Crazy|Gnarls Barkley|2006
+ The Grand Old Rag (You're A Grand Old Flag)|Billy Murray|1906
+ Always On My Mind|Willie Nelson|1982
+ Fuck You (Forget You)|Cee Lo Green|2010
+ The Wind Beneath My Wings|Bette Midler|1988
+ Nothing Compares 2 U|Sinead O'Connor|1990
+ Gold Digger|Kanye West|2005
+ Hard Knock Life (Ghetto Anthem)|Jay-Z|1998
+ Hit The Road Jack|Ray Charles|1961
+ Rock And Roll Music|Chuck Berry|1957
+ Crazy In Love|Beyoncé|2003
+ Jeremy|Pearl Jam|1991
+ You Made Me Love You, I Didn't Want To Do It|Al Jolson|1913
+ Wonderwall|Oasis|1995
+ No Diggity|BLACKstreet|1996
+ Under The Bridge|Red Hot Chili Peppers|1991
+ It's Too Soon To Know|Orioles|1948
+ Gangsta's Paradise|Coolio featuring L.V.|1995
+ Turn On Your Love Light|Bobby "Blue" Bland|1961
+ O Sole Mio|Enrico Caruso|1916
+ Lose Yourself|Eminem|2002
+ The Star-Spangled Banner|Prince's Orchestra|1916
+ Gonna Make You Sweat (Everybody Dance Now)|C & C Music Factory|1990
+ Nobody|Bert Williams|1906
+ Born To Be Wild|Steppenwolf|1968
+ Go Your Own Way|Fleetwood Mac|1976
+ Lucille|Little Richard|1957
+ Loser|Beck|1993
+ Black And Tan Fantasy|Duke Ellington|1927
+ Money|Pink Floyd|1973
+ The Prisoner's Song|Vernon Dalhart|1925
+ Sexual Healing|Marvin Gaye|1982
+ More Than a Feeling|Boston|1976
+ Ticket To Ride|Beatles|1965
+ Sweet Little Sixteen|Chuck Berry|1958
+ Roxanne|Police|1978
+ I Love Rock 'N' Roll|Joan Jett & The Blackhearts|1981
+ Bad Moon Rising|Creedence Clearwater Revival|1969
+ Brother, Can You Spare A Dime|Bing Crosby|1932
+ Creep|Radiohead|1992
+ Seven Nation Army|The White Stripes|2003
+ Dream On|Aerosmith|1973
+ The Train Kept-A-Rollin'|Johnny Burnette Trio|1956
+ Dreamlover|Mariah Carey|1993
+ Stein Song (University of Maine)|Rudy Vallee & His Connecticut Yankees|1930
+ Anarchy In The U.K.|Sex Pistols|1976
+ Like A Virgin|Madonna|1984
+ Living for the City|Stevie Wonder|1973
+ Revolution|Beatles|1968
+ Bitter Sweet Symphony|The Verve|1997
+ Blue Christmas|Elvis Presley|1957
+ Lola|Kinks|1970
+ Surfin' U.S.A.|Beach Boys|1963
+ Get Lucky|Daft Punk feat. Pharrell Williams|2013
+ Sweet Dreams (Are Made of This)|Eurythmics|1983
+ Sultans of Swing|Dire Straits|1978
+ Glad All Over|Dave Clark 5|1963
+ Call Me|Blondie|1980
+ Let The Good Times Roll|Shirley & Lee|1956
+ Who'll Stop the Rain|Creedence Clearwater Revival|1970
+ Clocks|Coldplay|2002
+ Tears In Heaven|Eric Clapton|1992
+ Gimme Shelter|Rolling Stones|1969
+ See See Rider Blues|Ma Rainey|1925
+ Kashmir|Lez Zeppelin|1975
+ Another One Bites the Dust|Queen|1980
+ Rip It Up|Little Richard|1956
+ Paint It, Black|Rolling Stones|1966
+ Fire And Rain|James Taylor|1970
+ Little Red Corvette|Prince|1982
+ Wild Thing|Troggs|1966
+ Killing Me Softly|The Fugees|1996
+ Lovesick Blues|Hank Williams|1949
+ Baba O'Riley|The Who|1971
+ Downtown|Petula Clark|1964
+ Cherokee|Charlie Barnet|1939
+ She's Not There|Zombies|1964
+ You Are the Sunshine of My Life|Stevie Wonder|1972
+ Walk This Way|Run-D.M.C.|1986
+ Christmas (Baby Please Come Home)|Darlene Love|1963
+ Paper Planes|M.I.A.|2007
+ All Right Now|Free|1970
+ Rocking Pneumonia & the Boogie Woogie Flu|Huey "Piano" Smith & the Clowns|1957
+ Come As You Are|Nirvana|1991
+ Riders On The Storm|Doors|1971
+ I Feel Fine|Beatles|1964
+ Whip It|Devo|1980
+ My Sweet Lord|George Harrison|1970
+ Uptown Funk|Mark Ronson feat. Bruno Mars|2014
+ Do You Believe In Magic|Lovin' Spoonful|1965
+ Searchin'|Coasters|1957
+ Girls Just Want To Have Fun|Cyndi Lauper|1984
+ Get It On (Bang a Gong)|T. Rex|1971
+ Song 2|Blur|1997
+ The Letter|Box Tops|1967
+ Black Magic Woman|Santana|1970
+ Purple Rain|Prince|1984
+ Statesboro Blues|Blind Willie McTell|1928
+ Wake Up Little Susie|Everly Brothers|1957
+ Time Of The Season|Zombies|1968
+ Last Nite|Strokes|2001
+ One Nation Under a Groove|Funkadelic|1978
+ Physical|Olivia Newton John|1981
+ Drinkin' Wine Spo_Dee_O_Dee|Stick McGhee & His Buddies|1949
+ Gloria|Them|1964
+ Wish You Were Here|Pink Floyd|1975
+ Hound Dog|Big Mama Thornton|1953
+ Rock And Roll|Led Zeppelin|1971
+ 96 Tears|? & The Mysterians|1966
+ I Wanna Be Sedated|The Ramones|1978
+ Back In The Saddle Again|Gene Autry|1939
+ Runaway|Del Shannon|1961
+ Low Rider|War|1975
+ 1979|Smashing Pumpkins|1995
+ Susie Q|Dale Hawkins|1957
+ Jump|Van Halen|1984
+ Tired Of Being Alone|Al Green|1971
+ Please Please Me|Beatles|1963
+ I Still Haven't Found What I'm Looking For|U2|1987
