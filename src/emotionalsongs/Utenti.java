@@ -344,7 +344,7 @@ public class Utenti {
      * @param cognome
      * @return cognome che contiene solo caratteri alfanumerici
      * @throws IOException
-     * @author Emilio Daverio
+     * @author Cristian Stinga
      *         controlla che il cognome inserito sia lungo almeno 3 e che sia
      *         formato da sole lettere
      */
@@ -369,7 +369,7 @@ public class Utenti {
     /**
      * @param cap
      * @return cap corretto secondo i requisiti
-     * @author Emilio Daverio
+     * @author Cristian Stinga
      *         controlla che il cap inserito sia lungo almeno 5 e che sia compreso
      *         tra [10,97100]
      */
@@ -402,7 +402,7 @@ public class Utenti {
      * @param numcivico
      * @return numero civico corretto secondo le specifiche
      * @throws IOException
-     * @author Emilio Daverio
+     * @author Cristian Stinga
      *         controlla che il numero civico segua il formato prestabilito
      */
     // <editor-fold desc="Controllo Numero Civico">
@@ -421,7 +421,7 @@ public class Utenti {
      * @param testo
      * @param filePath
      * @throws IOException
-     * @author Emilio Daverio
+     * @author Cristian Stinga
      *         metodo per salvare i dati sul file Utenti.dati
      */
     public static void ScriviFile(String testo, String filePath) throws IOException {
@@ -436,7 +436,7 @@ public class Utenti {
      * @param Pw
      * @return vero/falso a seconda di come va a finire l'operazione di login
      * @throws IOException
-     * @author Emilio Daverio
+     * @author Cristian Stinga
      *         metodo che serve per fare il login
      */
     // <editor-fold desc="Login">
@@ -475,7 +475,7 @@ public class Utenti {
      * @param nomeUtente
      * @return vero/falso che dipende se esiste o meno l'utente nel file
      * @throws IOException
-     * @author Emilio Daverio
+     * @author Cristian Stinga
      *         controllas se esiste gia un utente con lo stesso UsernId
      */
     // <editor-fold desc="UserId Esistente">

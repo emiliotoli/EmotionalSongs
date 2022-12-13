@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * @author Emilio Toli
+ * @author Cristian Stinga
  * @author Stefano Farina
  *         è il main dell' applicazione, si trovano tutte le opzioni che un
  *         utente può fare
