@@ -57,7 +57,7 @@ public class Canzoni {
         // poi visualizza un menu con le operazioni che puoi fare
         if (trovato) {
             int varswich;
-            System.out.println("inormazioni canzone \n");
+            System.out.println("informazioni canzone \n");
             System.out.println("Titolo: " + TitoloFile);
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);
