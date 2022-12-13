@@ -4,19 +4,18 @@ import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
-
 /**
  * @author Stefano Farina
- * la classe serve per ricercare una canzone nel file Canzoni.dati
+ *         la classe serve per ricercare una canzone nel file Canzoni.dati
  */
 public class Canzoni {
 
-    //<editor-fold desc="Attributi">
+    // <editor-fold desc="Attributi">
     private String titolo, autore, anno, album, durata, genere;
     static InputStreamReader isr = new InputStreamReader(System.in);
     static BufferedReader br = new BufferedReader(isr);
     private final static String sep = System.getProperty("file.separator");
-    //</editor-fold>
+    // </editor-fold>
 
     public String toString(String Titolo, String Autore, String Anno, String Album, String Durata, String Genere) {
         return Titolo + "|" + Autore + "|" + Anno + "|" + Album + "|" + Durata + "|" + Genere;
@@ -27,9 +26,10 @@ public class Canzoni {
      * @param loggato
      * @throws IOException
      * @author Stefano Farina
-     * ricerca la canzone, per il titolo passato come parametro al metodo, nel file Canzoni.dati
+     *         ricerca la canzone, per il titolo passato come parametro al metodo,
+     *         nel file Canzoni.dati
      */
-    //<editor-fold desc="Ricerca Canzone per Titolo">
+    // <editor-fold desc="Ricerca Canzone per Titolo">
     public static void cercaBranoMusicaleTitolo(String Titolo, boolean loggato) throws IOException {
 
         File file = new File("data" + sep + "Canzoni.dati.txt");
@@ -45,7 +45,7 @@ public class Canzoni {
 
         while ((sup = bufread.readLine()) != null) {
             supporto = sup.split("\\|");
-            TitoloFile =supporto[0].trim().toLowerCase();
+            TitoloFile = supporto[0].trim().toLowerCase();
             if (Titolo.equals(TitoloFile.trim().toLowerCase())) {
                 AutoreFile = supporto[1].trim().toLowerCase();
                 AnnoFile = supporto[2].trim().toLowerCase();
@@ -53,7 +53,8 @@ public class Canzoni {
                 break;
             }
         }
-        // se trova la canzone visualizza le sue informazioni che si trovano nel file e poi visualizza un menu con le operazioni che puoi fare
+        // se trova la canzone visualizza le sue informazioni che si trovano nel file e
+        // poi visualizza un menu con le operazioni che puoi fare
         if (trovato) {
             int varswich;
             System.out.println("inormazioni canzone \n");
@@ -61,7 +62,8 @@ public class Canzoni {
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);
             System.out.println("\n");
-            //menu con: visualizza emozione e se loggato inserisci emozione terza voce menu principale
+            // menu con: visualizza emozione e se loggato inserisci emozione terza voce menu
+            // principale
             do {
                 System.out.println("Digita 1:  per visualizzare le emozioni associate a questa canzone--> ");
                 System.out.println("Digita 2:  per inserire le emozioni che hai provato ascoltando questa canzone--> ");
@@ -94,8 +96,7 @@ public class Canzoni {
         bufread.close();
 
     }
-    //</editor-fold>
-
+    // </editor-fold>
 
     /**
      * @param Autore
@@ -103,9 +104,9 @@ public class Canzoni {
      * @param loggato
      * @throws IOException
      * @author Stefano Farina
-     * ricerca la canzone per autore ed anno, ne file Canzoni.dati
+     *         ricerca la canzone per autore ed anno, ne file Canzoni.dati
      */
-    //<editor-fold desc="Ricerca canzone per Autore ed Anno">
+    // <editor-fold desc="Ricerca canzone per Autore ed Anno">
     public static void cercaBranoMusicaleAutoreAnno(String Autore, String Anno, boolean loggato) throws IOException {
 
         File file = new File("data" + sep + "Canzoni.dati.txt");
@@ -135,7 +136,8 @@ public class Canzoni {
             System.out.println("Autore: " + AutoreFile);
             System.out.println("Anno: " + AnnoFile);
             int varswich;
-            // menu--> le operazioni che un utente può fare dopo aver trovato la canzone e se è loggato
+            // menu--> le operazioni che un utente può fare dopo aver trovato la canzone e
+            // se è loggato
             do {
                 System.out.println("Digita 1:  per visualizzare le emozioni associate a questa canzone--> ");
                 System.out.println("Digita 2:  per inserire le emozioni che hai provato ascoltando questa canzone--> ");
@@ -162,23 +164,21 @@ public class Canzoni {
                 }
             } while (varswich != 0);
 
-
         } else {
             System.out.println("Canzone non trovata");
         }
         bufread.close();
     }
-    //</editor-fold>
-
+    // </editor-fold>
 
     /**
      * @param titolo
      * @return vero/falso dipende se la canzone esiste o no nel file
      * @throws IOException
      * @author Stefano Farina
-     * controlla se una canzone è presente o meno nel file
+     *         controlla se una canzone è presente o meno nel file
      */
-    //<editor-fold desc="Controllo canzone esistente">
+    // <editor-fold desc="Controllo canzone esistente">
     public static boolean controlloCanzoneEsistente(String titolo) throws IOException {
 
         File file = new File("data" + sep + "Canzoni.dati.txt");
@@ -189,24 +189,26 @@ public class Canzoni {
         String[] supporto;
         while ((str = br.readLine()) != null) {
             supporto = str.split("\\|");
-            if ((supporto[0].toLowerCase().trim()).equals(titolo.toLowerCase().trim()))
-            {
+            if ((supporto[0].toLowerCase().trim()).equals(titolo.toLowerCase().trim())) {
+                br.close();
                 return true;
             }
         }
+        br.close();
         return false;
     }
-    //</editor-fold>
-
+    // </editor-fold>
 
     /**
      * @param titolo
-     * @return vero/falso se trova o meno la canzone, questo risultato servirà in un altro metodo
+     * @return vero/falso se trova o meno la canzone, questo risultato servirà in un
+     *         altro metodo
      * @throws IOException
      * @author Stefano Farina
-     * ricerca la canzone e mi dice il numero della riga in cui si trova nel file
+     *         ricerca la canzone e mi dice il numero della riga in cui si trova nel
+     *         file
      */
-    //<editor-fold desc="Ricerca canzone e numero riga">
+    // <editor-fold desc="Ricerca canzone e numero riga">
     public static boolean ricercaCanzoni(String titolo) throws IOException {
 
         File file = new File("data" + sep + "Canzoni.dati.txt");
@@ -228,27 +230,27 @@ public class Canzoni {
             }
             linea++;
         }
+        br.close();
         return trovato;
     }
-    //</editor-fold>
-
+    // </editor-fold>
 
     /**
      * @return mi restituisce il numero totale di canzoni presenti nel file
      * @throws IOException
      * @author Stefano Farina
-     * conta le canzoni nel file e mi dice quante sono
+     *         conta le canzoni nel file e mi dice quante sono
      */
-    //<editor-fold desc="numero canzoni nel file">
+    // <editor-fold desc="numero canzoni nel file">
     public static int numeroTotaleCanzoni() throws IOException {
 
         File file = new File("data" + sep + "Canzoni.dati.txt");
         String path = file.getAbsolutePath();
         LineNumberReader lnr = new LineNumberReader(new FileReader(path));
         lnr.skip(Long.MAX_VALUE);
+        lnr.close();
         return (lnr.getLineNumber() + 1);
     }
-    //</editor-fold>
+    // </editor-fold>
 
 }
-

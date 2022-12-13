@@ -7,12 +7,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
-
 /**
  * @author Emilio Toli
  * @author Stefano Farina
- * è il main dell' applicazione, si trovano tutte le opzioni che un utente può fare
+ *         è il main dell' applicazione, si trovano tutte le opzioni che un
+ *         utente può fare
  */
 public class EmotionalSongs {
 
@@ -24,7 +23,7 @@ public class EmotionalSongs {
         BufferedReader br = new BufferedReader(isr);
         final String sep = System.getProperty("file.separator");
         String nomePlaylist;
-        String idUtenteGlob = null; //variabile globale che serve ad avere l'id-utente
+        String idUtenteGlob = null; // variabile globale che serve ad avere l'id-utente
         String idUtente;
         Boolean controlloCap;
         boolean esiste;
@@ -50,7 +49,7 @@ public class EmotionalSongs {
                     System.out.println("Digitare 4 per Loggarti");
                     System.out.println("Digitare 5 per accedere all'area personale: ");
                     System.out.println("Digitare 6 per terminare tutte le operazioni");
-                    //System.out.println("\n");
+                    // System.out.println("\n");
                     System.out.println("per accedre al case 5, prima bisogna effettuare il login");
                     System.out.println("-------------------------------------------------------------------------");
                 } else {
@@ -72,7 +71,8 @@ public class EmotionalSongs {
                     controlloMenuPrincipale = true;
 
                 } catch (Exception e) {
-                    System.out.println("\nDEVI INSERIRE SOLO NUMERI DA 1 A 5 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'");
+                    System.out
+                            .println("\nDEVI INSERIRE SOLO NUMERI DA 1 A 5 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'");
                     System.out.println("PER TERMINARE LE OPERZIONI SUBITO PUI DIGITARE 0 O 6");
                     controlloMenuPrincipale = false;
                 }
@@ -80,15 +80,15 @@ public class EmotionalSongs {
 
             switch (varswich) {
                 case 1:
-                    //<editor-fold desc="RICERCA BRANO PER TITOLO">
+                    // <editor-fold desc="RICERCA BRANO PER TITOLO">
                     System.out.println("inizio procedura di ricerca in base al titolo\n");
                     System.out.print("inserisci titolo da cercare: ");
                     titolo = br.readLine().trim().toLowerCase();
                     Canzoni.cercaBranoMusicaleTitolo(titolo, loggatoglob);
                     break;
-                //</editor-fold>
+                // </editor-fold>
                 case 2:
-                    //<editor-fold desc="RICERCA BRANO PER AUTORE ED ANNO">
+                    // <editor-fold desc="RICERCA BRANO PER AUTORE ED ANNO">
                     System.out.println("inizio procedura ricerca canzone per autore e titolo:");
                     System.out.print("\ninserisci autore: ");
                     autore = br.readLine().trim().toLowerCase();
@@ -96,9 +96,9 @@ public class EmotionalSongs {
                     anno = br.readLine().trim().toLowerCase();
                     Canzoni.cercaBranoMusicaleAutoreAnno(autore, anno, loggatoglob);
                     break;
-                //</editor-fold>
+                // </editor-fold>
                 case 3:
-                    //<editor-fold desc="REGISTRAZIONE NUOVO UTENTE">
+                    // <editor-fold desc="REGISTRAZIONE NUOVO UTENTE">
                     System.out.println("inserisci utente da registrare: ");
 
                     System.out.print("Inserisci nome: ");
@@ -111,7 +111,8 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci codice fiscale: ");
                     codfisc = br.readLine().toLowerCase();
-                    codfisc = Utenti.ControlloFormatocf(codfisc); //controllo che il codice fiscale sia nel formato corretto
+                    codfisc = Utenti.ControlloFormatocf(codfisc); // controllo che il codice fiscale sia nel formato
+                                                                  // corretto
 
                     System.out.print("inserisci indirizzo: ");
                     indirizzo = br.readLine();
@@ -121,18 +122,17 @@ public class EmotionalSongs {
                     numerocivico = Utenti.controlloNumeroCivico(numerocivico);
 
                     System.out.print("inserisci cap: ");
-                    do{
-                        try{
+                    do {
+                        try {
                             cap = br.readLine();
                             cap = Utenti.controlloCAP(Integer.parseInt(cap));
-                            controlloCap=true;
-                        }
-                        catch (Exception e){
+                            controlloCap = true;
+                        } catch (Exception e) {
                             System.out.println("puoi inserire solo numeri");
                             System.out.println("Rinseriscilo: ");
-                            controlloCap=false;
+                            controlloCap = false;
                         }
-                    }while(!controlloCap);
+                    } while (!controlloCap);
 
                     System.out.print("inserire il comune: ");
                     comune = br.readLine();
@@ -146,18 +146,19 @@ public class EmotionalSongs {
 
                     System.out.print("inserisci user: ");
                     username = br.readLine();
-                    username=Utenti.controlloUserEsistente(username);
+                    username = Utenti.controlloUserEsistente(username);
 
                     System.out.print("inserisci password: ");
                     password = br.readLine();
                     password = Utenti.controlloPassword(password);
 
-
-                    Utenti.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password);
-                    Utenti.ScriviFile(Utenti.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email, username, password), path); //inserisco un nuovo utente nel file
+                    Utenti.Registrazione(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune, provincia, email,
+                            username, password);
+                    Utenti.ScriviFile(Utenti.toString(nome, cognome, codfisc, indirizzo, numerocivico, cap, comune,
+                            provincia, email, username, password), path); // inserisco un nuovo utente nel file
                     System.out.println("\nregistrazione completata");
                     break;
-                //</editor-fold>
+                // </editor-fold>
 
                 case 4:
                     if (!loggatoglob) {
@@ -167,19 +168,16 @@ public class EmotionalSongs {
                             System.out.print("inserisci la password: ");
                             password = br.readLine().trim();
                             loggatoglob = Utenti.Login(idUtente, password);
-                            if(!loggatoglob)
-                            {
-                                nonLoggato=false;
+                            if (!loggatoglob) {
+                                nonLoggato = false;
                                 break;
-                            }
-                            else {
-                                nonLoggato=true;
+                            } else {
+                                nonLoggato = true;
                             }
                         } while (!loggatoglob);
-                        if(!nonLoggato){
-                            loggatoglob=false;
-                        }
-                        else {
+                        if (!nonLoggato) {
+                            loggatoglob = false;
+                        } else {
                             loggatoglob = true;
                             idUtenteGlob = idUtente;
                             System.out.println("sei loggato");
@@ -212,7 +210,8 @@ public class EmotionalSongs {
                                     varmenu = Integer.parseInt(br.readLine());
                                     controllomenupersonale = true;
                                 } catch (Exception e) {
-                                    System.out.println("\nDEVI INSERIRE SOLO NUMERI DA 1 A 7 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'\n");
+                                    System.out.println(
+                                            "\nDEVI INSERIRE SOLO NUMERI DA 1 A 7 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'\n");
                                     controllomenupersonale = false;
                                 }
 
@@ -226,22 +225,25 @@ public class EmotionalSongs {
                                     do {
                                         valido = Playlist.registraPlaylist(idUtenteGlob, br.readLine());
                                         if (!valido)
-                                            System.out.println("PLAYLIST GIA' ESISTENTE. INSERISCI UN NUOVO NOME PER LA TUA PLAYLIST");
-                                    } while (!valido);            //controllo sul ritorno del metodo per capire se esista gia' una playlist associata all'idUtente
+                                            System.out.println(
+                                                    "PLAYLIST GIA' ESISTENTE. INSERISCI UN NUOVO NOME PER LA TUA PLAYLIST");
+                                    } while (!valido); // controllo sul ritorno del metodo per capire se esista gia' una
+                                                       // playlist associata all'idUtente
 
                                     break;
                                 case 2:
                                     Playlist.visualizzaPlaylistUtente(idUtenteGlob);
                                     break;
                                 case 3:
-                                    boolean srv3=false;
+                                    boolean srv3 = false;
                                     do {
-                                        System.out.println("Inserisci nome della playlist di cui visualizzare le canzoni: ");
+                                        System.out.println(
+                                                "Inserisci nome della playlist di cui visualizzare le canzoni: ");
                                         playlist = br.readLine();
-                                        srv3= Playlist.controlloPlaylistEsistente(idUtenteGlob,playlist);
-                                        if(!srv3)
+                                        srv3 = Playlist.controlloPlaylistEsistente(idUtenteGlob, playlist);
+                                        if (!srv3)
                                             System.out.println("Nome playlist inesistente! ");
-                                    }while(!srv3);
+                                    } while (!srv3);
                                     Playlist.visualizzaCanzoniPlaylist(idUtenteGlob, playlist);
                                     break;
                                 case 4:
@@ -252,22 +254,23 @@ public class EmotionalSongs {
                                     break;
 
                                 case 5:
-                                    boolean srv=false;
+                                    boolean srv = false;
                                     do {
                                         System.out.println("Inserire nome playlist da cui eliminare canzoni: ");
                                         playlist = br.readLine();
                                         srv = Playlist.controlloPlaylistEsistente(idUtenteGlob, playlist);
-                                        if(!srv)
+                                        if (!srv)
                                             System.out.println("Errore, reinseire nome playlist");
-                                    }while(!srv);
-                                        srv=false;
-                                        do {
-                                            System.out.println("inserire nome brano da eliminare dalla playlist");
-                                            brano = br.readLine();
-                                            srv = Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob, playlist, brano);
-                                            if(!srv)
-                                                System.out.println("Canzone inesistente! Reinserire il titolo della canzone");
-                                        }while(!srv);
+                                    } while (!srv);
+                                    srv = false;
+                                    do {
+                                        System.out.println("inserire nome brano da eliminare dalla playlist");
+                                        brano = br.readLine();
+                                        srv = Playlist.eliminaCanzoneDaPlaylist(idUtenteGlob, playlist, brano);
+                                        if (!srv)
+                                            System.out
+                                                    .println("Canzone inesistente! Reinserire il titolo della canzone");
+                                    } while (!srv);
                                     break;
 
                                 case 6:

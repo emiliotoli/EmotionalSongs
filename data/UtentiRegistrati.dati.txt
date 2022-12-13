@@ -11,7 +11,6 @@ marco|buglione|ryfhfe63a63u833i|via como 23|23|123|bodio|milano|emiiiiiiiii|davo
 marco|buglione|freliu64g63l876y|minte generoso|22|23456|varedser|varese|mbuglione|marco|pwd
 emilio|toli|gtrkel36d64u876t|monmte|54|54637|var|varese|etoli|etoli|pwd
 piero|angela|dfgyuo98f63h732g|erba|como|123|varese|busto|ginopino|emi|pwd
-antonio|lavazza|poiuyt09s87g654f|monte|56|45678|noapoli|napoli|antonio244|emi|pwd
 pippo|baudo|ertyui94d45f958j|monte|44Ã¹|45678|quasso|varese|pippobaudo@gmail.com|emi|pwd
 prova|prov|werfgh89k95g574d|prova|45|12|prova|prova|prova|prova|prova
 prova|prova|poiytr56t67u897t|prova|34a|34556|prova|prova|prova.prova@gmail.comi|emi23|prova
@@ -23,8 +22,9 @@ nicol|emanuele|oooooo99s55d555d|via veneto lotti|8|125|roma|ro|ddd@gmail.com|lal
 prova|prova|tyutyu56t56t567t|prova|prova|34567|prova|prova|prova@prova.it|prova|prova23
 prova6|prova6|ertert34e34e345e|prova6|prova6|34567|prova6|prova6|prova6@prova6.it|prova6|pr
 prova7|prova7|ertert45e45e456e|prova7|prova7|56789|prova7|prova7|prova7@prova7.it|prova7|Emilio.dario15@#
-emi|dav|ertert45e45r456t|monte|23r|34|monteù|vagdsd|eronx.gafs@gmail.comn|edvaf_sfd23|Emix99@daverio_
+emi|dav|ertert45e45r456t|monte|23r|34|monteï¿½|vagdsd|eronx.gafs@gmail.comn|edvaf_sfd23|Emix99@daverio_
 sdcfv|dfcvg|ertyui45r45r567y|cfvg|4567t|345|sdxcfvg|dcfvg|fcvgb@fvg.it|emi|Amico23@!
 xsdcf|xdcf|ertyui56t67y789i|cdfvgh|34|34567|dfg|sdfg|sdf@sdfv.com|davox_|Davox@23emi
 xdcf|edxcfrvg|ertyui34e34e345r|34r|345|00034|edcfv|fvgbhn|dcfv@fvgbh.it|fgvtbhynju_|DAvrio23!emi
 antoo|ferrari|aaaaaa11a11a111a|monte generoso|2e|23456|varese|varese|aaaa.aaaa@aaa.aa|Antoo23|Antoo23@an#
+cri|grossano|stntrc00t22z129u|alba|21|21052|BUsto Arsizio|Varese|crisrian@gjdfsa|cri|pwd
