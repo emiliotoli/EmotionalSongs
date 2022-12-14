@@ -45,19 +45,18 @@ public class EmotionalSongs {
                     System.out.println("-------------------- menu' principale applicazione ----------------------");
                     System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
                     System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
-                    System.out.println("Digitare 3 per per Registrati:");
+                    System.out.println("Digitare 3 per per Registrarti:");
                     System.out.println("Digitare 4 per Loggarti");
                     System.out.println("Digitare 5 per accedere all'area personale: ");
                     System.out.println("Digitare 6 per terminare tutte le operazioni");
-                    // System.out.println("\n");
-                    System.out.println("per accedre al case 5, prima bisogna effettuare il login");
+                    System.out.println("per accedere al case 5, prima bisogna effettuare il login");
                     System.out.println("-------------------------------------------------------------------------");
                 } else {
                     System.out.println("\n");
                     System.out.println("-------------------- menu' principale applicazione ----------------------");
                     System.out.println("Digitare 1 per ricercare una canzone per Titolo:");
                     System.out.println("Digitare 2 per ricercare una canzone per Autore e Anno:");
-                    System.out.println("Digitare 3 per per Registrati:");
+                    System.out.println("Digitare 3 per per Registrarti:");
                     System.out.println("Digitare 4 per il logout");
                     System.out.println("Digitare 5 per accedere all'area personale: ");
                     System.out.println("Digitare 6 per terminare tutte le operazioni");
@@ -73,7 +72,7 @@ public class EmotionalSongs {
                 } catch (Exception e) {
                     System.out
                             .println("\nDEVI INSERIRE SOLO NUMERI DA 1 A 5 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'");
-                    System.out.println("PER TERMINARE LE OPERZIONI SUBITO PUI DIGITARE 0 O 6");
+                    System.out.println("PER TERMINARE LE OPERAZIONI SUBITO PUOI DIGITARE 0 O 6");
                     controlloMenuPrincipale = false;
                 }
             } while (!controlloMenuPrincipale);
@@ -129,7 +128,7 @@ public class EmotionalSongs {
                             controlloCap = true;
                         } catch (Exception e) {
                             System.out.println("puoi inserire solo numeri");
-                            System.out.println("Rinseriscilo: ");
+                            System.out.println("inserisci di nuovo: ");
                             controlloCap = false;
                         }
                     } while (!controlloCap);
@@ -260,7 +259,7 @@ public class EmotionalSongs {
                                         playlist = br.readLine();
                                         srv = Playlist.controlloPlaylistEsistente(idUtenteGlob, playlist);
                                         if (!srv)
-                                            System.out.println("Errore, reinseire nome playlist");
+                                            System.out.println("Errore, reinserire nome playlist");
                                     } while (!srv);
                                     srv = false;
                                     do {
