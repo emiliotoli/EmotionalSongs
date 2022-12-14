@@ -1,32 +1,3 @@
-1)Rifare il jar 	
-
-
-2)gestire le eccezioni nella classe Emozioni--> fatto
-
-
-3)gestire l'eccezione nel cap se inserisco una lettera al posto del numero --> FATTO
-
-
-4)gestire situazione in cui provo a loggarmi senza essermi regisrato, mi deve
-  dare la possibilità di registrarmi o di tornare al menù --> FATTA
-
-5)testare tutte tutti i casi
-
-
-6)vedere se abbiamo fatto tuto secondo le specifiche
-
-
-7)sistemare i file in maniera decente -->FATTO
-
-
-8)da vedere perchè da problemi quando visualizzi le emozioni -->  IN TEORIA FUNZIONA
-
-
-9)rifare il javadoc inserendo il nome di cri in una classe -->FATTO
-
-
-10)inserire il nome di cri nei manuali-->FATTO
-
-
-11) Sistemare i manuali--> FATTo
-
+1. Rifare il JAR;
+2. Testing;
+3. Controllare le specifiche richieste.

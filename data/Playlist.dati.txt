@@ -1,26 +1,13 @@
-emi|università|Respect|
-etoli|pop|That's All Right|That's All Right|Hound Dog|Hound Dog|That's All Right|Under The Boardwalk|American Pie|
-demi||American Pie|Under The Boardwalk|Green Onions|
-demi|pullman|Respect|That's All Right|
-emi|studio|American Pie|
-emi|rock|My Girl|Hey Jude|Work With Me Annie|Work With Me Annie|
-emi|personale|My Girl|
-demi||Under The Boardwalk|Under The Boardwalk|
-demi|studio|Under The Boardwalk|Respect|American Pie|In The Mood|Under The Boardwalk|In The Mood|Green Onions|
-demi|università|My Girl|That's All Right|Hey Jude|
-cri|università|Hey Jude|
-etoli||Under The Boardwalk|That's All Right|
-etoli|rock|Respect|Georgia On My Mind|My Girl|My Girl|
-etoli|pop|In The Mood|
-demi|università|In The Mood|Under The Boardwalk|That's All Right|Hound Dog|My Girl|
-etoli||Georgia On My Mind|Respect|
-emi|studio|American Pie|Green Onions|Hey Jude|Green Onions|
-etoli|università|Green Onions|American Pie|My Girl|Hey Jude|Respect|Under The Boardwalk|
-emi|università|That's All Right|
-demi|rock|Green Onions|Hound Dog|Hound Dog|Georgia On My Mind|
-demi|rock|Under The Boardwalk|My Girl|Hey Jude|American Pie|Under The Boardwalk|
-emi|rock|Hound Dog|Georgia On My Mind|My Girl|That's All Right|Hey Jude|
-cri||In The Mood|American Pie|Green Onions|
-etoli|università|My Girl|That's All Right|Hey Jude|
-emi|università|Green Onions|Hound Dog|
-emi|università|Hound Dog|
+cri|università|Another Brick in the Wall, Part 2|Real Love|I'm In The Mood For Love|
+cri|studio|Work With Me Annie|Michelle|Moody Mood For Love|In The Mood|Real Love|That's All Right|I'm A Believer|
+emi|pullman|Another Brick in the Wall, Part 2|
+demi|pop|Real Love|I've Been Loving You Too Long|American Pie|Another Brick in the Wall, Part 2|My Girl|
+demi|rock|California Dreamin'|Hey Ya!|
+demi|personale|California Dreamin'|In The Mood|
+etoli|allenamento|California Dreamin'|Another Brick in the Wall, Part 2|In The Mood|
+etoli|corsa|That's All Right|Respect|My Girl|Another Brick in the Wall, Part 2|That's All Right|
+cri|palestra|That's All Right|California Dreamin'|Georgia On My Mind|Respect|American Pie|
+demi|programmazione|In The Mood|Under The Boardwalk|Hey Ya!|
+emi|relax|In The Mood|
+cri|crazy|In The Mood|Hey Ya!|Moody Mood For Love|In The Mood|Respect|
+etoli|chill|Work With Me Annie|That's All Right|Hey Ya!|I'm A Believer|
