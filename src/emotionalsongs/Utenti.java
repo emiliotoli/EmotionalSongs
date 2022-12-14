@@ -150,7 +150,7 @@ public class Utenti {
 
         pwd1 = Utenti.controlloNonNulla(pwd1);
 
-        System.out.println(" digita nuovamente la password per confermarla: ");
+        System.out.println("Digita nuovamente la password per confermarla: ");
         pwd2 = brr.readLine();
         System.out.println("controllo delle password per vedere se coincidono: ");
         Utenti.controlloPassUguale(pwd1, pwd2);
@@ -201,7 +201,7 @@ public class Utenti {
                 pass = brr.readLine();
             }
 
-        } while (!(pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!_]).{8,20})")));
+        } while (!(pass.matches("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!_.]).{8,20})")));
         return pass;
     }
     // </editor-fold>
@@ -253,8 +253,8 @@ public class Utenti {
 
             } else {
 
-                System.out.println("ID UTENTE gia' esistente! Scegliere un nuovo nomeUtente");
-                System.out.println("rinserire il nome utente: ");
+                System.out.println("ID UTENTE gia' esistente! Scegliere un nuovo nome utente");
+                System.out.println("Inserire nuovamente il nome utente: ");
                 username = brr.readLine();
             }
         } while (esisteut);
