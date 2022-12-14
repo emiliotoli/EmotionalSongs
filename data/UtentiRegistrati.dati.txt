@@ -1,4 +1,2 @@
 pippo|baudo|ertyui94d45f958j|monte|44|45678|quasso|varese|pippobaudo@gmail.com|emi|pwd
-cristian|stinga|stntrc00t22z129u|gozzano|22|busto arsizio|varese|cristian.grossano@gmail.com|cri|pwd
-emilio|toli|gtrkel36d64u876t|monmte|54|54637|var|varese|etoli@gmail.com|etoli|pwd
-emilio|daverio|gtrkel36d64u876t|cervo|25|21020|castronno|varese|edavo@gmail.com|demi|pwd
+cristian|stinga|stntrc00t22z129u|gozzano|22|21052|BUSTO arsizio|varese|cristian.grossano@gmail.com|cri|Password1_
