@@ -447,15 +447,15 @@ public class Utenti {
    *         tra [10,97100]
    */
   // <editor-fold desc="Controllo formato e lunghezza cap">
-  static String controlloCAP(int cap) {
+  static String controlloCAP(int cap) throws IOException {
+
     boolean check = false;
     do {
       if (cap < 10 || cap > 97100) {
         System.out.println("cap non valido");
         System.out.println("reinserire il cap: ");
-        Scanner in = new Scanner(System.in);
-        cap = in.nextInt();
-        in.close();
+        cap = Integer.parseInt(brr.readLine());
+        
       } else {
         check = true;
       }
@@ -466,6 +466,7 @@ public class Utenti {
       CAP.append(0);
     }
     CAP.append(cap);
+
     return CAP.toString();
   }
 
@@ -556,7 +557,7 @@ public class Utenti {
    * @return vero/falso che dipende se esiste o meno l'utente nel file
    * @throws IOException
    * @author Cristian Stinga
-   *         controllas se esiste gia un utente con lo stesso UsernId
+   *         controlla se esiste gia un utente con lo stesso UsernId
    */
   // <editor-fold desc="UserId Esistente">
   private static boolean esisteUtente(String nomeUtente) throws IOException {
@@ -573,6 +574,75 @@ public class Utenti {
     br.close();
     return false;
   }
+
   // </editor-fold>
+
+  /**
+   * @param com
+   * @return com (comune) corretto
+   * @throws IOException
+   * @author Daverio Emilio
+   *         controlla se il comune inserito sia nullo o meno
+   */
+  public static String controlloCOMUNEnonNull(String com) throws IOException {
+    do{
+      if(com.length()==0){
+        System.out.println("non hai inserito niente.");
+        System.out.println("inserisci nuovamente il comune: ");
+        com= brr.readLine();
+      }
+      else{
+        break;
+      }
+    }while(com.length()==0);
+    com=Utenti.controlloCOMPROV(com);
+
+    return com;
+  }
+
+  /**
+   * @param str
+   * @return str
+   * @throws IOException
+   * @author Daverio Emilio
+   *         controlla se la stringa che gli viene passata contiene numeri o caratteri speciali
+   */
+  private static String controlloCOMPROV(String str) throws IOException {
+    do{
+      if(str.matches("[A-Za-z]*")){
+        break;
+      }
+      else{
+        System.out.println("la stringa inserita non puo' contenerte dei caratteri numerici");
+        System.out.println("reinserire la stringa: ");
+        str=brr.readLine();
+      }
+
+    }while(!(str.matches("[A-Za-z]*")));
+    return str;
+  }
+
+  /**
+   * @param prov
+   * @return prov (provincia) corretta
+   * @throws IOException
+   * @author Daverio Emilio
+   *         controlla se la provincia inserita sia nulla o meno
+   */
+  public static String controlloProvincianonNull(String prov) throws IOException {
+    do{
+      if (prov.length()==0){
+        System.out.println("non hai inserito nessuna provincia.");
+        System.out.println("rinserisci la Provincia: ");
+        prov=brr.readLine();
+      }
+      else {
+        break;
+      }
+    }while (prov.length()==0);
+    prov=Utenti.controlloCOMPROV(prov);
+    return prov;
+  }
+
 
 }
