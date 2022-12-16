@@ -91,7 +91,7 @@ public class Canzoni {
           "Digita 2:  per inserire le emozioni che hai provato ascoltando questa canzone: "
         );
         System.out.println(
-          "NOTA--> per inserire le emozioni di devi prima loggare"
+          "NOTA! Per inserire le emozioni devi prima effettuare il login"
         );
         System.out.println("Digita 3:  per tornare al menu principale: ");
         System.out.print("scelta: ");
@@ -177,7 +177,9 @@ public class Canzoni {
         System.out.println(
           "Digita 2:  per inserire le emozioni che hai provato ascoltando questa canzone: "
         );
-        System.out.println("NOTA: per inserire emozioni di devi prima loggare");
+        System.out.println(
+          "NOTA! Per inserire le emozioni devi prima effettuare il login"
+        );
         System.out.println("Digita 3:  per tornare al menu principale: ");
         System.out.print("scelta: ");
         varswich = Integer.parseInt(br.readLine());
