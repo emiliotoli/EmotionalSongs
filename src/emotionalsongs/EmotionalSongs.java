@@ -1,17 +1,16 @@
 package emotionalsongs;
 
+//! Con Java.io.Console si può nasconodere la password
 import java.io.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
-import java.util.Scanner;
 
 /**
  * @author Cristian Stinga
  * @author Stefano Farina
- * è il main dell' applicazione, si trovano tutte le opzioni che un
- * utente può fare
+ *         è il main dell' applicazione, si trovano tutte le opzioni che un
+ *         utente può fare
  */
 public class EmotionalSongs {
 
@@ -25,8 +24,18 @@ public class EmotionalSongs {
     BufferedReader br = new BufferedReader(isr);
     final String sep = System.getProperty("file.separator");
     String nomePlaylist;
-    String idUtenteGlob = null; // variabile globale che serve ad avere l'id-utente
+    String idUtenteGlob = null;
     String idUtente;
+    String errorMessageMain =
+      "\nI soli valori ammessi sono quelli presenti nel menù.\n" +
+      "Per terminare le operazioni puoi digitare 6\n";
+    String errorMessagePersonal =
+      "\nI soli valori ammessi sono quelli presenti nel menù.\n";
+    String[] FrasiMenu = new String[] {
+      "Inizio procedura di ricerca in base al titolo\n",
+      "Inizio procedura di ricerca in base all'autore e titolo\n",
+      "Inizio procedura di registrazione utente\n",
+    };
     Boolean controlloCap;
     boolean esiste;
     boolean loggatoglob = false;
@@ -39,83 +48,71 @@ public class EmotionalSongs {
 
     File file = new File("data" + sep + "UtentiRegistrati.dati.txt");
     String path = file.getAbsolutePath();
-
+    String TestoMenu = null;
     do {
       do {
         if (!loggatoglob) {
-          System.out.println("\n");
-          System.out.println(
-            "-------------------- Menu' principale applicazione ----------------------"
-          );
-          System.out.println(
-            "Digitare 1 per cercare una canzone in base al Titolo:"
-          );
-          System.out.println(
-            "Digitare 2 per cercare una canzone in base all'Autore e all'Anno:"
-          );
-          System.out.println("Digitare 3 per per registrarti:");
-          System.out.println("Digitare 4 per eseguire il login:");
-          System.out.println("Digitare 5 per accedere all'area personale: ");
-          System.out.println("Digitare 6 per terminare tutte le operazioni");
-          System.out.println(
-            "Per accedere alla sezione 5, è necessario eseguire il login."
-          );
-          System.out.println(
-            "-------------------------------------------------------------------------"
-          );
+          TestoMenu =
+            "\n" +
+            "-------------------- Menu' Emotional Songs ----------------------\n" +
+            "Digitare 1 per cercare una canzone in base al titolo;\n" +
+            "Digitare 2 per cercare in base all'autore oppure all'anno;\n" +
+            "Digitare 3 per registrarsi;\n" +
+            "Digitare 4 per eseguire il login;\n" +
+            "Digitare 5 per accedere all'area personale\n" +
+            "Digitare 6 per terminare le operazioni;\n" +
+            "N.B.: Per accedere all'area personale prima è necessario eseguire il login.\n" +
+            "-------------------------------------------------------------------------\n";
+          System.out.println(TestoMenu);
         } else {
-          System.out.println("\n");
-          System.out.println(
-            "-------------------- Menu' principale applicazione ----------------------"
-          );
-          System.out.println(
-            "Digitare 1 per cercare una canzone in base al Titolo:"
-          );
-          System.out.println(
-            "Digitare 2 per cercare una canzone in base all'Autore e all'Anno:"
-          );
-          System.out.println("Digitare 3 per per registrarti:");
-          System.out.println("Digitare 4 per eseguire il login:");
-          System.out.println("Digitare 5 per accedere all'area personale: ");
-          System.out.println("Digitare 6 per terminare tutte le operazioni");
-          System.out.println(
-            "Per accedere alla sezione 5, è necessario eseguire il login."
-          );
-          System.out.println(
-            "-------------------------------------------------------------------------"
-          );
-        }
+          TestoMenu =
+            "\n" +
+            "-------------------- Menu' Emotional Songs ----------------------\n" +
+            "Digitare 1 per cercare una canzone in base al titolo;\n" +
+            "Digitare 2 per cercare in base all'autore oppure all'anno;\n" +
+            "Digitare 3 per registrarsi;\n" +
+            "Digitare 4 per eseguire il logout;\n" +
+            "Digitare 5 per accedere all'area personale\n" +
+            "Digitare 6 per terminare le operazioni;\n" +
+            "N.B.: Per accedere all'area personale prima è necessario eseguire il login.\n" +
+            "-------------------------------------------------------------------------\n";
 
-        System.out.print("scelta: ");
+          System.out.println(TestoMenu);
+        }
+        System.out.print("Scelta: ");
+
         try {
           varswich = Integer.parseInt(br.readLine());
-          controlloMenuPrincipale = true;
+
+          if (varswich < 1 || varswich > 6) {
+            controlloMenuPrincipale = false;
+            System.out.println(errorMessageMain);
+          } else {
+            controlloMenuPrincipale = true;
+          }
         } catch (Exception e) {
-          System.out.println(
-            "\nDEVI INSERIRE SOLO NUMERI DA 1 A 5 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'"
-          );
-          System.out.println(
-            "PER TERMINARE LE OPERAZIONI SUBITO PUOI DIGITARE 0 O 6"
-          );
+          System.out.println(errorMessageMain);
+
           controlloMenuPrincipale = false;
         }
       } while (!controlloMenuPrincipale);
 
+      // controllare lo switch
+
       switch (varswich) {
         case 1:
           // <editor-fold desc="RICERCA BRANO PER TITOLO">
-          System.out.println("inizio procedura di ricerca in base al titolo\n");
-          System.out.print("inserisci titolo da cercare: ");
+          System.out.println(FrasiMenu[varswich]);
+          System.out.println("Inserisci titolo da cercare: ");
           titolo = br.readLine().trim().toLowerCase();
           Canzoni.cercaBranoMusicaleTitolo(titolo, loggatoglob);
           break;
         // </editor-fold>
         case 2:
           // <editor-fold desc="RICERCA BRANO PER AUTORE ED ANNO">
-          System.out.println(
-            "inizio procedura ricerca canzone per autore e titolo:"
-          );
-          System.out.print("\ninserisci autore: ");
+          System.out.println(FrasiMenu[varswich]);
+
+          System.out.print("\nInserisci nome autore: ");
           autore = br.readLine().trim().toLowerCase();
           System.out.print("Inserisci anno: ");
           anno = br.readLine().trim().toLowerCase();
@@ -124,58 +121,59 @@ public class EmotionalSongs {
         // </editor-fold>
         case 3:
           // <editor-fold desc="REGISTRAZIONE NUOVO UTENTE">
-          System.out.println("inserisci utente da registrare: ");
+          System.out.println(FrasiMenu[varswich]);
 
           System.out.print("Inserisci nome: ");
           nome = br.readLine().toLowerCase();
           nome = Utenti.LunghezzaNome(nome);
 
-          System.out.print("inserisci cognome: ");
+          System.out.print("Inserisci cognome: ");
           cognome = br.readLine().toLowerCase();
           cognome = Utenti.LunghezzaCognome(cognome);
 
-          System.out.print("inserisci codice fiscale: ");
+          System.out.print("Inserisci codice fiscale: ");
           codfisc = br.readLine().toLowerCase();
-          codfisc = Utenti.ControlloFormatocf(codfisc); // controllo che il codice fiscale sia nel formato
-          // corretto
+          codfisc = Utenti.ControlloFormatocf(codfisc);
+          // controllo che il codice fiscale sia nel formato corretto
 
-          System.out.print("inserisci indirizzo: ");
+          System.out.print("Inserisci indirizzo: ");
           indirizzo = br.readLine();
 
-          System.out.print("inserisci numero civico: ");
+          System.out.print("Inserisci numero civico: ");
           numerocivico = br.readLine();
           numerocivico = Utenti.controlloNumeroCivico(numerocivico);
 
-          System.out.print("inserisci cap: ");
+          System.out.print("Inserisci CAP: ");
           do {
             try {
               cap = br.readLine();
               cap = Utenti.controlloCAP(Integer.parseInt(cap));
               controlloCap = true;
             } catch (Exception e) {
-              System.out.println("puoi inserire solo numeri");
-              System.out.println("inserisci di nuovo: ");
+              System.out.println(
+                "Sono ammessi solo valori numerici.\nInserisci nuovamente."
+              );
               controlloCap = false;
             }
           } while (!controlloCap);
 
-          System.out.print("inserire il comune: ");
+          System.out.print("Inserisci il comune: ");
           comune = br.readLine();
           comune = Utenti.controlloCOMUNEnonNull(comune);
 
-          System.out.print("inserire la provincia: ");
+          System.out.print("Inserisci la provincia: ");
           provincia = br.readLine();
           provincia = Utenti.controlloProvincianonNull(provincia);
 
-          System.out.print("inserisci email: ");
+          System.out.print("Inserisci e-mail: ");
           email = br.readLine();
           Utenti.controlloMail(email);
 
-          System.out.print("inserisci user: ");
+          System.out.print("Inserisci un nome utente per il login: ");
           username = br.readLine();
           username = Utenti.controlloUserEsistente(username);
 
-          System.out.print("inserisci password: ");
+          System.out.print("Inserisci password: ");
           password = br.readLine();
           password = Utenti.controlloPassword(password);
 
@@ -192,6 +190,7 @@ public class EmotionalSongs {
             username,
             password
           );
+
           Utenti.ScriviFile(
             Utenti.toString(
               nome,
@@ -208,16 +207,16 @@ public class EmotionalSongs {
             ),
             path
           ); // inserisco un nuovo utente nel file
-          System.out.println("\nregistrazione completata");
+          System.out.println("\nRegistrazione Completata.");
           break;
         // </editor-fold>
 
         case 4:
           if (!loggatoglob) {
             do {
-              System.out.print("inserisci l'UserId:");
+              System.out.print("Inserisci nome utente: ");
               idUtente = br.readLine().trim().toLowerCase();
-              System.out.print("inserisci la password: ");
+              System.out.print("Inserisci la password: ");
               password = br.readLine().trim();
               loggatoglob = Utenti.Login(idUtente, password);
               if (!loggatoglob) {
@@ -232,7 +231,7 @@ public class EmotionalSongs {
             } else {
               loggatoglob = true;
               idUtenteGlob = idUtente;
-              System.out.println("sei loggato");
+              System.out.println("Benvenuto " + idUtente + "!\n");
             }
           } else {
             loggatoglob = false;
@@ -241,41 +240,35 @@ public class EmotionalSongs {
           }
 
           break;
-        case 5: // ci pensa il davo
+        case 5:
           String playlist, brano;
           if (loggatoglob) {
             do {
               do {
-                System.out.println(
-                  "-------------------- menu' area personale ----------------------"
-                );
-                System.out.println("Digitare 1 per creare una playlist: ");
-                System.out.println("Digitare 2 per visualizzare le playList: ");
-                System.out.println(
-                  "Digitare 3 per visualizzare le canzoni di una playlist: "
-                );
-                System.out.println(
-                  "Digitare 4 per inserire una canzone in una playlist esistente: "
-                );
-                System.out.println(
-                  "Digitare 5 per eliminare una canzone da una playlist esistente: "
-                );
-                System.out.println("Digitare 6 per eliminare una playlist: ");
-                System.out.println(
-                  "Digitare 7 per tornare al menu' principale: "
-                );
-                System.out.println("Digitare 8 per fare il logout: ");
-                System.out.println(
-                  "----------------------------------------------------------------"
-                );
-                System.out.print("scelta: ");
+                TestoMenu =
+                  "-------------------- menu' area personale ----------------------\n" +
+                  "Digitare 1 per creare una playlist;\n" +
+                  "Digitare 2 per visualizzare lista delle playlist;\n" +
+                  "Digitare 3 per visualizzare una playlist;\n" +
+                  "Digitare 4 per aggiungere una canzone ad una playlist;\n" +
+                  "Digitare 5 per rimuovere una canzone da una playlist\n" +
+                  "Digitare 6 per eliminare una playlist;\n" +
+                  "Digitare 7 per tornare al menù principale;\n" +
+                  "Digitare 8 per eseguire il logout.\n" +
+                  "----------------------------------------------------------------\n\n";
+
+                System.out.print(TestoMenu + "Scelta: ");
+
                 try {
                   varmenu = Integer.parseInt(br.readLine());
-                  controllomenupersonale = true;
+                  if (varmenu < 0 || varmenu > 8) {
+                    System.out.println(errorMessagePersonal);
+                    controllomenupersonale = false;
+                  } else {
+                    controllomenupersonale = true;
+                  }
                 } catch (Exception e) {
-                  System.out.println(
-                    "\nDEVI INSERIRE SOLO NUMERI DA 1 A 7 PER FARE LE OPERAZIONI DESCRITTE SUL MENU'\n"
-                  );
+                  System.out.println("\n" + errorMessagePersonal + "\n");
                   controllomenupersonale = false;
                 }
               } while (!controllomenupersonale);
@@ -283,13 +276,16 @@ public class EmotionalSongs {
               switch (varmenu) {
                 case 1:
                   boolean valido = true;
-                  System.out.println("INSERIRE IL NOME DELLA NUOVA PLAYLIST");
+                  System.out.println("Inserire nome della playlist: ");
                   do {
                     valido =
                       Playlist.registraPlaylist(idUtenteGlob, br.readLine());
-                    if (!valido) System.out.println(
-                      "PLAYLIST GIA' ESISTENTE. INSERISCI UN NUOVO NOME PER LA TUA PLAYLIST"
-                    );
+                    if (!valido) {
+                      System.out.println(
+                        "Playlist con questo nome già esistente\n" +
+                        "Per favore, inserisci un nome che non è già in uso"
+                      );
+                    }
                   } while (!valido); // controllo sul ritorno del metodo per capire se esista gia' una
                   // playlist associata all'idUtente
 
@@ -309,9 +305,7 @@ public class EmotionalSongs {
                         idUtenteGlob,
                         playlist
                       );
-                    if (!srv3) System.out.println(
-                      "Nome playlist inesistente! "
-                    );
+                    if (!srv3) System.out.println("Nome playlist non in uso! ");
                   } while (!srv3);
                   Playlist.visualizzaCanzoniPlaylist(idUtenteGlob, playlist);
                   break;
@@ -341,7 +335,7 @@ public class EmotionalSongs {
                   srv = false;
                   do {
                     System.out.println(
-                      "inserire nome brano da eliminare dalla playlist"
+                      "Inserire nome brano da eliminare dalla playlist: "
                     );
                     brano = br.readLine();
                     srv =
@@ -351,12 +345,12 @@ public class EmotionalSongs {
                         brano
                       );
                     if (!srv) System.out.println(
-                      "Canzone inesistente! Reinserire il titolo della canzone"
+                      "Canzone inesistente!\nReinserire il titolo della canzone: "
                     );
                   } while (!srv);
                   break;
                 case 6:
-                  System.out.println("Inserisci nome playlist da eliminare");
+                  System.out.println("Inserisci nome playlist da eliminare: ");
                   playlist = br.readLine();
                   Playlist.cancellaPlaylist(idUtenteGlob, playlist);
                 case 7:
@@ -369,13 +363,13 @@ public class EmotionalSongs {
               }
             } while (varmenu != 0);
           } else {
-            System.out.println("non ti sei ancora loggato!! \n");
+            System.out.println("Non è ancora stato eseguito il login!\n");
           }
           break;
         case 6:
-          System.out.println("grazie e arrivederci");
-          varswich = 0;
+          System.out.println("Grazie e Arrivederci.");
+          varswich = 6;
       }
-    } while (varswich != 0);
+    } while (varswich != 6);
   }
 }
