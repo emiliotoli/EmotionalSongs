@@ -34,7 +34,7 @@ public class EmotionalSongs {
     String[] FrasiMenu = new String[] {
       "Inizio procedura di ricerca in base al titolo\n",
       "Inizio procedura di ricerca in base all'autore e titolo\n",
-      "Inizio procedura di registrazione utente\n",
+      
     };
     Boolean controlloCap;
     boolean esiste;
@@ -121,7 +121,7 @@ public class EmotionalSongs {
         // </editor-fold>
         case 3:
           // <editor-fold desc="REGISTRAZIONE NUOVO UTENTE">
-          System.out.println(FrasiMenu[varswich]);
+          System.out.println("Inizio procedura di registrazione utente\n");
 
           System.out.print("Inserisci nome: ");
           nome = br.readLine().toLowerCase();
